@@ -1,8 +1,7 @@
-import { useState } from "react";
 import "./App.scss";
 import Navbar from "./components/maincomponents/nabvar/Navbar";
 import Inicio from "./components/secondaryComponents/home/Inicio";
-import { Route, Router, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import QueHacemos from "./components/secondaryComponents/quehacemos/QueHacemos";
 import Proyectos from "./components/secondaryComponents/proyectos/Proyectos";
 
