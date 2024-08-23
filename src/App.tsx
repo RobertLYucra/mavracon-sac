@@ -8,19 +8,22 @@ import Proyectos from "./components/secondaryComponents/proyectos/Proyectos";
 function App() {
 
   return <>
-    <Navbar />  
+    <Navbar />
 
 
-    <div className="routes">
-      <Routes>
-        <Route path="/" element={<Inicio />} ></Route>
-        <Route path="/que-hacemos" element={<QueHacemos />} ></Route>
-        <Route path="/proyectos" element={<Proyectos />} ></Route>
-        <Route path="/innovacion-tecnologia" element={<Inicio />} ></Route>
-        <Route path="/quienes-somos" element={<Inicio />} ></Route>
-        <Route path="/noticias" element={<Inicio />} ></Route>
-        <Route path="/sostenibilidad" element={<Inicio />} ></Route>
-      </Routes>
+    <div className="routes-main">
+      <div className="routes">
+
+        <Routes>
+          <Route path="/" element={<Inicio />} ></Route>
+          <Route path="/que-hacemos" element={<QueHacemos />} ></Route>
+          <Route path="/proyectos" element={<Proyectos />} ></Route>
+          <Route path="/innovacion-tecnologia" element={<Inicio />} ></Route>
+          <Route path="/quienes-somos" element={<Inicio />} ></Route>
+          <Route path="/noticias" element={<Inicio />} ></Route>
+          <Route path="/sostenibilidad" element={<Inicio />} ></Route>
+        </Routes>
+      </div>
     </div>
 
   </>;

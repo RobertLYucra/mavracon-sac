@@ -1,6 +1,8 @@
 const Proyectos = () => {
   return (
-    <div>Proyectos</div>
+    <div>
+      <p className="text-white">Proyectos</p>
+    </div>
   )
 }
 

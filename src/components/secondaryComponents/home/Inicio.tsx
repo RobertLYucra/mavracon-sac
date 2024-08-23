@@ -2,7 +2,7 @@ import './Inicio.scss'
 import Actividades from "./subcomponents/Actividades";
 const Inicio = () => {
   return (
-    <div className="container">
+    <div className="containers">
       <div className="index-panel">
         <div className="banner_home">
           <video
