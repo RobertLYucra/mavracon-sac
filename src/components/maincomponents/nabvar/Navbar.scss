@@ -1,0 +1,256 @@
+.logo {
+    width: 200px;
+    transition: 0.5s ease;
+    margin-left: 20px;
+}
+
+.right {
+    display: flex;
+    height: 50px;
+    align-items: center;
+    justify-content: center;
+
+    .contacto {
+        color: var(--text-primary-color);
+        text-decoration: none;
+        margin-right: 15px;
+        font-family: var(--primary-font);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        transition: 0.5 ease;
+        border: 1px solid var(--secondary-color);
+        padding: 10px;
+
+        &:hover {
+            background-color: var(--secondary-color);
+            color: var(--text-primary-color);
+        }
+    }
+}
+nav {
+    background-color: transparent;
+    width: 100%;
+    padding-top: 5px;
+    padding-bottom: 10px;
+    position: fixed;
+    top: 0;
+    transition: background-color 0.5s ease;
+    z-index: 1;
+}
+
+nav.scrolled {
+    background-color: var(--navbar-bg);
+}
+
+.main-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 100%;
+
+    .menu {
+        display: none;
+        cursor: pointer;
+    }
+}
+
+.links {
+    display: flex;
+    margin-right: 25px;
+    transition: 0.5s ease;
+    justify-content: center;
+    align-items: center;
+
+    .etiquetas {
+        color: var(--text-primary-color);
+        text-decoration: none;
+        margin: 15px;
+        font-family: var(--primary-font);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        transition: 0.5 ease;
+
+        .icon {
+            display: none;
+        }
+
+        a {
+            width: 100%;
+            position: relative;
+
+            &::before {
+                content: '';
+                position: absolute;
+                width: 0;
+                height: 2px;
+                background-color: var(--secondary-color);
+                top: 105%;
+                transition: .3s;
+            }
+
+            &:hover::before {
+                width: 100%;
+            }
+        }
+
+    }
+
+    .active {
+        a {
+            &::before {
+                content: '';
+                position: absolute;
+                width: 100%;
+                height: 2px;
+                background-color: var(--secondary-color);
+                top: 105%;
+                transition: .3s;
+            }
+        }
+    }
+
+
+}
+
+@media screen and (max-width: 1400px) {
+    .links {
+        .etiquetas {
+            font-size: 14px;
+            margin: 10px;
+        }
+    }
+
+    .logo {
+        width: 200px;
+    }
+
+    .contacto {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 1152px) {
+    .links {
+        .etiquetas {
+            font-size: 12px;
+        }
+    }
+
+    .contacto {
+        font-size: 12px;
+    }
+
+    .logo {
+        width: 180px;
+    }
+}
+
+@media screen and (max-width: 1006px) {
+    .main-nav {
+        .menu {
+            display: flex;
+            margin-right: 15px;
+
+            .menu-icon {
+                color: white;
+                font-size: 2rem;
+            }
+        }
+
+        .logo {
+            z-index: 2;
+        }
+
+        .nav-ul {
+            display: none;
+        }
+    }
+}
+
+@media screen and (max-width: 1005px) {
+    .navbar.open{
+        background-color: var(--navbar-bg);
+        transition: none;
+    }
+    .main-nav {
+        .nav-ul.open {
+            display: flex;
+            position: fixed;
+            top: 70px;
+            left: 0;
+            background-color: var(--navbar-bg);
+            width: 100%;
+            z-index: 2;
+            height: 100vh;
+            transition: 0.5s ease;
+
+            .links {
+                display: flex;
+                flex-direction: column;
+                margin: 70px;
+                align-items: start;
+                width: 100%;
+                justify-content: start;
+
+                .etiquetas {
+                    text-align: start;
+                    display: flex;
+                    width: 100%;
+                    justify-content: space-between;
+
+                    a {
+                        font-size: 18px;
+
+                        &::before {
+                            width: 0;
+                        }
+                    }
+
+                    .icon {
+                        color: var(--secondary-color);
+                        font-size: 18px;
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: 600px) {
+
+    .logo {
+        width: 150px;
+    }
+
+    .main-nav {
+        .nav-ul.open {
+            top: 60px;
+            left: 0;
+
+            .links {
+                margin-left: 10px;
+                margin-right: 25px;
+
+                .etiquetas {
+                    justify-content: center;
+                    align-items: center;
+
+                    a {
+                        font-size: 14px;
+                        display: flex;
+                        align-items: center;
+                        height: 35px;
+                    }
+
+                    .icon {}
+                }
+            }
+        }
+    }
+}
