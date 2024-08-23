@@ -1,6 +1,15 @@
+import { useEffect } from 'react';
 import './Inicio.scss'
 import Actividades from "./subcomponents/Actividades";
+import VideoImage from "./images/video-image.jpg"
+import Global from './subcomponents/Global';
+import { IonIcon } from '@ionic/react';
+
+
 const Inicio = () => {
+  useEffect(() => {
+    document.title = "Inicio - MAVRACON";
+  }, []);
   return (
     <div className="containers">
       <div className="index-panel">
@@ -19,18 +28,23 @@ const Inicio = () => {
           <div className="content">
             < div className="top">
               <div className="text_animation">
-                <p className="display"> Diseñamos y </p>
-                <p className="display display1"> construimos </p>
-                <p className="display display1"> tu futuro </p>
+                <p className="display"> Más de 12 años impulsando el desarrollo de nuestro pais</p>
               </div>
-              <div className="imagen">
-                <img src="https://www.shutterstock.com/image-photo/professional-engineering-worker-woman-quality-260nw-2281498631.jpg"></img>
+              <div className="right-video">
+                <div className='text-desc'>
+                    <h3>MIRA EL VIDEO</h3>
+                    <IonIcon className='more-icon' icon="play-circle"/>
+                </div>
+                <img className='video-image' src={VideoImage}></img>
               </div>
             </div>
             <div className="que-hacemos">
               <Actividades/>
             </div>
           </div>
+        </div>
+        <div className='world_section'>
+          <Global/>
         </div>
       </div>
     </div>

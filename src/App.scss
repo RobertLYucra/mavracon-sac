@@ -1,11 +1,23 @@
-.routes-main{
+.routes-main {
     margin-top: 90px;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
 
-    .routes{
+    .routes {
         width: 100%;
+        margin-left: 11%;
+        margin-right: 11%;
+    }
+}
+
+@media screen and (max-width: 1650px) {
+
+    .routes-main {
+        .routes {
+            margin-left: 5%;
+            margin-right: 5%;
+        }
     }
 }

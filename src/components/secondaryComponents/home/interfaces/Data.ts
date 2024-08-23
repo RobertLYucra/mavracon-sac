@@ -12,24 +12,24 @@ export const actividades: Actividad[] = [
     {
         id: 1, 
         icono: "finger-print",
-         actividad: "MINERÍA A TAJO ABIERTO",
-        descripcion: "Innovación y sostenibilidad en la superficie.", 
+         actividad: "INGENIERÍA HÍBRIDA Y CONSULTORÍA",
+        descripcion: "Innovación y planificación estratégica.", 
         mas: "VER MÁS", 
         iconarrow: "arrow-forward"
     },
     {
         id: 1, 
         icono: "airplane",
-         actividad: "INGENIERÍA SUBTERRÁNERA",
-        descripcion: "Extraer resultados y eficiencia.", 
+         actividad: "EJECUCIÓN DE PROYECTOS",
+        descripcion: "Planificación, gestión y ejecución de proyectos.", 
         mas: "VER MÁS", 
         iconarrow: "arrow-forward"
     },
     {
         id: 1, 
         icono: "barbell",
-         actividad: "SERVICIOS DE CONSTRUCCIÓN ",
-        descripcion: "Construimos minas en condiciones complejas.", 
+         actividad: "BIENES RAÍCES",
+        descripcion: "Compra, venta y gestión de propiedades.", 
         mas: "VER MÁS", 
         iconarrow: "arrow-forward"
     },

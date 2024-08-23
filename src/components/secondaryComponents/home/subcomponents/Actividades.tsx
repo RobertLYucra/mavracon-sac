@@ -1,6 +1,6 @@
 import { actividades } from '../interfaces/Data'
 import { IonIcon } from '@ionic/react';
-import './Actividades.scss'
+import './styles/Actividades.scss'
 
 const Actividades = () => {
 
