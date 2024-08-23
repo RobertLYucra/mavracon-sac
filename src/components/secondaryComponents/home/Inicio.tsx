@@ -1,9 +1,5 @@
-import React from "react";
-import Img from "./images/portada.jpg";
 import './Inicio.scss'
 import Actividades from "./subcomponents/Actividades";
-import { actividades } from "./interfaces/Data";
-import { IonIcon } from "@ionic/react";
 const Inicio = () => {
   return (
     <div className="container">
