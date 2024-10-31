@@ -1,4 +1,3 @@
-import { Icon } from "ionicons/dist/types/components/icon/icon";
 
 export interface Indicador {
     id: number;
