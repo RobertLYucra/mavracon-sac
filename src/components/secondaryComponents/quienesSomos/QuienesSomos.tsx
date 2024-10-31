@@ -1,6 +1,12 @@
+import { useEffect } from 'react';
 import Portada from '../plantillas/Portada'
 
 const QuienesSomos = () => {
+
+  useEffect(() => {
+    document.title = "Quienes Somos - MAVRACON";
+  }, []);
+
   return (
     <div className="containers">
       <div className="index-panel">

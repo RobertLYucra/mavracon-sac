@@ -2,8 +2,14 @@ import Actividades from "./Subcompentes/Actividades.hacemos"
 import Portada from "../plantillas/Portada"
 import HacemosPrincipal from "./Subcompentes/Hacemos.Principal"
 import MasServicios from "./Subcompentes/MasServicios"
+import { useEffect } from "react"
 
 const QueHacemos = () => {
+
+  useEffect(() => {
+    document.title = "Que Hacemos - MAVRACON";
+  }, []);
+
   return (
     <div className="containers">
       <div className="index-panel">

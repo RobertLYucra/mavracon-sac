@@ -1,9 +1,17 @@
+import { useEffect } from "react"
 import Portada from "../plantillas/Portada"
 import "./styles/Sostenibilidad.scss"
 import CardsSostenibilidad from "./subcompentes/CardsSostenibilidad"
 import VideoSostenibilidad from "./subcompentes/VideoSostenibilidad"
+
+
 const Sostenenibilidad = () => {
-    return (
+
+    useEffect(() => {
+        document.title = "Sostenibilidad - MAVRACON";
+      }, []);
+      
+      return (
         <div className="containers-sostenibilidad">
             <div className="index-panel">
                 <Portada section="SOSTENIBILIDAD"

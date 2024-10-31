@@ -1,9 +1,15 @@
+import { useEffect } from 'react'
 import Portada from '../plantillas/Portada'
 import "./Innovacion.scss"
 import InnovacionCards from './subcomponentes/InnovacionCards'
 import VideoInnovacion from './subcomponentes/VideoInnovacion'
 
 const Innovacion = () => {
+
+    useEffect(() => {
+        document.title = "Innovacion - MAVRACON";
+      }, []);
+      
     return (
         <div className="containers">
             <div className="index-panel">

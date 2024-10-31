@@ -1,6 +1,12 @@
+import { useEffect } from "react";
 import Portada from "../plantillas/Portada"
 
 const Proyectos = () => {
+
+  useEffect(() => {
+    document.title = "Proyectos - MAVRACON";
+  }, []);
+
   return (
     <div className="containers">
       <div className="index-panel">

@@ -34,26 +34,26 @@ const Inicio = () => {
               </div>
               <div className="right-video">
                 <div className='text-desc'>
-                    <h3>MIRA EL VIDEO</h3>
-                    <IonIcon className='more-icon' icon="play-circle"/>
+                  <h3>MIRA EL VIDEO</h3>
+                  <IonIcon className='more-icon' icon="play-circle" />
                 </div>
                 <img className='video-image' src={VideoImage}></img>
               </div>
             </div>
             <div className="que-hacemos">
-              <Actividades/>
+              <Actividades />
             </div>
           </div>
         </div>
         <div className='world_section'>
-          <Global/>
+          <Global />
         </div>
 
         <div className='proyectos_section'>
-          <Proyectos/>
+          <Proyectos />
         </div>
         <div className='sostenibilidad_section'>
-          <Impacto/>
+          <Impacto />
         </div>
       </div>
     </div>
