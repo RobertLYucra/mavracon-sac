@@ -1,0 +1,42 @@
+.our-impact {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 5%;
+    margin-right: 5%;
+
+    .impact-left {
+        max-width: 600px;
+        margin-right: 50px;
+
+        .titulo {
+            font-weight: 500;
+        }
+
+        .h1_bold {
+            font-size: 30px;
+            font-weight: 700;
+            margin: 20px 0 20px 0;
+        }
+    }
+
+    .impact-right {
+        .slider_video {
+            .owl-stage-outer {
+                .owl-stage {
+                    .owl-item {
+                        .sv_single {
+                            img{
+                                width: 800px;
+                            } 
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

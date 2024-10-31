@@ -1,0 +1,59 @@
+.innovacion-cards-detalle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-primary-color);
+    margin-top: 50px;
+    align-items: stretch;
+    margin-bottom: 25px;
+    figure {
+        flex: 1;
+        max-width: 100%;
+        min-height: 250px;
+        background: #101F3B;
+        padding: 25px;
+        margin-left: 10px;
+        margin-right: 10px;
+
+        .contador {
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+            font-size: 25px;
+            font-weight: 700;
+        }
+
+        .titulo {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        p {
+            font-size: 15px;
+        }
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .innovacion-cards-detalle {
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        figure {
+            max-width: 100%;
+            flex: 0 1 calc(50% - 20px);
+            /* Hace que cada figura ocupe 50% del contenedor menos el margen */
+            margin-bottom: 20px;
+            /* Añade un margen en la parte inferior para espacio entre filas */
+        }
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .innovacion-cards-detalle {
+        figure {
+            flex: 0 1 calc(100% - 20px); /* Hace que cada figura ocupe el 100% del contenedor */
+            margin-bottom: 20px; /* Espacio entre cada figure */
+          }
+    }
+}

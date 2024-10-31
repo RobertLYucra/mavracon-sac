@@ -37,6 +37,7 @@
             align-items: center;
             justify-content: space-between;
             margin-top: 25px;
+            margin-bottom: 25px;
             border-bottom: 1px solid rgb(155, 157, 177);
             border-top: 1px solid rgb(155, 157, 177);
 
@@ -162,6 +163,9 @@
 
         .global_left {
             .texts-descp {
+                margin-left: 10px;
+                margin-right: 10px;
+
                 h1 {
                     font-size: 20px;
                 }
@@ -174,15 +178,17 @@
             .status {
                 display: flex;
                 flex-direction: column;
-                .status-projects{
+
+                .status-projects {
                     margin: 10px;
                     width: 100%;
                 }
+
                 .mid-status {
                     padding-top: 15px;
                     padding-bottom: 15px;
                     border-bottom: 1px solid rgb(155, 157, 177);
-            border-top: 1px solid rgb(155, 157, 177);
+                    border-top: 1px solid rgb(155, 157, 177);
 
                 }
             }
@@ -190,6 +196,7 @@
 
         .global_right {
             max-width: 750px;
+
             .mapa {
                 max-width: 350px;
             }
@@ -197,19 +204,31 @@
     }
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 750px) {
     .global {
         flex-direction: column;
-        .global_left {
-           
-          
-        }
 
-        .global_right {
-            margin-top: 25px;
-            max-width: 750px;
-            .mapa {
-                max-width: 350px;
+        .global_left {
+
+            .status {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+
+                .status-projects {
+                    margin-left: 10px;
+                    margin-right: 0px;
+                    max-width: 320px;
+                }
+            }
+
+            .global_right {
+                margin-top: 250px;
+                max-width: 750px;
+
+                .mapa {
+                    max-width: 320px;
+                }
             }
         }
     }

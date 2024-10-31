@@ -1,0 +1,57 @@
+.containers {
+    .innovacion-eficiencia {
+        color: var(--text-primary-color);
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 50px;
+
+        .card-innovacion {
+            display: flex;
+            width: 90%;
+
+            .titulo-innovacion {
+                width: 650px;
+                font-weight: 600;
+                font-size: 25px;
+            }
+
+            p {
+                max-width: 700px;
+                font-size: 15px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 938px) {
+    .containers {
+        .innovacion-eficiencia {
+            color: var(--text-primary-color);
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 25px;
+
+            .card-innovacion {
+                display: flex;
+                flex-direction: column;
+                width: 90%;
+
+                .titulo-innovacion {
+                    width: 100%;
+                    font-weight: 600;
+                    font-size: 25px;
+                    margin-bottom: 25px;
+                }
+
+                p {
+                    width: 100%;
+                    font-size: 15px;
+                }
+            }
+        }
+    }
+}

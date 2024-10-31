@@ -1,0 +1,206 @@
+.mas-servicio-card-innovacion {
+    margin-top: 50px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .mas-servicio-card {
+        color: var(--text-primary-color);
+        margin-top: 25px;
+
+        h2 {
+            font-size: 25px;
+            font-weight: 600;
+            margin-bottom: 25px;
+        }
+
+        .bottom-servicio-video {
+            width: 100%;
+
+            a {
+                .blur-mas {
+                    transition: 0.5s ease;
+                    z-index: 1;
+                    position: absolute;
+                    width: 1200px;
+                    height: 500px;
+                    background: -webkit-gradient(linear, left bottom, left top, color-stop(-62.39%, rgba(5, 17, 37, 0)), color-stop(-0.24%, #081324), color-stop(87.33%, rgba(6, 14, 25, 0)));
+                    background: linear-gradient(360deg, rgba(5, 17, 37, 0) -62.39%, #081324 -0.24%, rgba(6, 14, 25, 0) 90.33%);
+                }
+
+                .fondo {
+                    transition: 0.5s ease;
+                    position: relative;
+                    width: 1200px;
+                    height: 500px;
+                    background-image: url('https://www.stracon.com/site/media/Screen-Shot-2023-03-27-at-17.31.38.jpg');
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                    background-position: center center;
+
+                    span {
+                        display: flex;
+                        align-items: center;
+                        position: absolute;
+                        bottom: 25px;
+                        margin-left: 25px;
+                        z-index: 2;
+
+                        .icon-play {
+                            margin-right: 15px;
+                            font-size: 3rem;
+                            color: var(--secondary-color);
+                        }
+
+                        p {}
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: 1343px) {
+    .mas-servicio-card-innovacion {
+
+        .mas-servicio-card {
+            .bottom-servicio-video {
+
+                a {
+                    .blur-mas {
+
+                        width: 950px;
+                        height: 500px;
+                    }
+
+                    .fondo {
+
+                        width: 950px;
+                        height: 500px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1008px) {
+    .mas-servicio-card-innovacion{
+
+        .mas-servicio-card {
+            .bottom-servicio-video {
+
+                a {
+                    .blur-mas {
+
+                        width: 750px;
+                        height: 500px;
+                    }
+
+                    .fondo {
+
+                        width: 750px;
+                        height: 500px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 806px) {
+    .mas-servicio-card-innovacion {
+
+        .mas-servicio-card {
+            h2 {
+                font-size: 20px;
+
+            }
+
+            .bottom-servicio-video {
+
+                a {
+                    position: relative;
+                    width: 100%;
+
+                    .blur-mas {
+
+                        max-width: 550px;
+                        height: 400px;
+                    }
+
+                    .fondo {
+
+                        max-width: 550px;
+                        height: 400px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 607px) {
+    .mas-servicio-card-innovacion {
+
+        .mas-servicio-card {
+            h2 {
+                font-size: 20px;
+
+            }
+
+            .bottom-servicio-video {
+
+                a {
+                    position: relative;
+                    width: 100%;
+
+                    .blur-mas {
+
+                        max-width: 450px;
+                        height: 200px;
+                    }
+
+                    .fondo {
+
+                        max-width: 450px;
+                        height: 200px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 489px) {
+    .mas-servicio-card-innovacion {
+
+        .mas-servicio-card {
+            h2 {
+                font-size: 20px;
+
+            }
+
+            .bottom-servicio-video {
+
+                a {
+                    position: relative;
+                    width: 100%;
+
+                    .blur-mas {
+                        width: 100%;
+                        height: 201px;
+                    }
+
+                    .fondo {
+                        position: relative;
+                        width: 100%;
+                        height: 200px;
+                    }
+                }
+            }
+        }
+    }
+}

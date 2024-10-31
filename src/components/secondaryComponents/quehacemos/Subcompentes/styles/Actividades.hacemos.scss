@@ -1,0 +1,151 @@
+.que-hacer-2 {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 25px;
+}
+
+.figura_card-hacemos {
+    width: 100%;
+    display: flex;
+    color: var(--text-primary-color);
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+    backdrop-filter: blur(0px);
+    transition: background 0.3s ease;
+
+
+    &:hover {
+        background: rgba(0.04, 0.08, 0.15, 0.8);
+    }
+
+    .contenido_card {
+        width: 500px;
+        padding: 15px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        position: relative;
+        overflow: hidden;
+        transition: all 0.3s ease;
+
+        .description-container {
+            display: flex;
+            align-items: center;
+            justify-items: center;
+
+            .icon-span {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                .icon {
+                    font-size: 2rem;
+                    margin-right: 15px;
+                }
+            }
+
+            .actividad {
+                font-size: 20px;
+                font-weight: 600;
+
+            }
+
+
+        }
+
+        .ver_mas {
+            display: flex;
+            align-items: center;
+            transition: 0.5s ease;
+
+            p {
+                margin-right: 20px;
+                font-weight: 600;
+            }
+
+            span {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                .more-icon {
+                    color: var(--secondary-color);
+                    font-size: 25px;
+                }
+            }
+        }
+
+    }
+}
+
+@media screen and (max-width: 1650px) {
+    .figura_card-hacemos {
+        .contenido_card {
+            width: 420px;
+            padding: 15px;
+
+            .description-container {
+
+                .icon {
+                    font-size: 2rem;
+                    margin-bottom: 30px;
+                }
+
+                .actividad {
+                    font-size: 24px;
+                    font-weight: 600;
+                }
+
+                .description {
+                    font-size: 17px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1400px) {
+    .figura_card-hacemos {
+        max-width: 100%;
+
+        .contenido_card {
+            width: 350px;
+        }
+    }
+}
+
+@media screen and (max-width: 1140px) {
+    .figura_card-hacemos {
+
+        .contenido_card {
+            width: 280px;
+
+            .description-container {
+
+                .icon {
+                    margin-bottom: 20px;
+                }
+
+                .actividad {
+                    font-size: 15px;
+                }
+
+                .description {
+                    margin-bottom: 25px;
+                    font-size: 13px;
+                }
+
+                .ver_mas {}
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: 850px) {
+    .que-hacer-2 {
+       display: none;
+    }
+}

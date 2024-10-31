@@ -4,6 +4,8 @@ import Actividades from "./subcomponents/Actividades";
 import VideoImage from "./images/video-image.jpg"
 import Global from './subcomponents/Global';
 import { IonIcon } from '@ionic/react';
+import Proyectos from './subcomponents/Proyectos';
+import Impacto from './subcomponents/Impacto';
 
 
 const Inicio = () => {
@@ -45,6 +47,13 @@ const Inicio = () => {
         </div>
         <div className='world_section'>
           <Global/>
+        </div>
+
+        <div className='proyectos_section'>
+          <Proyectos/>
+        </div>
+        <div className='sostenibilidad_section'>
+          <Impacto/>
         </div>
       </div>
     </div>

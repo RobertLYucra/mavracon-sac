@@ -30,11 +30,10 @@
     padding: 22vh 0 0 0;
 
     .top {
-        width: 100%;
+        width: 90%;
         display: flex;
         justify-content: space-between;
         padding-bottom: 50px;
-
         .text_animation {
             margin-top: 25px;
 
@@ -151,6 +150,8 @@
                 .display {
                     font-size: 30px;
                     max-width: 450px;
+                    margin-right: 15px;
+                    margin-left: 15px;
 
                 }
             }
