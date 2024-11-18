@@ -68,7 +68,7 @@ const Carousel = () => {
                       <div className="lista">
                         <IonIcon className='icon' icon='flag-outline' />
                         <div className="text-dato">
-                          <h3 className="title" >Ubicación </h3>
+                          <h3 className="title" >Estado </h3>
                           <h3 className="dato">{proyecto.estado}</h3>
                         </div>
                       </div>

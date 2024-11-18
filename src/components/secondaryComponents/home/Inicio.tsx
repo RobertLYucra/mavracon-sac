@@ -40,7 +40,7 @@ const Inicio = () => {
                 <img className='video-image' src={VideoImage}></img>
               </div>
             </div>
-            <div className="que-hacemos">
+            <div className="que-hacemos mb-10">
               <Actividades />
             </div>
           </div>

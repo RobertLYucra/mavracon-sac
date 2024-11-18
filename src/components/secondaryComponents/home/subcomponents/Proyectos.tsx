@@ -5,7 +5,7 @@ import "./styles/Proyectos.scss"
 const Proyectos = () => {
 
   return (
-    <div className="proyectos">
+    <div className="proyectos-inicio">
       <div className="top">
         <div className="left-pry">
           <h3 className="n-pry">NUSTROS PROYECTOS</h3>
