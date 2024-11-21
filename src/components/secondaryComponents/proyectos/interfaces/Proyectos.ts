@@ -38,7 +38,7 @@ export const proyectos: Proyecto[] = [
     },
 
     {
-        nombre: "Hudbay Minerals",
+        nombre: "Mineria San Carlos",
         categoria: "Constancio",
         ubicacion: {
             pais: "Peru",

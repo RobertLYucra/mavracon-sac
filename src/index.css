@@ -10,6 +10,7 @@
   --font-size-base: 16px;
   --primary-font: "Poppins", serif;
   --navbar-bg: #15284b;
+  --cards-bg: #101F3B;
   --body-bg:#0A1426;
   margin: 0;
   padding: 0;
@@ -19,4 +20,32 @@
 
 body {
   background-color: var(--body-bg);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+/* Estilo de la barra de scroll */
+::-webkit-scrollbar {
+  width: 10px; /* Ancho de la barra */
+  height: 10px; /* Altura de la barra (horizontal) */
+}
+
+/* Color del fondo de la barra */
+::-webkit-scrollbar-track {
+  background: #193568;
+  border-radius: 10px;
+}
+
+/* Color y estilo del "thumb" (manija) */
+::-webkit-scrollbar-thumb {
+  background: var(--body-bg);
+  border-radius: 10px;
+}
+
+/* Cambiar el color del "thumb" al pasar el mouse */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }

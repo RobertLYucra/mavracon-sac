@@ -4,7 +4,7 @@ import 'swiper/css/effect-coverflow';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 
-import "./styles/Slider.scss"
+import "./styles/Carousel.scss"
 import { EffectCoverflow, Pagination, Navigation } from "swiper/modules";
 import { IonIcon } from "@ionic/react";
 import { proyectos } from "../interfaces/ImagesCarousel";

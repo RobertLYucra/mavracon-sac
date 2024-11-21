@@ -1,5 +1,11 @@
 import { useEffect } from 'react';
 import Portada from '../plantillas/Portada'
+import "./QuienesSomos.scss"
+import MisionVision from './SubComponets/MisionVision';
+import Valores from './SubComponets/Valores';
+import EquipoDirectorio from './SubComponets/EquipoDirectorio';
+import EquipoSocios from './SubComponets/EquipoSocios';
+
 
 const QuienesSomos = () => {
 
@@ -16,6 +22,20 @@ const QuienesSomos = () => {
           description="Brindamos servicios integrados que abarcan el ciclo de vida completo de una mina, desde 
          el planeamiento y constructabilidad, construcción, operación, transferencia al cliente, hasta el cierre de mina."/>
       </div>
+
+      <div className="nuestro_equipo_section mt-10">
+        <EquipoDirectorio />
+      </div>
+      <div className="nuestro_equipo_section mt-10">
+        <EquipoSocios />
+      </div>
+      <div className="mision_vision flex justify-center mb-10 mt-10">
+        <MisionVision />
+      </div>
+      <div className="valores">
+        <Valores />
+      </div>
+
     </div>
   )
 }

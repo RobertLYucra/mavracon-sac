@@ -20,10 +20,10 @@ const Proyectos = () => {
           description="Brindamos servicios integrados que abarcan el ciclo de vida completo de una mina, desde 
          el planeamiento y constructabilidad, construcción, operación, transferencia al cliente, hasta el cierre de mina."/>
       </div>
-      <div className="proyectos">
+      <div className="proyectos mt-20">
         <ProyectosCard/>
       </div>
-      <div className="proyecto_global_1">
+      <div className="proyecto_global_1 mb-10">
         <ProyectoGlobal/>
       </div>
     </div>

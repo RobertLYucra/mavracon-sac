@@ -103,11 +103,7 @@
           top: 50%;
           left: 50%;
           transform: translate(-50%, -52%);
-          background: linear-gradient(
-            0deg,
-            rgba(0, 0, 0, 0.657) 20.78%,
-            rgba(0, 0, 0, 0) 69.98%
-          );
+          background: linear-gradient(0deg, rgba(0, 0, 0, 0.657) 20.78%, rgba(0, 0, 0, 0) 69.98%);
         }
         .info {
           border-top: 1px solid rgba(255, 255, 255, 0.3);
@@ -118,10 +114,7 @@
           position: absolute;
           top: 50%;
           left: 50%;
-          transform: translate(
-            -50%,
-            200%
-          ); /* Ajusta para centrar completamente */
+          transform: translate(-50%, 200%); /* Ajusta para centrar completamente */
 
           .lista {
             display: flex;

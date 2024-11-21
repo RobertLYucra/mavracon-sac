@@ -1,0 +1,112 @@
+.valores-somos{
+    width: 95%;
+
+    .titulo-section{
+        color: var(--text-primary-color);
+        font-size: 25px ;
+        font-weight: bold;
+        margin-left: 10px;
+    }
+}
+
+.valores-cards-detalle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-primary-color);
+    margin-top: 50px;
+    align-items: stretch;
+    margin-bottom: 25px;
+   
+    a {
+        flex: 1;
+        max-width: 100%;
+        height: 250px;
+        background: #101F3B;
+        padding: 35px;
+        margin-left: 10px;
+        margin-right: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        overflow: hidden;
+        &:hover{
+            .more-icon {
+                transform: translateX(0px);
+            }
+        }
+        .more-icon-mobile {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--secondary-color);
+        }
+
+        .more-icon {
+            transition: 0.5s ease;
+            font-size: 1.5rem;
+            color: var(--secondary-color);
+            transform: translateX(-80px);
+        }
+
+        .contador {
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+            font-size: 25px;
+            font-weight: 700;
+        }
+
+        .titulo {
+            font-size: 23px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    .valores-cards-detalle {
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        a {
+            border-radius: 15px;
+
+            max-width: 100%;
+            flex: 0 1 calc(50% - 20px);
+            /* Hace que cada figura ocupe 50% del contenedor menos el margen */
+            margin-bottom: 20px;
+            height: 200px;
+            /* Añade un margen en la parte inferior para espacio entre filas */
+            .titulo {
+                font-size: 20px;
+                font-weight: 500;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .valores-somos{
+        .titulo-section{
+            font-size: 20px;
+        }
+    }
+    .valores-cards-detalle {
+        a {
+            flex: 0 1 calc(100% - 20px);
+            /* Hace que cada figura ocupe el 100% del contenedor */
+            margin-bottom: 20px;
+            /* Espacio entre cada figure */
+            height: 150px;
+            padding-right: 25px;
+            padding-top: 15px;
+            padding-bottom: 15px;
+            .titulo {
+                font-size: 15px;
+                font-weight: 500;
+            }
+        }
+    }
+}
