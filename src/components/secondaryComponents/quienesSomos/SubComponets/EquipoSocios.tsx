@@ -9,7 +9,7 @@ const EquipoSocios = () => {
                 <p className="titulo_directorio">SOCIOS ESTRÁTETIGOS</p>
                 <div className="cards_directorio">
                     {socios.map((ind, i) => (
-                        <figure>
+                        <figure key={i}>
                             <img src={ind.foto}></img>
                             <div className="datos_personales">
                                 <div className="datos">

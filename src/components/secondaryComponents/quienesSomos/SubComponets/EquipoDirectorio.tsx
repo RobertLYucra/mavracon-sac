@@ -10,7 +10,7 @@ const EquipoDirectorio = () => {
                 <p className="titulo_directorio">DIRECTORIO</p>
                 <div className="cards_directorio">
                     {directorios.map((ind, i) => (
-                        <figure>
+                        <figure key={i}>
                             <img src={ind.foto}></img>
                             <div className="datos_personales">
                                 <div className="datos">
