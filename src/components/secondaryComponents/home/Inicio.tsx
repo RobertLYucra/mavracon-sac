@@ -30,7 +30,7 @@ const Inicio = () => {
           <div className="content">
             < div className="top">
               <div className="text_animation">
-                <p className="display"> Más de 12 años impulsando el desarrollo de nuestro pais</p>
+                <p className="display"> Más de 18 años impulsando el desarrollo de nuestro pais</p>
               </div>
               <div className="right-video">
                 <div className='text-desc'>
@@ -52,7 +52,7 @@ const Inicio = () => {
         <div className='proyectos_section'>
           <Proyectos />
         </div>
-        <div className='sostenibilidad_section'>
+        <div className='sostenibilidad_section mb-11'>
           <Impacto />
         </div>
       </div>

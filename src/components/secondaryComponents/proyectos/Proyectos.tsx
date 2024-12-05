@@ -2,7 +2,9 @@ import { useEffect } from "react";
 import Portada from "../plantillas/Portada"
 import ProyectosCard from "./subcomponentes/ProyectosCard";
 import ProyectoGlobal from "./subcomponentes/ProyectoGlobal";
+import NextPrev from "../plantillas/NextPrev";
 
+import PortadaImagen from "../../../images/portada_hacemos.jpg"
 
 
 const Proyectos = () => {
@@ -15,16 +17,18 @@ const Proyectos = () => {
     <div className="containers">
       <div className="index-panel">
         <Portada section="PROYECTOS"
-          titulo="En toda superficie y condición"
-          imagen="https://wallpapers.com/images/hd/animated-busy-construction-4d8ybs8zf86spdwu.jpg"
-          description="Brindamos servicios integrados que abarcan el ciclo de vida completo de una mina, desde 
-         el planeamiento y constructabilidad, construcción, operación, transferencia al cliente, hasta el cierre de mina."/>
+          titulo="Afrontando cualquier obstáculo"
+          imagen={PortadaImagen}
+          description="Cada proyecto presenta desafíos únicos. Hemos ejecutado obras y consultorías en condiciones complejas, logrando resultados óptimos y cumpliendo con todos los objetivos." />
       </div>
       <div className="proyectos mt-20">
-        <ProyectosCard/>
+        <ProyectosCard />
       </div>
       <div className="proyecto_global_1 mb-10">
-        <ProyectoGlobal/>
+        <ProyectoGlobal />
+      </div>
+      <div className="prev_next_section_1">
+        <NextPrev />
       </div>
     </div>
   )

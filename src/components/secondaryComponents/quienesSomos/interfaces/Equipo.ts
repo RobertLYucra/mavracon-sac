@@ -17,16 +17,17 @@ interface datosPersonales {
 export const directorios: Persona[] = [
     {
         datosPersonales: {
-            nombre: "Sosimo",
+            nombre: "William",
             apellidoPaterno: "Yucra",
             apellidoMaterno: "Rodas"
         },
-        profesion: "Ingeniero Civil",
-        puesto: "Gerente General",
+        profesion: "Ingeniero Agroforestal",
+        puesto: "Gerente General y Administración",
         linkedin: "www.linkedin.com/robertlyucra",
         formacion: [],
         experiencia: [],
         foto: "https://img.freepik.com/vector-gratis/avatar-personaje-empresario-aislado_24877-60111.jpg"
+
     },
     {
         datosPersonales: {
@@ -35,7 +36,7 @@ export const directorios: Persona[] = [
             apellidoMaterno: "Rodas"
         },
         profesion: "Ingeniero Civil",
-        puesto: "Gerente General",
+        puesto: "Gerente de Ingeniería y Calidad",
         linkedin: "www.linkedin.com/robertlyucra",
         formacion: [],
         experiencia: [],
@@ -49,7 +50,7 @@ export const directorios: Persona[] = [
             apellidoMaterno: "Rodas"
         },
         profesion: "Ingeniero Ambiental y Sanitaria",
-        puesto: "Gerente General",
+        puesto: "Gerente Comercial y Logística",
         linkedin: "www.linkedin.com/robertlyucra",
         formacion: [],
         experiencia: [],
@@ -58,30 +59,32 @@ export const directorios: Persona[] = [
     },
     {
         datosPersonales: {
-            nombre: "William",
+            nombre: "Sosimo",
             apellidoPaterno: "Yucra",
             apellidoMaterno: "Rodas"
         },
-        profesion: "Ingeniero Agroforestal",
-        puesto: "Gerente General",
+        profesion: "Ingeniero Civil",
+        puesto: "Sub Gerente General y Operaciones",
         linkedin: "www.linkedin.com/robertlyucra",
         formacion: [],
         experiencia: [],
         foto: "https://img.freepik.com/vector-gratis/avatar-personaje-empresario-aislado_24877-60111.jpg"
+    },
 
-    }
+
+
 ]
 
 
 export const socios: Persona[] = [
     {
         datosPersonales: {
-            nombre: "Sosimo",
-            apellidoPaterno: "Yucra",
-            apellidoMaterno: "Rodas"
+            nombre: "Elio",
+            apellidoPaterno: "Lujan",
+            apellidoMaterno: "Yucra"
         },
-        profesion: "Ingeniero Civil",
-        puesto: "Gerente General",
+        profesion: "Ingeniero Ambiental y Sanitario",
+        puesto: "Gerente de Ssoma",
         linkedin: "www.linkedin.com/robertlyucra",
         formacion: [],
         experiencia: [],
@@ -89,12 +92,12 @@ export const socios: Persona[] = [
     },
     {
         datosPersonales: {
-            nombre: "Romulo",
-            apellidoPaterno: "Yucra",
-            apellidoMaterno: "Rodas"
+            nombre: "Robert",
+            apellidoPaterno: "Lujan",
+            apellidoMaterno: "Yucra"
         },
         profesion: "Ingeniero Civil",
-        puesto: "Gerente General",
+        puesto: "Gerente de Tecnología",
         linkedin: "www.linkedin.com/robertlyucra",
         formacion: [],
         experiencia: [],

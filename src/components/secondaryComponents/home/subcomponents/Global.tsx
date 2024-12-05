@@ -8,7 +8,7 @@ const Global = () => {
       <div className="global_left">
         <div className='texts-descp' >
           <h3>MAVRACON EN EL MUNDO</h3>
-          <h1>NUESTRAS OPERACIONES A NIVEL NMACIONAL</h1>
+          <h1>NUESTRAS OPERACIONES A NIVEL NACIONAL</h1>
           <p>En Mavracon somos mas que contructores, Nosotros somos diseñadores de tus sueños. Con un legado
             de años de excelencia y experiencia, hemos sido pioneros de soluciones
             innovadoras y pioneros en diversos megaproyectos.

@@ -78,7 +78,7 @@ const Navbar = () => {
                 </li>
               </ul>
             </div>
-            <a href='#' className='contacto'> CONTACTOS </a>
+            <a href='contacto' className='contacto'> CONTACTOS </a>
             <button onClick={toggleNavbar} className='menu'>
               <IonIcon className='menu-icon' icon={isOpen ? 'close' : 'menu'} />
             </button>

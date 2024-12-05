@@ -5,6 +5,7 @@ import MisionVision from './SubComponets/MisionVision';
 import Valores from './SubComponets/Valores';
 import EquipoDirectorio from './SubComponets/EquipoDirectorio';
 import EquipoSocios from './SubComponets/EquipoSocios';
+import NextPrev from '../plantillas/NextPrev';
 
 
 const QuienesSomos = () => {
@@ -17,10 +18,10 @@ const QuienesSomos = () => {
     <div className="containers">
       <div className="index-panel">
         <Portada section="QUIENES SOMOS"
-          titulo="Nos adecuamos a cualquier"
+          titulo="Flexibilidad a cualquier contexto"
           imagen="https://wallpapers.com/images/hd/animated-busy-construction-4d8ybs8zf86spdwu.jpg"
-          description="Brindamos servicios integrados que abarcan el ciclo de vida completo de una mina, desde 
-         el planeamiento y constructabilidad, construcción, operación, transferencia al cliente, hasta el cierre de mina."/>
+          description="En Mavracon somos más que constructores. Somos diseñadores de tus sueños.
+Con un legado de años de excelencia y experiencia, hemos sido pioneros en soluciones innovadoras y en diversos megaproyectos."/>
       </div>
 
       <div className="nuestro_equipo_section mt-10">
@@ -35,7 +36,9 @@ const QuienesSomos = () => {
       <div className="valores">
         <Valores />
       </div>
-
+      <div className="prev_next_section_1">
+        <NextPrev />
+      </div>
     </div>
   )
 }

@@ -8,6 +8,7 @@ import Innovacion from "./components/secondaryComponents/innovacion/Innovacion";
 import QuienesSomos from "./components/secondaryComponents/quienesSomos/QuienesSomos";
 import Footer from "./components/maincomponents/footer/Footer";
 import Sostenenibilidad from "./components/secondaryComponents/sostenibilidad/Sostenenibilidad";
+import Contacto from "./components/secondaryComponents/Contacto/Contacto";
 
 function App() {
 
@@ -26,6 +27,7 @@ function App() {
           <Route path="/quienes-somos" element={<QuienesSomos />} ></Route>
           <Route path="/noticias" element={<Inicio />} ></Route>
           <Route path="/sostenibilidad" element={<Sostenenibilidad />} ></Route>
+          <Route path="/contacto" element={<Contacto/>}></Route>
         </Routes>
       </div>
     </div>

@@ -11,7 +11,7 @@
 
     .impact-left {
         max-width: 600px;
-        margin-right: 50px;
+        margin-right: 80px;
 
         .titulo {
             font-weight: 500;
@@ -22,18 +22,123 @@
             font-weight: 700;
             margin: 20px 0 20px 0;
         }
+        .body_large {
+            margin-bottom: 30px;
+        }
+        .button_white {
+            border: 1px solid white;
+            padding: 10px 15px;
+            transition: 0.5s ease;
+            font-weight: 600;
+            border-radius: 5px;
+            &:hover {
+                background-color: white;
+                color: var(--body-bg);
+            }
+        }
     }
 
     .impact-right {
-        .slider_video {
-            .owl-stage-outer {
-                .owl-stage {
-                    .owl-item {
-                        .sv_single {
-                            img{
-                                width: 800px;
-                            } 
+        .bottom-servicio-video {
+            width: 100%;
+            a {
+                .blur-mas {
+                    transition: 0.5s ease;
+                    z-index: 1;
+                    position: absolute;
+                    width: 650px;
+                    height: 400px;
+                    background: -webkit-gradient(
+                        linear,
+                        left bottom,
+                        left top,
+                        color-stop(-62.39%, rgba(5, 17, 37, 0)),
+                        color-stop(-0.24%, #081324),
+                        color-stop(87.33%, rgba(6, 14, 25, 0))
+                    );
+                    background: linear-gradient(
+                        360deg,
+                        rgba(5, 17, 37, 0) -62.39%,
+                        #081324 -0.24%,
+                        rgba(6, 14, 25, 0) 90.33%
+                    );
+                }
+
+                .fondo {
+                    transition: 0.5s ease;
+                    position: relative;
+                    width: 650px;
+                    height: 400px;
+                    background-image: url("https://www.stracon.com/site/media/Screen-Shot-2023-03-27-at-17.31.38.jpg");
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                    background-position: center center;
+
+                    span {
+                        display: flex;
+                        align-items: center;
+                        position: absolute;
+                        bottom: 25px;
+                        margin-left: 25px;
+                        z-index: 2;
+
+                        .icon-play {
+                            margin-right: 15px;
+                            font-size: 3rem;
+                            color: var(--secondary-color);
                         }
+
+                        p {
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1337px) {
+    .our-impact {
+        .impact-right {
+            .bottom-servicio-video {
+                width: 100%;
+                a {
+                    .blur-mas {
+                   
+                        width: 450px;
+                        height: 400px;
+                    }
+
+                    .fondo {
+                        
+                        width: 450px;
+                        height: 400px;
+                       
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: 1050px) {
+    .our-impact {
+        .impact-right {
+            .bottom-servicio-video {
+                width: 100%;
+                a {
+                    .blur-mas {
+                   
+                        width: 450px;
+                        height: 400px;
+                    }
+
+                    .fondo {
+                        
+                        width: 450px;
+                        height: 400px;
+                       
                     }
                 }
             }

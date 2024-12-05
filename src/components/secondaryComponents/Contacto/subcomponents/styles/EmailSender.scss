@@ -1,0 +1,25 @@
+.email-sender-section {
+    .socials_contacto {
+        li {
+            background-color: var(--secondary-color);
+            transition: 0.5s ease;
+            cursor: pointer;
+            &:hover{
+                background: #a11720;
+            }
+            a {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+                height: 100%;
+                .icon{
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+    .interes_buttons{
+        transition: all 0.5s ease;
+    }
+}

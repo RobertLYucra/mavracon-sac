@@ -13,46 +13,46 @@ interface numeracionValor{
 export const valores: Valor[]=[
     {
         icon:"people",
-        nombreValor:"SEGURIDAD",
+        nombreValor:"INNOVACION",
         valores:[
             {
-                valor :"La seguridad de las personas son lo primero."
+                valor :"Impulsamos soluciones creativas que transforman el futuro."
             },
             {
-                valor :"Realizamos nuestro trabajo cumpliendo los estándares de seguridad."
+                valor :"Adoptamos nuevas tecnologías para mejorar cada proceso."
             },
             {
-                valor :"Levantamos la mano al detectar condiciones o actos que ponen en riesgo nuestra vida o la de nuestros compañeros."
+                valor :"Fomentamos una cultura de innovación continua para optimizar resultados."
             }
         ]
     },
     {
         icon:"people",
-        nombreValor:"INTEGRIDAD",
+        nombreValor:"CONFIABILIDAD",
         valores:[
             {
-                valor :"La seguridad de las personas son lo primero."
+                valor :"Cumplimos con nuestros compromisos para generar confianza."
             },
             {
-                valor :"Realizamos nuestro trabajo cumpliendo los estándares de seguridad."
+                valor :"Nuestra gestión está basada en la transparencia y la honestidad."
             },
             {
-                valor :"Levantamos la mano al detectar condiciones o actos que ponen en riesgo nuestra vida o la de nuestros compañeros."
+                valor :"Trabajamos de manera consistente, garantizando resultados a largo plazo."
             }
         ]
     },
     {
         icon:"people",
-        nombreValor:"PASIÓN",
+        nombreValor:"CALIDAD",
         valores:[
             {
-                valor :"La seguridad de las personas son lo primero."
+                valor :"Aseguramos resultados de excelencia en cada proyecto."
             },
             {
-                valor :"Realizamos nuestro trabajo cumpliendo los estándares de seguridad."
+                valor :"Cumplimos con los estándares más altos de calidad en todas las etapas."
             },
             {
-                valor :"Levantamos la mano al detectar condiciones o actos que ponen en riesgo nuestra vida o la de nuestros compañeros."
+                valor :"Nos comprometemos a mejorar constantemente para ofrecer lo mejor a nuestros clientes."
             }
         ]
     },
@@ -61,14 +61,9 @@ export const valores: Valor[]=[
         nombreValor:"CREAR VALOR",
         valores:[
             {
-                valor :"La seguridad de las personas son lo primero."
+                valor :"Trabajamos para maximizar los beneficios tanto para nuestros clientes como para la comunidad."
             },
-            {
-                valor :"Realizamos nuestro trabajo cumpliendo los estándares de seguridad."
-            },
-            {
-                valor :"Levantamos la mano al detectar condiciones o actos que ponen en riesgo nuestra vida o la de nuestros compañeros."
-            }
+            
         ]
     }
 ]
