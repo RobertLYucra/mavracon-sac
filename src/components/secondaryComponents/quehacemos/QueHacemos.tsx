@@ -1,7 +1,6 @@
 import Actividades from "./Subcompentes/Actividades.hacemos"
 import Portada from "../plantillas/Portada"
 import HacemosPrincipal from "./Subcompentes/Hacemos.Principal"
-import MasServicios from "./Subcompentes/MasServicios"
 import { useEffect } from "react"
 import NextPrev from "../plantillas/NextPrev"
 import hacemosPortada from "../../../images/portada_hacemos.jpg"

@@ -2,7 +2,6 @@ import { useEffect } from 'react'
 import Portada from '../plantillas/Portada'
 import "./Innovacion.scss"
 import InnovacionCards from './subcomponentes/InnovacionCards'
-import VideoInnovacion from './subcomponentes/VideoInnovacion'
 
 import portadaInnovacionFoto from "../../../images/portada_innovacion.jpeg"
 import NextPrev from '../plantillas/NextPrev'

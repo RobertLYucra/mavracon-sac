@@ -2,7 +2,6 @@ import { useEffect } from "react"
 import Portada from "../plantillas/Portada"
 import "./styles/Sostenibilidad.scss"
 import CardsSostenibilidad from "./subcompentes/CardsSostenibilidad"
-import VideoSostenibilidad from "./subcompentes/VideoSostenibilidad"
 import NextPrev from "../plantillas/NextPrev"
 import portadaimg from "../../../images/sostenibilidad_portada.png"
 
