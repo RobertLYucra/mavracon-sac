@@ -32,7 +32,7 @@ export const proyectos: Proyectos[] = [
     {
         titulo: "Aeropuerto Jorge Chavez",
         nombreProyecto: "Construcción y Levantamiento",
-        imagen: "https://i0.wp.com/www.cartagohoy.com/wp-content/uploads/2020/07/construccion.jpg?fit=850%2C638&ssl=1", 
+        imagen: "https://www.cube-construction.eu/wp-content/uploads/2017/05/cube-construction.jpg", 
         ubicacion: "Callao, Lima", 
         tipo: "Construcción",
         estado :"En Curso",

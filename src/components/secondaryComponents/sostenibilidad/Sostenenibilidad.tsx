@@ -18,7 +18,7 @@ const Sostenenibilidad = () => {
                 <Portada section="SOSTENIBILIDAD"
                     titulo="Hacia un futuro más prometedor"
                     imagen={portadaimg}
-                    description="En MAVRACON impulsamos el desarrollo sostenible de las comunidades a través de iniciativas que promueven la equidad, el crecimiento profesional y la capacitación técnica, contribuyendo a la integración social y al fortalecimiento de las capacidades locales."/>
+                    description="En MAVRACON impulsamos el desarrollo sostenible de las comunidades a través de iniciativas que promueven la equidad, el crecimiento profesional y la capacitación técnica, contribuyendo a la integración social y al fortalecimiento de las capacidades locales." />
             </div>
 
             <div className='sostenibilidad-info'>
@@ -41,11 +41,14 @@ const Sostenenibilidad = () => {
                 </div>
             </div>
 
-            <div className='videoInnovacion '>
+           {/*  <div className='videoInnovacion '>
                 <VideoSostenibilidad />
-            </div>
+            </div> */}
             <div className="prev_next_section_1">
-                <NextPrev />
+                <NextPrev
+                    prevTitle="QUIENES SOMOS"
+                    prevLink="/quienes-somos"
+                />
             </div>
         </div>
     )

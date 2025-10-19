@@ -1,29 +1,51 @@
 import { IonIcon } from '@ionic/react';
 import Logo from '../../../images/logo-oscuro.png';
 import './Navbar.scss';
-import { arrowForward } from 'ionicons/icons';
+import { arrowForward, menuOutline, closeOutline } from 'ionicons/icons';
 import { useState, useEffect } from 'react';
 
 const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false); // Estado para manejar si el navbar está abierto o cerrado
+  const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
+  const navLinks = [
+    { href: '/', label: 'Inicio' },
+    { href: 'que-hacemos', label: 'Qué hacemos?' },
+    { href: 'proyectos', label: 'Proyectos' },
+    { href: 'innovacion-tecnologia', label: 'Innovación y tecnología' },
+    { href: 'quienes-somos', label: 'Quiénes Somos' },
+    { href: 'sostenibilidad', label: 'Sostenibilidad' },
+    //{ href: 'noticias', label: 'Noticias' }
+  ];
+
   const handleScroll = () => {
-    if (window.scrollY > 0) {
-      setIsScrolled(true);
-    } else {
-      setIsScrolled(false);
-    }
+    setIsScrolled(window.scrollY > 0);
   };
 
   const toggleNavbar = () => {
-    setIsOpen(!isOpen); // Cambia el estado de abierto a cerrado y viceversa
-    console.log(isOpen);
+    setIsOpen(!isOpen);
   };
 
+  // Bloquea scroll del body cuando está abierto
   useEffect(() => {
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isOpen]);
 
+  // Cierra con tecla Escape
+  useEffect(() => {
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && isOpen) {
+        setIsOpen(false);
+      }
+    };
+    window.addEventListener('keydown', handleEscape);
+    return () => window.removeEventListener('keydown', handleEscape);
+  }, [isOpen]);
 
+  useEffect(() => {
     window.addEventListener('scroll', handleScroll);
     return () => {
       window.removeEventListener('scroll', handleScroll);
@@ -32,55 +54,51 @@ const Navbar = () => {
 
   return (
     <>
+      {/* Backdrop */}
+      <div
+        className={`backdrop ${isOpen ? 'show' : ''}`}
+        onClick={() => setIsOpen(false)}
+      />
+
       <nav className={`navbar ${isScrolled ? 'scrolled' : ''} ${isOpen ? 'open' : ''}`}>
         <div className="main-nav">
           <div className="prueba-div">
             <a href='/'><img src={Logo} className="logo" alt="logo" /></a>
           </div>
+
           <div className='right'>
-            <div className={`nav-ul ${isOpen ? 'open' : ''} `}>
-              <ul className='links'>
-                <li className={`etiquetas`}>
-                  <a href='que-hacemos' >
-                    Qué hacemos?
-                  </a>
-                  <IonIcon className='icon' icon={arrowForward} />
-                </li>
-                <li className={`etiquetas`}>
-                  <a href='proyectos' >
-                    Proyectos
-                  </a>
-                  <IonIcon className='icon' icon={arrowForward} />
-                </li>
-                <li className={`etiquetas `}>
-                  <a href='innovacion-tecnologia' >
-                    Innovación y tecnología
-                  </a>
-                  <IonIcon className='icon' icon={arrowForward} />
-                </li>
-                <li className={`etiquetas`}>
-                  <a href='quienes-somos'>
-                    Quiénes Somos
-                  </a>
-                  <IonIcon className='icon' icon={arrowForward} />
-                </li>
-                <li className={`etiquetas `}>
-                  <a href='sostenibilidad' >
-                    Sostenibilidad
-                  </a>
-                  <IonIcon className='icon' icon={arrowForward} />
-                </li>
-                <li className={`etiquetas`}>
-                  <a href='noticias' >
-                    Noticias
-                  </a>
-                  <IonIcon className='icon' icon={arrowForward} />
-                </li>
-              </ul>
+            <div className={`nav-ul ${isOpen ? 'open' : ''}`}>
+              <div className={`nav-ul__panel ${isOpen ? 'open' : ''}`}>
+                {/* Botón cerrar dentro del panel */}
+                <button
+                  onClick={() => setIsOpen(false)}
+                  className="close-button"
+                  aria-label="Cerrar menú"
+                >
+                  <IonIcon className="close-icon" icon={closeOutline} />
+                </button>
+
+                <ul className='links'>
+                  {navLinks.map((link) => (
+                    <li key={link.href} className='etiquetas'>
+                      <a href={link.href} onClick={() => setIsOpen(false)}>
+                        {link.label}
+                      </a>
+                      <IonIcon className='icon' icon={arrowForward} />
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
-            <a href='contacto' className='contacto'> CONTACTOS </a>
-            <button onClick={toggleNavbar} className='menu'>
-              <IonIcon className='menu-icon' icon={isOpen ? 'close' : 'menu'} />
+
+            <a href='contacto' className='contacto'>CONTACTOS</a>
+
+            <button
+              onClick={toggleNavbar}
+              className={`menu ${isOpen ? 'open' : ''}`}
+              aria-label={isOpen ? 'Cerrar menú' : 'Abrir menú'}
+            >
+              <IonIcon className='menu-icon' icon={isOpen ? closeOutline : menuOutline} />
             </button>
           </div>
         </div>

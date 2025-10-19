@@ -37,7 +37,12 @@ Con un legado de años de excelencia y experiencia, hemos sido pioneros en soluc
         <Valores />
       </div>
       <div className="prev_next_section_1">
-        <NextPrev />
+        <NextPrev
+          prevTitle="INNOVACION"
+          prevLink="/innovacion-tecnologia"
+          nextTitle="SOSTENIBILIDAD"
+          nextLink="/sostenibilidad"
+        />
       </div>
     </div>
   )

@@ -30,11 +30,16 @@ const Innovacion = () => {
             <div className="cards-innovacion">
                 <InnovacionCards />
             </div>
-            <div className='videoInnovacion'>
+            {/* <div className='videoInnovacion'>
                 <VideoInnovacion />
-            </div>
+            </div> */}
             <div className="prev_next_section_1">
-                <NextPrev />
+                <NextPrev
+                    prevTitle="PROYECTOS"
+                    prevLink="/innovacion-tecnologia"
+                    nextTitle="QUIENES SOMOS"
+                    nextLink="/quienes-somos"
+                />
             </div>
         </div>
     )

@@ -30,6 +30,7 @@
     width: 25rem !important;
     height: 30rem !important;
   }
+
   .swiper-slide .figure {
     width: 25rem !important;
     height: 30rem !important;
@@ -114,6 +115,7 @@
   background: var(--body-bg);
   margin-top: 15px;
   box-shadow: rgba(196, 195, 195, 0.527) 0px 5px 15px;
+
   .titulo {
     font-size: 25px;
     font-weight: 700;
@@ -219,12 +221,14 @@
 
         &:hover {
           background-color: var(--secondary-color);
-          .icon{
-            
+
+          .icon {
+
             color: white;
           }
         }
-        .icon{
+
+        .icon {
           transition: 0.5s ease;
         }
       }
@@ -391,5 +395,82 @@
         }
       }
     }
+  }
+}
+
+.swiper-slide .figure {
+  transition:
+    filter .45s ease,
+    opacity .45s ease,
+    transform .45s ease,
+    box-shadow .45s ease;
+  filter: brightness(.72) saturate(.9) blur(.3px);
+  opacity: .78;
+  transform: scale(.97);
+}
+
+/* Las adyacentes (prev/next) un poco menos atenuadas que el resto */
+.swiper-slide-prev .figure,
+.swiper-slide-next .figure {
+  filter: brightness(.86) saturate(.95) blur(.15px);
+  opacity: .92;
+  transform: scale(.985);
+}
+
+/* La activa (centrada) totalmente nítida y al frente */
+.swiper-slide-active .figure {
+  filter: brightness(1.02) saturate(1.05) blur(0);
+  opacity: 1;
+  transform: scale(1);
+  box-shadow: 0 10px 34px rgba(0, 0, 0, .22);
+  /* sutil */
+  z-index: 2;
+}
+
+/* Evita “pelea” de tamaños internos: usa % dentro del contenedor */
+.figure {
+  width: 37rem;
+  height: 42rem;
+
+  .bottom-figure {
+    width: 100%;
+    height: 35rem;
+
+    .img-pry,
+    .blur {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+/* ----- Mobile: suaviza el efecto para legibilidad y estabilidad ----- */
+@media (max-width: 750px) {
+  .swiper-slide .figure {
+    filter: brightness(.85);
+    opacity: .92;
+    transform: scale(.99);
+  }
+
+  .swiper-slide-prev .figure,
+  .swiper-slide-next .figure {
+    filter: brightness(.92);
+    opacity: .96;
+    transform: scale(1);
+  }
+
+  .swiper-slide-active .figure {
+    filter: brightness(1);
+    opacity: 1;
+    transform: scale(1);
+    box-shadow: 0 8px 22px rgba(0, 0, 0, .18);
+  }
+}
+
+/* (Opcional) Si usas “reduce motion”, elimina las animaciones fuertes */
+@media (prefers-reduced-motion: reduce) {
+  .swiper-slide .figure {
+    transition: filter .2s ease, opacity .2s ease;
+    transform: none !important;
   }
 }

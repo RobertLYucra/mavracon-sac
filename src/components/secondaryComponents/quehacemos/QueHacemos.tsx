@@ -28,12 +28,13 @@ const QueHacemos = () => {
       <div className="hacemos-main mt-10" >
         <HacemosPrincipal />
       </div>
-      <div className="mas-servicios mt-6">
+      {/* <div className="mas-servicios mt-6">
         <MasServicios />
-      </div>
-      <div className="prev_next_section_1">
-        <NextPrev />
-      </div>
+      </div> */}
+      <NextPrev
+        nextTitle="PROYECTOS"
+        nextLink="/proyectos"
+      />
     </div>
   )
 }

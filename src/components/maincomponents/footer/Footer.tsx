@@ -1,36 +1,75 @@
 import Logo from '../../../images/logo-oscuro.png';
+import { IonIcon } from '@ionic/react';
+import { logoFacebook, logoInstagram, logoLinkedin, logoYoutube } from 'ionicons/icons';
 import "./Footer.scss"
 
 const Footer = () => {
+  const footerLinks = [
+    { href: '/', label: 'Inicio' },
+    { href: '/que-hacemos', label: 'Qué hacemos' },
+    { href: '/proyectos', label: 'Proyectos' },
+    { href: '/innovacion-tecnologia', label: 'Innovación y tecnología' },
+    { href: '/quienes-somos', label: 'Quiénes Somos' },
+    { href: '/sostenibilidad', label: 'Sostenibilidad' },
+    { href: '/contacto', label: 'Contacto' }
+  ];
+
+  const currentYear = new Date().getFullYear();
+
   return (
-    <div>
-      <footer className="shadow ">
-        <div className="w-full max-w-screen-xl mx-auto p-4 md:py-8">
-          <div className="sm:flex sm:items-center sm:justify-between">
-            <a href="https://flowbite.com/" className="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse">
-              <img src={Logo} className="h-16" alt="Flowbite Logo" />
+    <footer className="footer">
+      <div className="footer-container">
+        <div className="footer-main">
+          <div className="footer-logo-section">
+            <a href="/">
+              <img src={Logo} alt="Mavracon Logo" className="footer-logo" />
             </a>
-            <ul className="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-500 sm:mb-0 dark:text-gray-400">
-              <li>
-                <a href="#" className="hover:underline me-4 md:me-6">About</a>
-              </li>
-              <li>
-                <a href="#" className="hover:underline me-4 md:me-6">Privacy Policy</a>
-              </li>
-              <li>
-                <a href="#" className="hover:underline me-4 md:me-6">Licensing</a>
-              </li>
-              <li>
-                <a href="#" className="hover:underline">Contact</a>
-              </li>
+            <p className="footer-description">
+              Construcción e ingeniería de excelencia para el desarrollo del Perú
+            </p>
+            <div className="footer-social">
+              <a href="#" aria-label="Facebook">
+                <IonIcon icon={logoFacebook} />
+              </a>
+              <a href="#" aria-label="Instagram">
+                <IonIcon icon={logoInstagram} />
+              </a>
+              <a href="#" aria-label="LinkedIn">
+                <IonIcon icon={logoLinkedin} />
+              </a>
+              <a href="#" aria-label="YouTube">
+                <IonIcon icon={logoYoutube} />
+              </a>
+            </div>
+          </div>
+
+          <div className="footer-links-section">
+            <h3>Enlaces</h3>
+            <ul>
+              {footerLinks.map((link) => (
+                <li key={link.href}>
+                  <a href={link.href}>{link.label}</a>
+                </li>
+              ))}
             </ul>
           </div>
-          <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
-          <span className="block text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2024 <a href="https://flowbite.com/" className="hover:underline">Mavracon™</a>. Todos los Derechos Reservados.</span>
-        </div>
-      </footer>
 
-    </div>
+          <div className="footer-contact-section">
+            <h3>Contacto</h3>
+            <div className="contact-info">
+              <p>Jr. Manuel Villavicencio 1711, Lince</p>
+              <p>Lima, Perú</p>
+              <p className="phone">+51 123 456 789</p>
+              <p className="email">contacto@mavracon.com</p>
+            </div>
+          </div>
+        </div>
+
+        <div className="footer-bottom">
+          <p>© {currentYear} Mavracon. Todos los derechos reservados.</p>
+        </div>
+      </div>
+    </footer>
   )
 }
 

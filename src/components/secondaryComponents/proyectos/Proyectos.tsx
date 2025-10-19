@@ -28,7 +28,12 @@ const Proyectos = () => {
         <ProyectoGlobal />
       </div>
       <div className="prev_next_section_1">
-        <NextPrev />
+        <NextPrev
+          prevTitle="QUE HACEMOS"
+          prevLink="/que-hacemos"
+          nextTitle="INNOVACION"
+          nextLink="/innovacion-tecnologia"
+        />
       </div>
     </div>
   )

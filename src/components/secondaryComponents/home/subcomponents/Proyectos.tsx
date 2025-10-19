@@ -12,7 +12,7 @@ const Proyectos = () => {
           <h1>CONSTRUCCIÓN Y DISEÑO DE CALIDAD</h1>
         </div>
         <div className="right-pry">
-          <a href=""> MIRA NUESTROS PROYECTOS </a>
+          <a href="/proyectos"> MIRA NUESTROS PROYECTOS </a>
         </div>
 
       </div>
