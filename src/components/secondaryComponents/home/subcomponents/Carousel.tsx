@@ -9,51 +9,7 @@ import "swiper/css/effect-cards";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "./styles/Carousel.scss";
-
-interface Proyecto {
-  titulo: string;
-  nombreProyecto: string;
-  imagen: string;
-  ubicacion: string;
-  tipo: string;
-  estado: string;
-}
-
-const proyectos: Proyecto[] = [
-  {
-    titulo: "Edificio Residencial",
-    nombreProyecto: "Torres del Sol",
-    imagen: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800",
-    ubicacion: "Lima, Perú",
-    tipo: "Residencial",
-    estado: "En construcción",
-  },
-  {
-    titulo: "Complejo Comercial",
-    nombreProyecto: "Plaza Central",
-    imagen:
-      "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800",
-    ubicacion: "Arequipa, Perú",
-    tipo: "Comercial",
-    estado: "Finalizado",
-  },
-  {
-    titulo: "Puente Vehicular",
-    nombreProyecto: "Vía Andina",
-    imagen: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800",
-    ubicacion: "Cusco, Perú",
-    tipo: "Infraestructura",
-    estado: "En planificación",
-  },
-  {
-    titulo: "Puente Vehicular",
-    nombreProyecto: "Vía Andina",
-    imagen: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800",
-    ubicacion: "Cusco, Perú",
-    tipo: "Infraestructura",
-    estado: "En planificación",
-  },
-];
+import { Proyecto, proyectos } from "../../proyectos/interfaces/Proyectos";
 
 const Carousel: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -107,7 +63,7 @@ const Carousel: React.FC = () => {
       <div className="project-card__image-wrapper">
         <img
           src={proyecto.imagen}
-          alt={proyecto.nombreProyecto}
+          alt={proyecto.nombre}
           className="project-card__image"
         />
         <div className="project-card__overlay" />
@@ -116,8 +72,8 @@ const Carousel: React.FC = () => {
       {/* Content */}
       <div className="project-card__content">
         <div className="project-card__header">
-          <span className="project-card__tag">{proyecto.titulo}</span>
-          <h3 className="project-card__title">{proyecto.nombreProyecto}</h3>
+          <span className="project-card__tag">{proyecto.tipo}</span>
+          <h3 className="project-card__title">{proyecto.nombre}</h3>
         </div>
 
         <div className="project-card__details">
@@ -126,7 +82,7 @@ const Carousel: React.FC = () => {
             <div>
               <span className="project-card__detail-label">Ubicación</span>
               <span className="project-card__detail-value">
-                {proyecto.ubicacion}
+                {proyecto.ubicacion.departamento}, {proyecto.ubicacion.pais}
               </span>
             </div>
           </div>

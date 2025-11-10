@@ -1,38 +1,45 @@
-import "./Portada.scss"
+import "./Portada.scss";
 
-type GreetProps ={
-  section:string;
-  titulo:string;
-  imagen:string;
-  description:string;
+interface PortadaProps {
+  section: string;
+  titulo: string;
+  imagen: string;
+  description: string;
+  imageAlt?: string;
 }
 
-const Portada = (props:GreetProps) => {
+const Portada: React.FC<PortadaProps> = ({
+  section,
+  titulo,
+  imagen,
+  description,
+  imageAlt,
+}) => {
   return (
-    <div className="banner_portada">
+    <section className="banner_portada">
       <img
-        src={props.imagen}
+        src={imagen}
+        alt={imageAlt || titulo}
         id="video_background"
         className="image_background"
-      >
-      </img>
-      <div className="bg_blur_portada"></div>
+        loading="lazy"
+      />
+      <div className="bg_blur_portada" aria-hidden="true"></div>
       <div className="content-portada">
         <div className="principal">
-          < div className="top-portada-p">
+          <div className="top-portada-p">
             <div className="section">
-              <p className="section-text">{props.section}</p>
+              <p className="section-text">{section}</p>
             </div>
             <div className="text_animation">
-
-              <h1 className="display">{props.titulo}</h1>
-              <h3 className="info">{props.description}</h3>
+              <h1 className="display">{titulo}</h1>
+              <h3 className="info">{description}</h3>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  )
-}
+    </section>
+  );
+};
 
-export default Portada
+export default Portada;

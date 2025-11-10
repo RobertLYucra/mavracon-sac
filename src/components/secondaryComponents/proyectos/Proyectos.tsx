@@ -21,7 +21,7 @@ const Proyectos = () => {
           imagen={PortadaImagen}
           description="Cada proyecto presenta desafíos únicos. Hemos ejecutado obras y consultorías en condiciones complejas, logrando resultados óptimos y cumpliendo con todos los objetivos." />
       </div>
-      <div className="proyectos mt-20">
+      <div className="proyectos mt-5">
         <ProyectosCard />
       </div>
       <div className="proyecto_global_1 mb-10">

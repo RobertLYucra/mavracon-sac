@@ -3,12 +3,15 @@ import imagen1 from "../images/naturaleza.jpg";
 export interface Proyecto {
   nombre: string;
   categoria: string;
+  cliente: string; // <<< agregado
   ubicacion: ubicacion;
   tipo: string;
   estado: string;
   alcance: string;
   imagen: string;
   url: string;
+  descripcion?: string[];
+  galeria?: string[];
 }
 
 interface ubicacion {
@@ -22,6 +25,7 @@ export const proyectos: Proyecto[] = [
   {
     nombre: "Hudbay Minerals",
     categoria: "Constancio",
+    cliente: "Hudbay Minerals",   // << agregado
     ubicacion: {
       pais: "Peru",
       departamento: "Lima",
@@ -39,6 +43,7 @@ export const proyectos: Proyecto[] = [
   {
     nombre: "Mineria San Carlos",
     categoria: "Constancio",
+    cliente: "Mineria San Carlos",
     ubicacion: {
       pais: "Peru",
       departamento: "Lima",
@@ -54,6 +59,7 @@ export const proyectos: Proyecto[] = [
   {
     nombre: "Southern Copper",
     categoria: "Tía María",
+    cliente: "Southern Copper",
     ubicacion: {
       pais: "Peru",
       departamento: "Arequipa",
@@ -69,6 +75,7 @@ export const proyectos: Proyecto[] = [
   {
     nombre: "Antamina",
     categoria: "Antamina Expansion",
+    cliente: "Antamina",
     ubicacion: {
       pais: "Peru",
       departamento: "Ancash",
@@ -84,6 +91,7 @@ export const proyectos: Proyecto[] = [
   {
     nombre: "Glencore",
     categoria: "Antapaccay",
+    cliente: "Glencore",
     ubicacion: {
       pais: "Peru",
       departamento: "Cusco",
@@ -99,6 +107,7 @@ export const proyectos: Proyecto[] = [
   {
     nombre: "Shougang Hierro Perú",
     categoria: "Ampliación Marcona",
+    cliente: "Shougang Hierro Perú",
     ubicacion: {
       pais: "Peru",
       departamento: "Ica",
@@ -114,6 +123,7 @@ export const proyectos: Proyecto[] = [
   {
     nombre: "Buenaventura",
     categoria: "Yanacocha Sulfuros",
+    cliente: "Buenaventura",
     ubicacion: {
       pais: "Peru",
       departamento: "Cajamarca",
@@ -129,6 +139,7 @@ export const proyectos: Proyecto[] = [
   {
     nombre: "MMG",
     categoria: "Las Bambas",
+    cliente: "MMG",
     ubicacion: {
       pais: "Peru",
       departamento: "Apurímac",
@@ -144,6 +155,7 @@ export const proyectos: Proyecto[] = [
   {
     nombre: "Minsur",
     categoria: "Pucamarca",
+    cliente: "Minsur",
     ubicacion: {
       pais: "Peru",
       departamento: "Tacna",
@@ -156,68 +168,107 @@ export const proyectos: Proyecto[] = [
     alcance: "Minería subterránea con procesamiento de estaño",
     url: "#",
   },
-];
 
-export const proyectosCarousel: ProyectoCarousel[] = [
+  // ******** los que eran carousel ********
+
   {
-    titulo: "Edificio Residencial",
-    nombreProyecto: "Torres del Sol",
-    imagen: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800",
-    ubicacion: "Lima, Perú",
+    nombre: "Torres del Sol",
+    categoria: "Edificio Residencial",
+    cliente: "Torres del Sol",
+    ubicacion: {
+      pais: "Peru",
+      departamento: "Lima",
+      pronvincia: "",
+      distrito: "",
+    },
     tipo: "Residencial",
     estado: "En construcción",
+    imagen: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800",
+    alcance: "",
+    url: "#",
   },
   {
-    titulo: "Complejo Comercial",
-    nombreProyecto: "Plaza Central",
-    imagen:
-      "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800",
-    ubicacion: "Arequipa, Perú",
+    nombre: "Plaza Central",
+    categoria: "Complejo Comercial",
+    cliente: "Plaza Central",
+    ubicacion: {
+      pais: "Peru",
+      departamento: "Arequipa",
+      pronvincia: "",
+      distrito: "",
+    },
     tipo: "Comercial",
     estado: "Finalizado",
+    imagen:
+      "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800",
+    alcance: "",
+    url: "#",
   },
   {
-    titulo: "Puente Vehicular",
-    nombreProyecto: "Vía Andina",
-    imagen: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800",
-    ubicacion: "Cusco, Perú",
+    nombre: "Vía Andina",
+    categoria: "Puente Vehicular",
+    cliente: "Vía Andina",
+    ubicacion: {
+      pais: "Peru",
+      departamento: "Cusco",
+      pronvincia: "",
+      distrito: "",
+    },
     tipo: "Infraestructura",
     estado: "En planificación",
+    imagen: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800",
+    alcance: "",
+    url: "#",
   },
   {
-    titulo: "Centro Corporativo",
-    nombreProyecto: "Business Hub",
-    imagen:
-      "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800",
-    ubicacion: "Lima, Perú",
+    nombre: "Business Hub",
+    categoria: "Centro Corporativo",
+    cliente: "Business Hub",
+    ubicacion: {
+      pais: "Peru",
+      departamento: "Lima",
+      pronvincia: "",
+      distrito: "",
+    },
     tipo: "Corporativo",
     estado: "En construcción",
+    imagen:
+      "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800",
+    alcance: "",
+    url: "#",
   },
   {
-    titulo: "Parque Industrial",
-    nombreProyecto: "Zona Industrial Norte",
-    imagen:
-      "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800",
-    ubicacion: "Trujillo, Perú",
+    nombre: "Zona Industrial Norte",
+    categoria: "Parque Industrial",
+    cliente: "Zona Industrial Norte",
+    ubicacion: {
+      pais: "Peru",
+      departamento: "La Libertad",
+      pronvincia: "",
+      distrito: "",
+    },
     tipo: "Industrial",
     estado: "Finalizado",
+    imagen:
+      "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800",
+    alcance: "",
+    url: "#",
   },
   {
-    titulo: "Hospital Regional",
-    nombreProyecto: "Centro Médico",
-    imagen:
-      "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=800",
-    ubicacion: "Piura, Perú",
+    nombre: "Centro Médico",
+    categoria: "Hospital Regional",
+    cliente: "Centro Médico",
+    ubicacion: {
+      pais: "Peru",
+      departamento: "Piura",
+      pronvincia: "",
+      distrito: "",
+    },
     tipo: "Salud",
     estado: "En construcción",
+    imagen:
+      "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=800",
+    alcance: "",
+    url: "#",
   },
 ];
-
-export interface ProyectoCarousel {
-  titulo: string;
-  nombreProyecto: string;
-  imagen: string;
-  ubicacion: string;
-  tipo: string;
-  estado: string;
-}

@@ -1,153 +1,62 @@
-.que-hacer-2 {
-    display: flex;
-    justify-content: center;
+.actividades-grid {
+  display: flex;
+  justify-content: center;
+  margin-top: 25px;
+
+  @media (max-width: 850px) {
+    display: none;
+  }
+}
+
+.actividad-card {
+  all: unset;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 25px 15px;
+  margin: 5px;
+  cursor: pointer;
+  color: var(--text-primary-color);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(8px);
+  &:hover {
+    background: rgba(244, 37, 52, 0.15);
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--secondary-color), transparent);
+    transition: width 0.4s ease;
+  }
+
+  &:hover::after {
     width: 100%;
-    margin-top: 25px;
+  }
 }
 
-
-.figura_card-hacemos {
-    width: 100%;
-    display: flex;
-    color: var(--text-primary-color);
-    justify-content: center;
-    align-items: center;
-    background: transparent;
-    backdrop-filter: blur(0px);
-    transition: background 0.3s ease;
-
-
-    &:hover {
-        background: rgba(0.04, 0.08, 0.15, 0.8);
-    }
-
-    .contenido_card {
-        width: 500px;
-        padding: 15px;
-        height: 80px;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        position: relative;
-        overflow: hidden;
-        transition: all 0.3s ease;
-
-        .description-container {
-            display: flex;
-            align-items: center;
-            justify-items: center;
-
-            .icon-span {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-
-                .icon {
-                    font-size: 2rem;
-                    margin-right: 15px;
-                }
-            }
-
-            .actividad {
-                font-size: 20px;
-                font-weight: 600;
-
-            }
-
-
-        }
-
-        .ver_mas {
-            display: flex;
-            align-items: center;
-            transition: 0.5s ease;
-
-            p {
-                margin-right: 20px;
-                font-weight: 600;
-            }
-
-            span {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-
-                .more-icon {
-                    color: var(--secondary-color);
-                    font-size: 25px;
-                }
-            }
-        }
-
-    }
+.actividad-content {
+  display: flex;
+  align-items: center;
+  gap: 15px;
 }
 
-@media screen and (max-width: 1650px) {
-    .figura_card-hacemos {
-        .contenido_card {
-            width: 420px;
-            padding: 15px;
-
-            .description-container {
-
-                .icon {
-                    font-size: 2rem;
-                    margin-bottom: 30px;
-                }
-
-                .actividad {
-                    font-size: 24px;
-                    font-weight: 600;
-                }
-
-                .description {
-                    font-size: 17px;
-                }
-            }
-        }
-    }
+.actividad-icon {
+  font-size: 2rem;
 }
 
-@media screen and (max-width: 1400px) {
-    .figura_card-hacemos {
-        max-width: 100%;
-
-        .contenido_card {
-            width: 350px;
-        }
-    }
+.actividad-title {
+  font-size: clamp(15px, 1.5vw, 20px);
+  font-weight: 600;
 }
 
-@media screen and (max-width: 1140px) {
-    .figura_card-hacemos {
-
-        .contenido_card {
-            width: 280px;
-
-            .description-container {
-
-                .icon {
-                    margin-bottom: 20px;
-                }
-
-                .actividad {
-                    font-size: 15px;
-                }
-
-                .description {
-                    margin-bottom: 25px;
-                    font-size: 13px;
-                }
-
-                .ver_mas {}
-            }
-        }
-    }
-}
-
-
-@media screen and (max-width: 850px) {
-    .que-hacer-2 {
-       display: none;
-    }
+.arrow-icon {
+  font-size: 25px;
+  color: var(--secondary-color);
 }

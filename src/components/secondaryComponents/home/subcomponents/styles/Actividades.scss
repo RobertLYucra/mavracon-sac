@@ -1,201 +1,192 @@
 .que-hacer {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    margin-top: 25px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 25px;
+  border-radius: 10px;
 }
 
 .figura_card {
-    width: 100%;
-    display: flex;
-    color: var(--text-primary-color);
-    justify-content: center;
-    align-items: center;
-    background: transparent;
-    backdrop-filter: blur(0px);
-    transition: background 0.3s ease;
+  width: 100%;
+  display: flex;
+  color: var(--text-primary-color);
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  backdrop-filter: blur(0px);
+  transition: background 0.3s ease;
 
-
-    &:hover {
-        background: rgba(0.04, 0.08, 0.15, 0.8);
-
-        .contenido_card {
-            .ver_mas {
-                transform: translateX(10px);
-            }
-        }
-
-    }
-
+  &:hover {
+    backdrop-filter: blur(8px);
+     background: rgba(109, 109, 109, 0.438);
     .contenido_card {
-        width: 500px;
-        padding: 15px;
-        height: 220px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        position: relative;
-        overflow: hidden;
-        transition: all 0.3s ease;
-
-        .description-container {
-
-            .icon {
-                font-size: 2rem;
-                margin-bottom: 20px;
-            }
-
-            .actividad {
-                font-size: 25px;
-                font-weight: 600;
-
-            }
-
-            .description {
-                margin-bottom: 20px;
-            }
-
-        }
-
-        .ver_mas {
-            top: 20px;
-            display: flex;
-            align-items: center;
-            transition: 0.5s ease;
-            transform: translateX(-90px);
-
-            p {
-                margin-right: 20px;
-                font-weight: 600;
-            }
-
-            span {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-
-                .more-icon {
-                    color: var(--secondary-color);
-                    font-size: 30px;
-                }
-            }
-        }
-
+      .ver_mas {
+        transform: translateX(10px);
+      }
     }
+  }
+
+  .contenido_card {
+    width: 500px;
+    padding: 15px;
+    height: 220px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    .description-container {
+      .icon {
+        font-size: 2rem;
+        margin-bottom: 20px;
+      }
+
+      .actividad {
+        font-size: 25px;
+        font-weight: 500;
+      }
+
+      .description {
+        margin-bottom: 18px;
+        margin-top: 8px;
+      }
+    }
+
+    .ver_mas {
+      top: 20px;
+      display: flex;
+      align-items: center;
+      transition: 0.5s ease;
+      transform: translateX(-90px);
+
+      p {
+        margin-right: 20px;
+        font-weight: 600;
+      }
+
+      span {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .more-icon {
+          color: var(--secondary-color);
+          font-size: 30px;
+        }
+      }
+    }
+  }
 }
 
 @media screen and (max-width: 1650px) {
-    .figura_card {
-        .contenido_card {
-            width: 420px;
-            padding: 15px;
+  .figura_card {
+    .contenido_card {
+      width: 420px;
+      padding: 15px;
 
-            .description-container {
-
-                .icon {
-                    font-size: 2rem;
-                    margin-bottom: 30px;
-                }
-
-                .actividad {
-                    font-size: 24px;
-                    font-weight: 600;
-                }
-
-                .description {
-                    font-size: 17px;
-                }
-            }
+      .description-container {
+        .icon {
+          font-size: 2rem;
+          margin-bottom: 30px;
         }
+
+        .actividad {
+          font-size: 24px;
+          font-weight: 600;
+        }
+
+        .description {
+          font-size: 17px;
+        }
+      }
     }
+  }
 }
 
 @media screen and (max-width: 1400px) {
-    .figura_card {
-        max-width: 100%;
+  .figura_card {
+    max-width: 100%;
 
-        .contenido_card {
-            width: 350px;
-            height: 220px;
-        }
+    .contenido_card {
+      width: 350px;
+      height: 220px;
     }
+  }
 }
 
 @media screen and (max-width: 1140px) {
-    .figura_card {
+  .figura_card {
+    .contenido_card {
+      width: 280px;
 
-        .contenido_card {
-            width: 280px;
-
-            .description-container {
-
-                .icon {
-                    margin-bottom: 20px;
-                }
-
-                .actividad {
-                    font-size: 15px;
-                }
-
-                .description {
-                    margin-bottom: 25px;
-                    font-size: 13px;
-                }
-
-                .ver_mas {}
-            }
+      .description-container {
+        .icon {
+          margin-bottom: 20px;
         }
+
+        .actividad {
+          font-size: 15px;
+        }
+
+        .description {
+          margin-bottom: 25px;
+          font-size: 13px;
+        }
+
+        .ver_mas {
+        }
+      }
     }
+  }
 }
 
-
 @media screen and (max-width: 850px) {
-    .que-hacer {
-        flex-direction: column;
-        width: 100%;
-    }
+  .que-hacer {
+    flex-direction: column;
+    width: 100%;
+  }
 
-    .actividades-redirect {
-        width: 100%;
-    }
+  .actividades-redirect {
+    width: 100%;
+  }
 
-    .figura_card {
-        width: 100%;
-        margin: auto;
+  .figura_card {
+    width: 100%;
+    margin: auto;
 
-        .contenido_card {
-            width: 100%;
-            height: auto;
-            display: flex;
-            padding-top: 25px;
-            padding-bottom: 25px;
-            flex-direction: row;
-            justify-content: space-between;
-            align-items: center;
+    .contenido_card {
+      width: 100%;
+      height: auto;
+      display: flex;
+      padding-top: 25px;
+      padding-bottom: 25px;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
 
-            .description-container {
-
-                .icon-span {
-                    display: none;
-                }
-
-                .actividad {
-                    font-size: 18px;
-                }
-
-                .description {
-                    margin-bottom: auto;
-                    font-size: 13px;
-                }
-            }
-
-            .ver_mas {
-                transform: translateX(0px);
-
-                .ver-mas-text {
-                    display: none;
-                }
-            }
+      .description-container {
+        .icon-span {
+          display: none;
         }
+
+        .actividad {
+          font-size: 18px;
+        }
+
+        .description {
+          margin-bottom: auto;
+          font-size: 13px;
+        }
+      }
+
+      .ver_mas {
+        transform: translateX(0px);
+
+        .ver-mas-text {
+          display: none;
+        }
+      }
     }
+  }
 }

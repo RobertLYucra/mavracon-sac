@@ -9,10 +9,16 @@
   display: flex;
   justify-content: space-between;
   width: 90%;
+
   .prev {
     width: 350px;
     margin-right: 25px;
     .prev_link {
+      .anterior,
+      .siguiente {
+        margin-bottom: 8px;
+        transition: color 0.3s ease;
+      }
       &:hover {
         .section_prev {
           .section_prev_title {
@@ -39,6 +45,7 @@
         padding-bottom: 20px;
         padding-top: 10px;
         border-top: 1px solid #1d3869;
+        transition: border-color 0.3s ease;
 
         .section_prev_title {
           font-size: 1.125rem;
@@ -57,7 +64,7 @@
           .icons-container {
             display: flex;
             transform: translateX(35px);
-            transition: 0.5s ease;
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             .more-icon {
               font-size: 30px;
             }
