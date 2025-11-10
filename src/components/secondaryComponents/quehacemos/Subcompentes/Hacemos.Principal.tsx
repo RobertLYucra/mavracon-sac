@@ -23,8 +23,8 @@ const HacemosPrincipal = () => {
     <>
       <div className="que-hacemos-cards">
         {actividades.map((actividad, i) => (
-          <section id={actividad.section}>
-            <figure key={i}>
+          <section id={actividad.section} key={i}>
+            <figure >
               <IonIcon className="more-icon-mobile" icon={actividad.icono} />
               <h3 className="titulo-mobile">{actividad.actividad}</h3>
               <div className="left-image-actividad">
