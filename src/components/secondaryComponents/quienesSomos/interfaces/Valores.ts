@@ -12,7 +12,7 @@ interface numeracionValor{
 
 export const valores: Valor[]=[
     {
-        icon:"people",
+        icon:"bulb",
         nombreValor:"INNOVACION",
         valores:[
             {
@@ -27,7 +27,7 @@ export const valores: Valor[]=[
         ]
     },
     {
-        icon:"people",
+        icon:"lock-closed",
         nombreValor:"CONFIABILIDAD",
         valores:[
             {
@@ -42,7 +42,7 @@ export const valores: Valor[]=[
         ]
     },
     {
-        icon:"people",
+        icon:"medal",
         nombreValor:"CALIDAD",
         valores:[
             {
@@ -57,7 +57,7 @@ export const valores: Valor[]=[
         ]
     },
     {
-        icon:"people",
+        icon:"trending-up",
         nombreValor:"CREAR VALOR",
         valores:[
             {

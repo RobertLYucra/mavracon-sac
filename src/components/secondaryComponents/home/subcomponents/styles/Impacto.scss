@@ -1,208 +1,246 @@
+// Our Impact Section - Minimalist Design
 .our-impact {
-    display: flex;
+  width: 100%;
+  padding: 6rem 0;
+  color: var(--text-primary-color);
+  display: flex;
+  justify-content: space-between;
+
+  @media (max-width: 768px) {
+    padding: 4rem 0;
+  }
+
+  &__container {
+    width: 100%;
+    padding: 0 5%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
     align-items: center;
-    justify-content: center;
+
+    @media (max-width: 1024px) {
+      gap: 4rem;
+    }
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+  }
+
+  // Content Section
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    @media (max-width: 768px) {
+      gap: 1.25rem;
+    }
+  }
+
+  &__label {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--secondary-color);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+
+    @media (max-width: 768px) {
+      font-size: 0.8125rem;
+    }
+  }
+
+  &__title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 0;
+
+    @media (max-width: 1024px) {
+      font-size: 2.25rem;
+    }
+
+    @media (max-width: 768px) {
+      font-size: 2rem;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 1.75rem;
+    }
+  }
+
+  &__description {
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.8);
+    margin: 0;
+
+    @media (max-width: 768px) {
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+  }
+
+  &__button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem 2rem;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
     color: var(--text-primary-color);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-left: 5%;
-    margin-right: 5%;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    align-self: flex-start;
 
-    .impact-left {
-        max-width: 600px;
-        margin-right: 80px;
-
-        .titulo {
-            font-weight: 500;
-        }
-
-        .h1_bold {
-            font-size: 30px;
-            font-weight: 700;
-            margin: 20px 0 20px 0;
-        }
-        .body_large {
-            margin-bottom: 30px;
-        }
-        .button_white {
-            border: 1px solid white;
-            padding: 10px 15px;
-            transition: 0.5s ease;
-            font-weight: 600;
-            border-radius: 5px;
-            &:hover {
-                background-color: white;
-                color: var(--body-bg);
-            }
-        }
+    @media (max-width: 768px) {
+      padding: 0.875rem 1.75rem;
+      font-size: 0.875rem;
     }
 
-    .impact-right {
-        .bottom-servicio-video {
-            width: 100%;
-            a {
-                position: relative;
-                .blur-mas {
-                    transition: 0.5s ease;
-                    z-index: 1;
-                    position: absolute;
-                    width: 650px;
-                    height: 400px;
-                    background: -webkit-gradient(
-                        linear,
-                        left bottom,
-                        left top,
-                        color-stop(-62.39%, rgba(5, 17, 37, 0)),
-                        color-stop(-0.24%, #081324),
-                        color-stop(87.33%, rgba(6, 14, 25, 0))
-                    );
-                    background: linear-gradient(
-                        360deg,
-                        rgba(5, 17, 37, 0) -62.39%,
-                        #081324 -0.24%,
-                        rgba(6, 14, 25, 0) 90.33%
-                    );
-                }
+    ion-icon {
+      font-size: 20px;
+      transition: transform 0.3s ease;
 
-                .fondo {
-                    transition: 0.5s ease;
-                    position: relative;
-                    width: 650px;
-                    height: 400px;
-                    background-image: url("https://www.stracon.com/site/media/Screen-Shot-2023-03-27-at-17.31.38.jpg");
-                    background-size: cover;
-                    background-repeat: no-repeat;
-                    background-position: center center;
-
-                    span {
-                        display: flex;
-                        align-items: center;
-                        position: absolute;
-                        bottom: 25px;
-                        margin-left: 25px;
-                        z-index: 2;
-
-                        .icon-play {
-                            margin-right: 15px;
-                            font-size: 3rem;
-                            color: var(--secondary-color);
-                        }
-
-                        p {
-                        }
-                    }
-                }
-            }
-        }
+      @media (max-width: 768px) {
+        font-size: 18px;
+      }
     }
-}
 
-@media screen and (max-width: 1337px) {
-    .our-impact {
-        
-        .impact-right {
-            .bottom-servicio-video {
-                width: 100%;
-                a {
-                    .blur-mas {
-                   
-                        width: 450px;
-                        height: 400px;
-                    }
+    &:hover {
+      background: var(--text-primary-color);
+      color: var(--body-bg);
+      border-color: var(--text-primary-color);
 
-                    .fondo {
-                        
-                        width: 450px;
-                        height: 400px;
-                       
-                    }
-                }
-            }
-        }
+      ion-icon {
+        transform: translateX(4px);
+      }
     }
-}
 
-
-@media screen and (max-width: 1050px) {
-    .our-impact {
-        display: flex;
-        flex-direction: column;
-        .impact-left {
-            max-width: 85%;
-            margin-right: 0px;
-        }    
-        .impact-right {
-            margin-top: 40px;
-            .bottom-servicio-video {
-                width: 100%;
-                margin-top: 35px;
-                a {
-                    width: 100%;
-                    border-radius: 15px;
-                    .blur-mas {
-                        border-radius: 10px;
-
-                        width: 100%;
-                        height: 100%;
-                    }
-
-                    .fondo {
-                        
-                        width: 650px;
-                        height: 400px;
-                        border-radius: 15px;
-                       
-                    }
-                }
-            }
-        }
+    &:active {
+      transform: scale(0.98);
     }
-}
+  }
 
+  // Media Section
+  &__media {
+    position: relative;
+    width: 100%;
+  }
 
-@media screen and (max-width: 788px) {
-    .our-impact {
-        .impact-right {
-            .bottom-servicio-video {
-                a {
-                 .fondo {                       
-                        width: 450px;
-                        height: 350px;                      
-                    }
-                }
-            }
-        }
+  &__video {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 500px;
+    border-radius: 16px;
+    overflow: hidden;
+    background-image: url("https://www.stracon.com/site/media/Screen-Shot-2023-03-27-at-17.31.38.jpg");
+    background-size: cover;
+    background-position: center;
+    text-decoration: none;
+    transition: transform 0.4s ease;
+
+    @media (max-width: 1024px) {
+      height: 450px;
     }
-}
 
-@media screen and (max-width: 515px) {
-    .our-impact {
-        .impact-right {
-            .bottom-servicio-video {
-                a {
-                 .fondo {                       
-                        width: 350px;
-                        height: 300px;                      
-                    }
-                }
-            }
-        }
+    @media (max-width: 768px) {
+      height: 400px;
     }
-}
 
-
-@media screen and (max-width: 392px) {
-    .our-impact {
-        .impact-right {
-            .bottom-servicio-video {
-                a {
-                 .fondo {                       
-                        width: 300px;
-                        height: 280px;                      
-                    }
-                }
-            }
-        }
+    @media (max-width: 480px) {
+      height: 350px;
+      border-radius: 12px;
     }
+
+    &:hover {
+      transform: scale(1.02);
+
+      .our-impact__video-overlay {
+        background: linear-gradient(
+          180deg,
+          rgba(0, 0, 0, 0) 0%,
+          rgba(0, 0, 0, 0.5) 100%
+        );
+      }
+
+      .our-impact__play ion-icon {
+        transform: scale(1.1);
+        color: var(--secondary-color);
+      }
+    }
+  }
+
+  &__video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 0.7) 100%
+    );
+    transition: background 0.4s ease;
+    z-index: 1;
+  }
+
+  &__video-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem;
+    z-index: 2;
+
+    @media (max-width: 768px) {
+      padding: 1.5rem;
+    }
+
+    @media (max-width: 480px) {
+      padding: 1.25rem;
+    }
+  }
+
+  &__play {
+    margin-bottom: 1rem;
+
+    ion-icon {
+      font-size: 4rem;
+      color: rgba(255, 255, 255, 0.9);
+      transition: all 0.3s ease;
+      filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+
+      @media (max-width: 768px) {
+        font-size: 3.5rem;
+      }
+
+      @media (max-width: 480px) {
+        font-size: 3rem;
+      }
+    }
+  }
+
+  &__video-caption {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: var(--text-primary-color);
+    margin: 0;
+    max-width: 90%;
+
+    @media (max-width: 768px) {
+      font-size: 0.9375rem;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 0.875rem;
+      max-width: 100%;
+    }
+  }
 }

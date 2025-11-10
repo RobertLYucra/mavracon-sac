@@ -1,237 +1,339 @@
 .global_proyecto {
+  display: flex;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 30px 20px;
+  gap: 60px;
+  align-items: center;
+  margin-bottom: 25px;
+
+  .global_left {
+    flex: 1;
+    color: var(--text-primary-color);
     display: flex;
-    width: 100%;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 0; // Importante para flex
+
+    .texts-descp {
+      margin-bottom: 30px;
+
+      h3 {
+        font-size: 14px;
+        font-weight: 600;
+        color: var(--secondary-color);
+        letter-spacing: 1px;
+        margin-bottom: 15px;
+      }
+
+      h1 {
+        font-size: 32px;
+        font-weight: 600;
+        margin: 0 0 20px 0;
+        line-height: 1.3;
+      }
+
+      p {
+        font-size: 16px;
+        line-height: 1.6;
+        color: rgba(255, 255, 255, 0.8);
+      }
+    }
+
+    .status {
+      display: flex;
+      gap: 40px;
+      padding: 30px 0;
+      border-top: 1px solid rgba(155, 157, 177, 0.15);
+
+      .status-projects {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+
+        .icon {
+          font-size: 10px;
+        }
+
+        p {
+          font-size: 12px;
+          font-weight: 500;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+          white-space: nowrap;
+        }
+      }
+    }
+  }
+
+  .global_right {
+    flex: 1;
+    display: flex;
+    justify-content: center;
     align-items: center;
+    position: relative;
+    min-width: 0;
+
+    .imagen {
+      position: relative;
+      width: 100%;
+      max-width: 450px;
+      display: flex;
+      justify-content: center;
+
+      .mapa {
+        width: 100%;
+        height: auto;
+        max-width: 350px;
+        object-fit: contain;
+        filter: drop-shadow(0 8px 24px rgba(0, 0, 0, 0.15));
+        opacity: 0.95;
+      }
+    }
+
+    .bonotes {
+      .btn {
+        position: absolute;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: #e63636;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        cursor: pointer;
+        z-index: 2;
+        box-shadow: 0 0 0 0 rgba(230, 54, 54, 0.4);
+        transition: transform 0.3s ease;
+
+        &:hover {
+          transform: translate(-50%, -50%) scale(1.2);
+        }
+
+        p {
+          position: absolute;
+          top: 50%;
+          right: calc(100% + 20px);
+          transform: translateY(-50%);
+          color: var(--secondary-color);
+          font-weight: 500;
+          font-size: 13px;
+          white-space: nowrap;
+          letter-spacing: 0.5px;
+        }
+
+        &::after {
+          content: "";
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 24px;
+          height: 24px;
+          border-radius: 50%;
+          background-color: rgba(230, 54, 54, 0.2);
+          animation: pulse 2.5s ease-in-out infinite;
+          z-index: -1;
+        }
+      }
+    }
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(2);
+    opacity: 0;
+  }
+}
+
+// Tablet
+@media screen and (max-width: 1024px) {
+  .global_proyecto {
+    padding: 50px 20px;
+    gap: 40px;
 
     .global_left {
-        color: var(--text-primary-color);
-        height: 450px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        max-width: 750px;
-
-        .texts-descp {
-            h3 {
-                font-weight: 500;
-
-            }
-
-            h1 {
-                font-size: 30px;
-                font-weight: 500;
-                margin: 20px 0 20px 0;
-            }
-
-            p {
-                font-size: 16px;
-            }
+      .texts-descp {
+        h3 {
+          font-size: 13px;
         }
 
-        .status {
-            display: flex;
-            height: 90px;
-            align-items: center;
-            justify-content: space-between;
-            margin-top: 25px;
-            margin-bottom: 25px;
-            border-bottom: 1px solid rgb(155, 157, 177);
-            border-top: 1px solid rgb(155, 157, 177);
-
-            .status-projects {
-                display: flex;
-                align-items: center;
-                margin: 15px;
-
-                .icon {
-                    margin-right: 10px;
-                }
-
-                p {
-                    font-weight: 600;
-                }
-            }
+        h1 {
+          font-size: 26px;
         }
 
+        p {
+          font-size: 15px;
+        }
+      }
+
+      .status {
+        gap: 30px;
+        flex-wrap: wrap;
+
+        .status-projects {
+          p {
+            font-size: 10px;
+          }
+        }
+      }
     }
 
     .global_right {
-        max-width: 750px;
-        position: relative;
-
-        .mapa {
-            max-width: 500px;
-            border-top-right-radius: 40%;
-            border-top-right-radius: 40%;
-        }
-
-        .bonotes {
-            .btn {
-                position: absolute;
-                height: 12px;
-                width: 12px;
-                border-radius: 50%;
-                background: red;
-                top: 65%;
-                left: 49%;
-                transform: translate(-50%, -50%);
-                z-index: 0;
-
-                p {
-                    transform: translateX(-50px) translateY(-5px);
-                    color: var(--secondary-color);
-                    font-weight: 500;
-                }
-
-                &::after {
-                    content: '';
-                    position: absolute;
-                    top: -6px;
-                    left: -6px;
-                    width: 25px;
-                    height: 25px;
-                    border-radius: 50%;
-                    background-color: rgba(230, 54, 54, 0.918);
-                    animation: smooth-blink 1.5s ease-in-out infinite;
-                    pointer-events: none;
-                    z-index: -2;
-                }
-            }
-        }
+      .imagen {
+        max-width: 400px;
+      }
     }
+  }
 }
 
+@media screen and (max-width: 593px) {
+  .global_proyecto {
+    .global_left {
+      .texts-descp {
+      }
 
-@keyframes smooth-blink {
-    0% {
-        opacity: 0;
-    }
-
-    50% {
-        opacity: 0.5;
-    }
-
-    100% {
-        opacity: 0.8;
-    }
-
-    50% {
-        opacity: 0.5;
-    }
-
-    0% {
-        opacity: 0;
-    }
-}
-
-
-@media screen and (max-width: 1150px) {
-    .global_proyecto {
-
-        .global_left {
-            .texts-descp {
-                h3 {
-                    font-weight: 500;
-                }
-
-                h1 {
-                    font-size: 21px;
-                    font-weight: 500;
-                }
-
-                p {
-                    font-size: 15px;
-                }
-            }
-
-            .status {
-                align-items: start;
-                width: 100%;
-
-                .status-projects {}
-
-
-            }
-        }
-    }
-}
-
-@media screen and (max-width: 1000px) {
-    .global_proyecto {
-        width: 100%;
-        margin-bottom: 60px;
-        .global_left {
-            min-height: 350px;
-            .texts-descp {
-                margin-left: 10px;
-                margin-right: 10px;
-
-                h1 {
-                    font-size: 20px;
-                }
-
-                p {
-                    font-size: 14px;
-                }
-            }
-
-            .status {
-                display: flex;
-                flex-direction: column;
-                border: none;
-                .status-projects {
-                    margin: 10px;
-                    width: 100%;
-                }
-
-                .mid-status {
-                    padding-top: 15px;
-                    padding-bottom: 15px;
-                    border-bottom: 1px solid rgb(155, 157, 177);
-                    border-top: 1px solid rgb(155, 157, 177);
-
-                }
-            }
-        }
-
-        .global_right {
-            max-width: 750px;
-
-            .mapa {
-                max-width: 350px;
-            }
-        }
-    }
-}
-
-@media screen and (max-width: 750px) {
-    .global_proyecto {
+      .status {
         flex-direction: column;
+        padding: 0;
+        border: none;
 
-        .global_left {
-            width: 100%;
-            min-height: 350px;
-            .status {
-                display: flex;
-                flex-direction: column;
-                width: 100%;
-
-                .status-projects {
-                    margin-left: 10px;
-                    margin-right: 0px;
-                    max-width: 320px;
-                }
-            }
-
-            .global_right {
-                margin-top: 250px;
-                max-width: 750px;
-
-                .mapa {
-                    max-width: 320px;
-                }
-            }
+        p {
+          font-size: 25px ; 
         }
+      }
     }
+  }
+}
+// Mobile
+@media screen and (max-width: 768px) {
+  .global_proyecto {
+    flex-direction: column;
+    padding: 40px 20px;
+    gap: 50px;
+
+    .global_left {
+      width: 100%;
+
+      .texts-descp {
+        h3 {
+          font-size: 12px;
+        }
+
+        h1 {
+          font-size: 24px;
+        }
+
+        p {
+          font-size: 14px;
+        }
+      }
+
+      .status {
+        display: flex;
+        flex-wrap: nowrap;
+        gap: 30px;
+        padding: 30px 0;
+        border: none;
+        border-top: 1px solid rgba(155, 157, 177, 0.15);
+
+        .status-projects {
+          padding: 0;
+          border: none;
+
+          p {
+            font-size: 10px;
+          }
+        }
+      }
+    }
+
+    .global_right {
+      width: 100%;
+
+      .imagen {
+        max-width: 350px;
+      }
+
+      .bonotes {
+        .btn {
+          width: 14px;
+          height: 14px;
+
+          p {
+            font-size: 13px;
+            right: calc(100% + 12px);
+          }
+
+          &::after {
+            width: 28px;
+            height: 28px;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Small Mobile
+@media screen and (max-width: 480px) {
+  .global_proyecto {
+    padding: 40px 20px;
+
+    .global_left {
+      .texts-descp {
+        h1 {
+          font-size: 24px;
+        }
+
+        p {
+          font-size: 14px;
+        }
+      }
+
+      .status {
+        gap: 20px;
+
+        .status-projects {
+          .icon {
+            font-size: 9px;
+          }
+
+          p {
+            font-size: 9px;
+          }
+        }
+      }
+    }
+
+    .global_right {
+      .imagen {
+        max-width: 280px;
+      }
+
+      .bonotes {
+        .btn {
+          width: 10px;
+          height: 10px;
+
+          p {
+            font-size: 11px;
+            right: calc(100% + 14px);
+          }
+
+          &::after {
+            width: 20px;
+            height: 20px;
+          }
+        }
+      }
+    }
+  }
 }

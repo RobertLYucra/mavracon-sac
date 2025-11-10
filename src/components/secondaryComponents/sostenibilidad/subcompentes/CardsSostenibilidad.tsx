@@ -1,19 +1,37 @@
-import { IonIcon } from '@ionic/react'
-import { indicador } from '../interfaces/indicadores'
-import './styles/CardsSostenibilidad.scss'
+import { IonIcon } from "@ionic/react";
+import { indicador } from "../interfaces/indicadores";
+import "./styles/CardsSostenibilidad.scss";
 
 const CardsSostenibilidad = () => {
   return (
-    <div className="sostenibilidad-cards-detalle">
-      {indicador.map((ind, i) => (
-        <a key={i} href='#' >
-          <IonIcon className='more-icon-mobile' icon={ind.icon} ></IonIcon>
-          <h2 className="titulo">{ind.titulo}</h2>
-          <IonIcon className='more-icon' icon="arrow-forward" ></IonIcon>
-        </a>
-      ))}
-    </div>
-  )
-}
+    <section className="sostenibilidad-section">
+      <div className="sostenibilidad-container">
+        <div className="sostenibilidad-grid">
+          {indicador.map((ind, index) => (
+            <a
+              key={index}
+              href={`#indicador-${ind.titulo
+                .toLowerCase()
+                .replace(/\s+/g, "-")}`}
+              className="sostenibilidad-card"
+            >
+              <div className="card-header">
+                <IonIcon className="indicador-icon" icon={ind.icon} />
+              </div>
 
-export default CardsSostenibilidad
+              <div className="card-body">
+                <h3 className="indicador-titulo">{ind.titulo}</h3>
+              </div>
+
+              <div className="card-footer">
+                <IonIcon className="arrow-icon" icon="arrow-forward" />
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default CardsSostenibilidad;

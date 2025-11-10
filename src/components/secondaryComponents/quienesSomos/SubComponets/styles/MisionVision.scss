@@ -1,71 +1,163 @@
 .container_mision_vision {
-    display: flex;
-    width: 90%;
-    align-items: stretch;
-    justify-content: space-between;
-    color: var(--text-primary-color);
-    margin-top: 50px;
-    margin-bottom: 50px;
-    .card {
-        max-width: 50%;
-        padding: 20px;
-        transition: 0.5s ease;
-        .icon {
-            font-size: 25px;
-        }
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0;
+  width: 100%;
+  max-width: 1400px;
+  margin: 60px auto;
+  padding: 0 20px;
+  color: var(--text-primary-color);
 
-        .titulo {
-            font-size: 22px;
-            font-weight: bold;
-            margin-top: 15px;
-            margin-bottom: 15px;
-        }
-        .info {
-            font-size: 17px;
-        }
+  .card {
+    padding: 50px 40px;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease;
+    position: relative;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.02);
+
+      .icon {
+        transform: scale(1.1);
+        color: var(--secondary-color);
+      }
     }
-    .mision {
-        padding-left: 50px;
-        border-left: 1px solid #1d3869;
+
+    .icon {
+      font-size: 42px;
+      color: var(--secondary-color);
+      margin-bottom: 20px;
+      transition: all 0.3s ease;
+      filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
     }
-    .vision {
-        padding-right: 50px;
+
+    .titulo {
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
     }
+
+    .info {
+      font-size: 16px;
+      line-height: 1.7;
+      color: rgba(255, 255, 255, 0.8);
+    }
+  }
+
+  .vision {
+    padding-right: 50px;
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .mision {
+    padding-left: 50px;
+  }
 }
 
-@media screen and (max-width: 600px) {
-    .container_mision_vision {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        margin-top: 0px;
-        margin-bottom: 20px;
-        .card {
-            max-width: 100%;
-            .icon {
-                font-size: 25px;
-            }
+// Tablet
+@media screen and (max-width: 1024px) {
+  .container_mision_vision {
+    margin: 50px auto;
+    padding: 0 20px;
 
-            .titulo {
-                font-size: 18px;
-                font-weight: bold;
-                margin-top: 15px;
-                margin-bottom: 15px;
-            }
-            .info {
-                font-size: 15px;
-            }
-        }
-        .mision {
-            padding-top: 50px;
-            border-top: 1px solid #1d3869;
-            padding-left: 20px;
-            border-left: none;
+    .card {
+      padding: 40px 30px;
 
-        }
-        .vision {
-            padding-bottom: 50px;
-            padding-right: 20px;
-        }
+      .icon {
+        font-size: 38px;
+      }
+
+      .titulo {
+        font-size: 22px;
+        margin-bottom: 18px;
+      }
+
+      .info {
+        font-size: 15px;
+      }
     }
+
+    .vision {
+      padding-right: 40px;
+    }
+
+    .mision {
+      padding-left: 40px;
+    }
+  }
+}
+
+// Mobile
+@media screen and (max-width: 768px) {
+  .container_mision_vision {
+    grid-template-columns: 1fr;
+    margin: 40px auto;
+    padding: 0 15px;
+
+    .card {
+      padding: 40px 20px;
+
+      .icon {
+        font-size: 36px;
+      }
+
+      .titulo {
+        font-size: 20px;
+        margin-bottom: 15px;
+      }
+
+      .info {
+        font-size: 14px;
+        line-height: 1.6;
+      }
+    }
+
+    .vision {
+      padding-right: 20px;
+      padding-bottom: 40px;
+      border-right: none;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .mision {
+      padding-left: 20px;
+      padding-top: 40px;
+    }
+  }
+}
+
+// Small Mobile
+@media screen and (max-width: 480px) {
+  .container_mision_vision {
+    margin: 30px auto;
+
+    .card {
+      padding: 30px 15px;
+
+      .icon {
+        font-size: 32px;
+        margin-bottom: 15px;
+      }
+
+      .titulo {
+        font-size: 18px;
+        margin-bottom: 12px;
+      }
+
+      .info {
+        font-size: 13px;
+      }
+    }
+
+    .vision {
+      padding-bottom: 30px;
+    }
+
+    .mision {
+      padding-top: 30px;
+    }
+  }
 }

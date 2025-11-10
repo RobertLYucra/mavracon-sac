@@ -3,7 +3,15 @@
 
   .left-pry {
     h3 {
-      font-weight: 500;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--secondary-color);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+
+      @media (max-width: 768px) {
+        font-size: 0.8125rem;
+      }
     }
 
     h1 {
@@ -48,9 +56,9 @@
           font-weight: 500;
         }
       }
-      .right-pry{
-        a{
-            font-size: 15px;
+      .right-pry {
+        a {
+          font-size: 15px;
         }
       }
     }

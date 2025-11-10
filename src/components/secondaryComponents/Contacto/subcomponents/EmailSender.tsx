@@ -1,92 +1,152 @@
-import { IonIcon } from "@ionic/react"
-import "./styles/EmailSender.scss"
+import React, { useState } from "react";
+import { IonIcon } from "@ionic/react";
+import "./styles/EmailSender.scss";
+import {
+  ContactFormData,
+  contactInfo,
+  interestOptions,
+  InterestType,
+  socialLinks,
+} from "../Interfaces/Contacto";
 
-const EmailSender = () => {
-    return (
-        <div className="email-sender-section">
+const EmailSender: React.FC = () => {
+  const [formData, setFormData] = useState<ContactFormData>({
+    fullName: "",
+    email: "",
+    subject: "",
+    message: "",
+    interest: null,
+  });
 
-            <div className="mt-6 max-w-6xl max-lg:max-w-3xl mx-auto bg-[#182947] rounded-lg">
-                <div className="grid lg:grid-cols-2 items-center gap-14 sm:p-8 p-4 font-[sans-serif]">
-                    <div>
-                        <h1 className="text-4xl font-bold text-white">Contáctanos</h1>
-                        <p className="text-sm text-gray-300 mt-4 leading-relaxed">¿Tienes un proyecto de construcción o ingeniería civil que deseas desarrollar y necesitas asistencia profesional? Entonces, contáctanos.</p>
+  const handleInterestChange = (interest: InterestType) => {
+    setFormData((prev) => ({ ...prev, interest }));
+  };
 
-                        <ul className="mt-12 space-y-8">
-                            <li className="flex items-center">
-                                <IonIcon className="icon" icon="mail"></IonIcon>
-                                <a href="javascript:void(0)" className="text-white text-sm ml-4">
-                                    mavracon@gmail.com
-                                </a>
-                            </li>
-                            <li className="flex items-center">
-                                <IonIcon className="icon" icon="call"></IonIcon>
-                                <a href="javascript:void(0)" className="text-white text-sm ml-4">
-                                    +51 927 676 456
-                                </a>
-                            </li>
-                            <li className="flex items-center">
-                                <IonIcon className="icon" icon="location"></IonIcon>
-                                <a href="javascript:void(0)" className="text-white text-sm ml-4">
-                                    Ayacucho, Perú
-                                </a>
-                            </li>
-                        </ul>
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
 
-                        <ul className="flex mt-12 space-x-4 socials_contacto">
-                            <li className=" h-10 w-10 rounded-full flex items-center justify-center shrink-0">
-                                <a href="#">
-                                    <IonIcon className="icon" icon="logo-facebook"></IonIcon>
-                                </a>
-                            </li>
-                            <li className=" h-10 w-10 rounded-full flex items-center justify-center shrink-0">
-                                <a href="javascript:void(0)">
-                                    <IonIcon className="icon" icon="logo-linkedin"></IonIcon>
-                                </a>
-                            </li>
-                            <li className=" h-10 w-10 rounded-full flex items-center justify-center shrink-0">
-                                <a href="javascript:void(0)">
-                                    <IonIcon className="icon" icon="logo-youtube"></IonIcon>
-                                </a>
-                            </li>
-                            <li className=" h-10 w-10 rounded-full flex items-center justify-center shrink-0">
-                                <a href="javascript:void(0)">
-                                    <IonIcon className="icon" icon="logo-instagram"></IonIcon>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
+  const handleSubmit = () => {
+    console.log("Form submitted:", formData);
+    // Aquí iría la lógica de envío
+  };
 
-                    <div className="bg-gray-100 p-6 rounded-lg">
-                        <p className="text-sm font-semibold text-gray-800">Estoy interesado en...</p>
+  return (
+    <div className="email-sender">
+      <div className="email-sender__container">
+        {/* Left Section - Contact Info */}
+        <div className="email-sender__info">
+          <div className="email-sender__header">
+            <h1 className="email-sender__title">Contáctanos</h1>
+            <p className="email-sender__subtitle">
+              ¿Tienes un proyecto de construcción o ingeniería civil? Nos
+              encantaría ayudarte a hacerlo realidad.
+            </p>
+          </div>
 
-                        <div className="space-y-4 max-lg:mt-4 interes_buttons">
-                            <button type="button" className="px-4 py-2 rounded-lg bg-[#F42534] text-white text-sm tracking-wider font-medium outline-none border-2 border-[#F42534] mr-4">Consultoría</button>
-                            <button type="button" className="px-4 py-2 rounded-lg bg-transparent text-gray-800 text-sm tracking-wider font-medium outline-none border-2 border-gray-300 mr-4">Ejecución de proyectos</button>
-                            <button type="button" className="px-4 py-2 rounded-lg bg-transparent text-gray-800 text-sm tracking-wider font-medium outline-none border-2 border-gray-300">Bienes Raíces</button>
-                        </div>
-
-                        <form className="mt-8 space-y-4">
-                            <input type='text' placeholder='Nombre completo'
-                                className="w-full rounded-lg py-3 px-4 text-gray-800 text-sm outline-[#F42534]" />
-                            <input type='email' placeholder='Correo electrónico'
-                                className="w-full rounded-lg py-3 px-4 text-gray-800 text-sm outline-[#F42534]" />
-                            <input type='text' placeholder='Asunto'
-                                className="w-full rounded-lg py-3 px-4 text-gray-800 text-sm outline-[#F42534]" />
-                            <textarea placeholder='Mensaje' rows={6}
-                                className="w-full rounded-lg px-4 text-gray-800 text-sm pt-3 outline-[#F42534]"></textarea>
-                            <button type='button'
-                                className="text-white bg-[#F42534]  hover:bg-[#a11720] tracking-wide rounded-lg text-sm px-4 py-3 flex items-center justify-center w-full !mt-6">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" fill='#fff' className="mr-2" viewBox="0 0 548.244 548.244">
-                                    <path fill-rule="evenodd" d="M392.19 156.054 211.268 281.667 22.032 218.58C8.823 214.168-.076 201.775 0 187.852c.077-13.923 9.078-26.24 22.338-30.498L506.15 1.549c11.5-3.697 24.123-.663 32.666 7.88 8.542 8.543 11.577 21.165 7.879 32.666L390.89 525.906c-4.258 13.26-16.575 22.261-30.498 22.338-13.923.076-26.316-8.823-30.728-22.032l-63.393-190.153z" clip-rule="evenodd" data-original="#000000" />
-                                </svg>
-                                Enviar Mensaje
-                            </button>
-                        </form>
-                    </div>
+          <div className="email-sender__contact-list">
+            {contactInfo.map((info, index) => (
+              <div
+                key={index}
+                className="email-sender__contact-item"
+              >
+                <div className="email-sender__contact-icon">
+                  <IonIcon icon={info.icon} />
                 </div>
-            </div>
-        </div>
-    )
-}
+                <span className="email-sender__contact-text">{info.text}</span>
+              </div>
+            ))}
+          </div>
 
-export default EmailSender
+          <div className="email-sender__socials">
+            {socialLinks.map((social, index) => (
+              <a
+                key={index}
+                href={social.href}
+                className="email-sender__social-link"
+                aria-label={social.label}
+              >
+                <IonIcon icon={social.icon} />
+              </a>
+            ))}
+          </div>
+        </div>
+
+        {/* Right Section - Form */}
+        <div className="email-sender__form-wrapper">
+          <div className="email-sender__form">
+            <div className="email-sender__interest">
+              <label className="email-sender__label">Estoy interesado en</label>
+              <div className="email-sender__interest-buttons">
+                {interestOptions.map((option) => (
+                  <button
+                    key={option.value}
+                    type="button"
+                    onClick={() => handleInterestChange(option.value)}
+                    className={`email-sender__interest-btn ${
+                      formData.interest === option.value ? "active" : ""
+                    }`}
+                  >
+                    {option.label}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            <div className="email-sender__fields">
+              <input
+                type="text"
+                name="fullName"
+                placeholder="Nombre completo"
+                value={formData.fullName}
+                onChange={handleInputChange}
+                className="email-sender__input"
+              />
+
+              <input
+                type="email"
+                name="email"
+                placeholder="Correo electrónico"
+                value={formData.email}
+                onChange={handleInputChange}
+                className="email-sender__input"
+              />
+
+              <input
+                type="text"
+                name="subject"
+                placeholder="Asunto"
+                value={formData.subject}
+                onChange={handleInputChange}
+                className="email-sender__input"
+              />
+
+              <textarea
+                name="message"
+                placeholder="Mensaje"
+                rows={5}
+                value={formData.message}
+                onChange={handleInputChange}
+                className="email-sender__textarea"
+              />
+            </div>
+
+            <button
+              type="button"
+              onClick={handleSubmit}
+              className="email-sender__submit"
+            >
+              <IonIcon icon="paper-plane-outline" />
+              <span>Enviar Mensaje</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default EmailSender;

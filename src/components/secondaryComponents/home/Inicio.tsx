@@ -2,11 +2,12 @@ import { useEffect } from 'react';
 import './Inicio.scss'
 import Actividades from "./subcomponents/Actividades";
 import VideoImage from "./images/video-image.jpg"
-import Global from './subcomponents/Global';
+//import Global from './subcomponents/Global';
 import { IonIcon } from '@ionic/react';
 import Proyectos from './subcomponents/Proyectos';
 import Impacto from './subcomponents/Impacto';
-
+import VideoPortada from '../../../images/portada-video.mp4'
+import ProyectoGlobal from '../proyectos/subcomponentes/ProyectoGlobal';
 
 const Inicio = () => {
   useEffect(() => {
@@ -17,7 +18,7 @@ const Inicio = () => {
       <div className="index-panel">
         <div className="banner_home">
           <video
-            src="https://www.stracon.com/site/media/PRINCIPAL-COMPRIMIDO.mp4"
+            src={VideoPortada}
             id="video_background"
             autoPlay
             muted
@@ -46,7 +47,7 @@ const Inicio = () => {
           </div>
         </div>
         <div className='world_section'>
-          <Global />
+          <ProyectoGlobal />
         </div>
 
         <div className='proyectos_section'>

@@ -5,6 +5,7 @@ export interface Actividad {
     descripcion: string;
     mas: string;
     iconarrow: string;
+    section: string
 }
 
 
@@ -15,7 +16,8 @@ export const actividades: Actividad[] = [
          actividad: "INGENIERÍA HÍBRIDA Y CONSULTORÍA",
         descripcion: "Innovación y planificación estratégica.", 
         mas: "VER MÁS", 
-        iconarrow: "arrow-forward"
+        iconarrow: "arrow-forward",
+        section: "ingenieria"
     },
     {
         id: 1, 
@@ -23,7 +25,8 @@ export const actividades: Actividad[] = [
          actividad: "EJECUCIÓN DE PROYECTOS",
         descripcion: "Planificación, gestión y ejecución de proyectos.", 
         mas: "VER MÁS", 
-        iconarrow: "arrow-forward"
+        iconarrow: "arrow-forward",
+        section: "ejecucion"
     },
     {
         id: 1, 
@@ -31,6 +34,7 @@ export const actividades: Actividad[] = [
          actividad: "BIENES RAÍCES",
         descripcion: "Compra, venta y gestión de propiedades.", 
         mas: "VER MÁS", 
-        iconarrow: "arrow-forward"
+        iconarrow: "arrow-forward",
+        section: "bienes-raices"
     },
 ];

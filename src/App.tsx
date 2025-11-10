@@ -14,11 +14,8 @@ function App() {
 
   return <>
     <Navbar />
-
-
     <div className="routes-main">
       <div className="routes">
-
         <Routes>
           <Route path="/" element={<Inicio />} ></Route>
           <Route path="/que-hacemos" element={<QueHacemos />} ></Route>

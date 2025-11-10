@@ -1,57 +1,56 @@
-interface RedSocial {
-    tipo:string;
-    valor: string
-    icon: string;
-    url: string;
+export interface ContactFormData {
+  fullName: string;
+  email: string;
+  subject: string;
+  message: string;
+  interest: InterestType;
 }
 
-export const datosContacto: RedSocial[] = [
+export type InterestType = 'consultoria' | 'ejecucion' | 'bienes-raices' | null;
+
+export interface ContactInfo {
+  icon: string;
+  text: string;
+  href: string;
+  type: 'email' | 'phone' | 'location';
+}
+
+export interface SocialLink {
+  icon: string;
+  href: string;
+  label: string;
+}
+
+export const contactInfo: ContactInfo[] = [
     {
-        tipo : "Numero Telefono",
-        valor: "+51 927 676 456",
-        icon : "call",
-        url:""
+      icon: 'mail-outline',
+      text: 'mavracon@gmail.com',
+      href: 'mailto:mavracon@gmail.com',
+      type: 'email'
     },
     {
-        tipo : "Correo",
-        valor: "robertlyucra@gmail.com",
-        icon : "mail",
-        url:""
+      icon: 'call-outline',
+      text: '+51 927 676 456',
+      href: 'tel:+51927676456',
+      type: 'phone'
     },
     {
-        tipo : "Facebook",
-        valor: "@Mavracon",
-        icon : "logo-facebook",
-        url:""
+      icon: 'location-outline',
+      text: 'Ayacucho, Perú',
+      href: '#',
+      type: 'location'
     }
-    ,{
-        tipo : "Instagram",
-        valor: "@Mavracon",
-        icon : "logo-instagram",
-        url:""
-    },
-    {
-        tipo : "LinkedIn",
-        valor: "@Mavracon",
-        icon : "logo-linkedin",
-        url:""
-    },
-    {
-        tipo : "Youtube",
-        valor: "@Mavracon",
-        icon : "logo-youtube",
-        url:""
-    },
-    {
-        tipo : "Ubicacion",
-        valor: "Ayacucho, Perú",
-        icon : "location",
-        url:""
-    },
-    {
-        tipo : "Horario",
-        valor: "Lunes - Viernes : 9am - 6pm",
-        icon : "alarm",
-        url:""
-    }
-]
+  ];
+
+  export const socialLinks: SocialLink[] = [
+    { icon: 'logo-facebook', href: '#', label: 'Facebook' },
+    { icon: 'logo-linkedin', href: '#', label: 'LinkedIn' },
+    { icon: 'logo-youtube', href: '#', label: 'YouTube' },
+    { icon: 'logo-instagram', href: '#', label: 'Instagram' }
+  ];
+
+  export const interestOptions = [
+    { value: 'consultoria' as InterestType, label: 'Consultoría' },
+    { value: 'ejecucion' as InterestType, label: 'Ejecución de proyectos' },
+    { value: 'bienes-raices' as InterestType, label: 'Bienes Raíces' }
+  ];

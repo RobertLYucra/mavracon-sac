@@ -1,6 +1,6 @@
 import { IonIcon } from "@ionic/react"
-import Mapa from '../images/mapamundi.png'
 import "./styles/ProyectoGlobal.scss"
+import Peru from '../../home/images/Peru.png'
 
 const ProyectoGlobal = () => {
     return (
@@ -32,7 +32,7 @@ const ProyectoGlobal = () => {
 
             <div className="global_right">
                 <div className='imagen'>
-                    <img className='mapa' src={Mapa} alt="" />
+                    <img className='mapa' src={Peru} alt="" />
                 </div>
                 <div className='bonotes'>
                     <div className='btn'>

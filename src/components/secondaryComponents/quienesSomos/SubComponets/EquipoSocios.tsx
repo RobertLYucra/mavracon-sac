@@ -1,33 +1,48 @@
-import { IonIcon } from "@ionic/react"
-import { socios } from "../interfaces/Equipo"
-import "./styles/EquipoSocio.scss"
+import { IonIcon } from "@ionic/react";
+import { socios } from "../interfaces/Equipo";
+import "./styles/EquipoSocio.scss";
 
 const EquipoSocios = () => {
     return (
-        <div className="nuestro_equipo_socio">
-            <div className="socios">
-                <p className="titulo_directorio">SOCIOS ESTRÁTETIGOS</p>
-                <div className="cards_directorio">
-                    {socios.map((ind, i) => (
-                        <figure key={i}>
-                            <img src={ind.foto}></img>
-                            <div className="datos_personales">
-                                <div className="datos">
-                                    <p className="name">Ing. {ind.datosPersonales.nombre} {ind.datosPersonales.apellidoPaterno}</p>
-                                    <p className="puesto">{ind.puesto}</p>
-                                </div>
-                                <div className="more-info">
-                                    <a href="" className="linkedin"><IonIcon className="icon" icon="logo-linkedin" ></IonIcon></a>
-                                    <a href="#" className="more">Ver más</a>
-                                </div>
-                            </div>
+      <div className="nuestro_equipo_socio">
+        <div className="socios">
+          <h3 className="titulo_directorio">Socios Estratégicos</h3>
 
-                        </figure>
-                    ))}
+          <div className="cards_directorio">
+            {socios.map((socio, index) => (
+              <figure key={index}>
+                <img
+                  src={socio.foto}
+                  alt={`${socio.datosPersonales.nombre} ${socio.datosPersonales.apellidoPaterno}`}
+                />
+
+                <div className="datos_personales">
+                  <div className="datos">
+                    <p className="name">
+                      Ing. {socio.datosPersonales.nombre}{" "}
+                      {socio.datosPersonales.apellidoPaterno}
+                    </p>
+                    <p className="puesto">{socio.puesto}</p>
+                  </div>
+
+                  <div className="more-info">
+                    <a
+                      href={socio.linkedin || "#"}
+                      className="linkedin"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`LinkedIn de ${socio.datosPersonales.nombre}`}
+                    >
+                      <IonIcon icon="logo-linkedin" />
+                    </a>
+                  </div>
                 </div>
-            </div>
+              </figure>
+            ))}
+          </div>
         </div>
-    )
-}
+      </div>
+    );
+};
 
-export default EquipoSocios
+export default EquipoSocios;
