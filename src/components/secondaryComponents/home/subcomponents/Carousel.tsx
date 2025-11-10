@@ -1,14 +1,14 @@
-import React, { useState } from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { EffectCards, Navigation, Pagination, Autoplay } from 'swiper/modules';
-import { IonIcon } from '@ionic/react';
-import type { Swiper as SwiperType } from 'swiper';
+import React, { useState } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { EffectCards, Navigation, Pagination, Autoplay } from "swiper/modules";
+import { IonIcon } from "@ionic/react";
+import type { Swiper as SwiperType } from "swiper";
 
-import 'swiper/css';
-import 'swiper/css/effect-cards';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import './styles/Carousel.scss';
+import "swiper/css";
+import "swiper/css/effect-cards";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "./styles/Carousel.scss";
 
 interface Proyecto {
   titulo: string;
@@ -26,15 +26,16 @@ const proyectos: Proyecto[] = [
     imagen: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800",
     ubicacion: "Lima, Perú",
     tipo: "Residencial",
-    estado: "En construcción"
+    estado: "En construcción",
   },
   {
     titulo: "Complejo Comercial",
     nombreProyecto: "Plaza Central",
-    imagen: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800",
+    imagen:
+      "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800",
     ubicacion: "Arequipa, Perú",
     tipo: "Comercial",
-    estado: "Finalizado"
+    estado: "Finalizado",
   },
   {
     titulo: "Puente Vehicular",
@@ -42,7 +43,7 @@ const proyectos: Proyecto[] = [
     imagen: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800",
     ubicacion: "Cusco, Perú",
     tipo: "Infraestructura",
-    estado: "En planificación"
+    estado: "En planificación",
   },
   {
     titulo: "Puente Vehicular",
@@ -50,21 +51,29 @@ const proyectos: Proyecto[] = [
     imagen: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800",
     ubicacion: "Cusco, Perú",
     tipo: "Infraestructura",
-    estado: "En planificación"
-  }
+    estado: "En planificación",
+  },
 ];
 
 const Carousel: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState(0);
-  const [swiperInstance, setSwiperInstance] = useState<SwiperType | null>(null);
+  const [swiperMobile, setSwiperMobile] = useState<SwiperType | null>(null);
+  const [swiperDesktop, setSwiperDesktop] = useState<SwiperType | null>(null);
 
   const handleSlideChange = (swiper: SwiperType) => {
     setActiveIndex(swiper.realIndex);
   };
 
-  const handleSwiperInit = (swiper: SwiperType) => {
-    setSwiperInstance(swiper);
-    // Forzar actualización después de inicializar
+  const handleSwiperMobileInit = (swiper: SwiperType) => {
+    setSwiperMobile(swiper);
+    setTimeout(() => {
+      swiper.update();
+      swiper.slideTo(swiper.activeIndex, 0);
+    }, 100);
+  };
+
+  const handleSwiperDesktopInit = (swiper: SwiperType) => {
+    setSwiperDesktop(swiper);
     setTimeout(() => {
       swiper.update();
       swiper.slideTo(swiper.activeIndex, 0);
@@ -72,7 +81,24 @@ const Carousel: React.FC = () => {
   };
 
   const goToSlide = (index: number) => {
-    swiperInstance?.slideToLoop(index);
+    swiperMobile?.slideToLoop(index);
+    swiperDesktop?.slideToLoop(index);
+  };
+
+  const handlePrev = () => {
+    if (swiperMobile && window.innerWidth < 1024) {
+      swiperMobile.slidePrev();
+    } else if (swiperDesktop) {
+      swiperDesktop.slidePrev();
+    }
+  };
+
+  const handleNext = () => {
+    if (swiperMobile && window.innerWidth < 1024) {
+      swiperMobile.slideNext();
+    } else if (swiperDesktop) {
+      swiperDesktop.slideNext();
+    }
   };
 
   const renderProjectCard = (proyecto: Proyecto) => (
@@ -91,18 +117,14 @@ const Carousel: React.FC = () => {
       <div className="project-card__content">
         <div className="project-card__header">
           <span className="project-card__tag">{proyecto.titulo}</span>
-          <h3 className="project-card__title">
-            {proyecto.nombreProyecto}
-          </h3>
+          <h3 className="project-card__title">{proyecto.nombreProyecto}</h3>
         </div>
 
         <div className="project-card__details">
           <div className="project-card__detail">
             <IonIcon icon="location-outline" />
             <div>
-              <span className="project-card__detail-label">
-                Ubicación
-              </span>
+              <span className="project-card__detail-label">Ubicación</span>
               <span className="project-card__detail-value">
                 {proyecto.ubicacion}
               </span>
@@ -122,9 +144,7 @@ const Carousel: React.FC = () => {
           <div className="project-card__detail">
             <IonIcon icon="flag-outline" />
             <div>
-              <span className="project-card__detail-label">
-                Estado
-              </span>
+              <span className="project-card__detail-label">Estado</span>
               <span className="project-card__detail-value">
                 {proyecto.estado}
               </span>
@@ -151,7 +171,7 @@ const Carousel: React.FC = () => {
                 key={index}
                 onClick={() => goToSlide(index)}
                 className={`projects-carousel__dot ${
-                  activeIndex === index ? 'active' : ''
+                  activeIndex === index ? "active" : ""
                 }`}
                 aria-label={`Ir al proyecto ${index + 1}`}
               />
@@ -170,7 +190,7 @@ const Carousel: React.FC = () => {
             }}
             modules={[EffectCards, Navigation, Pagination, Autoplay]}
             className="projects-carousel__swiper projects-carousel__swiper--mobile"
-            onSwiper={handleSwiperInit}
+            onSwiper={handleSwiperMobileInit}
             onSlideChange={handleSlideChange}
             cardsEffect={{
               slideShadows: false,
@@ -199,7 +219,7 @@ const Carousel: React.FC = () => {
             }}
             modules={[Navigation, Pagination, Autoplay]}
             className="projects-carousel__swiper projects-carousel__swiper--desktop"
-            onSwiper={handleSwiperInit}
+            onSwiper={handleSwiperDesktopInit}
             onSlideChange={handleSlideChange}
             breakpoints={{
               1024: {
@@ -222,14 +242,14 @@ const Carousel: React.FC = () => {
           {/* Navigation Arrows */}
           <div className="projects-carousel__nav">
             <button
-              onClick={() => swiperInstance?.slidePrev()}
+              onClick={handlePrev}
               className="projects-carousel__nav-btn prev"
               aria-label="Proyecto anterior"
             >
               <IonIcon icon="chevron-back-outline" />
             </button>
             <button
-              onClick={() => swiperInstance?.slideNext()}
+              onClick={handleNext}
               className="projects-carousel__nav-btn next"
               aria-label="Siguiente proyecto"
             >
@@ -240,9 +260,13 @@ const Carousel: React.FC = () => {
 
         {/* Project Counter */}
         <div className="projects-carousel__counter">
-          <span className="current">{String(activeIndex + 1).padStart(2, '0')}</span>
+          <span className="current">
+            {String(activeIndex + 1).padStart(2, "0")}
+          </span>
           <span className="separator">/</span>
-          <span className="total">{String(proyectos.length).padStart(2, '0')}</span>
+          <span className="total">
+            {String(proyectos.length).padStart(2, "0")}
+          </span>
         </div>
       </div>
     </div>

@@ -1,13 +1,15 @@
 // Projects Carousel - Responsive Design
 .projects-carousel {
   width: 100%;
-  padding: 1rem 1rem;
+  padding: 1rem 0;
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden; // Prevenir scroll horizontal
 
   @media (max-width: 768px) {
     min-height: auto;
+    padding: 1rem 0;
   }
 
   &__container {
@@ -16,6 +18,7 @@
     display: flex;
     flex-direction: column;
     gap: 3rem;
+    overflow: hidden; // Prevenir scroll horizontal
 
     @media (max-width: 768px) {
       gap: 2rem;
@@ -29,6 +32,7 @@
     max-width: 100%;
     margin: 0 auto;
     padding: 2rem 0;
+    overflow: visible; // Permitir que swiper maneje el overflow
 
     @media (max-width: 1023px) {
       max-width: 500px;
@@ -94,6 +98,7 @@
   &__swiper {
     width: 100%;
     padding-bottom: 4rem;
+    overflow: visible; // Importante para cards effect
 
     @media (max-width: 1023px) {
       padding-bottom: 3rem;
@@ -114,6 +119,12 @@
 
       @media (max-width: 480px) {
         height: 550px;
+      }
+
+      // Fix para evitar scroll horizontal en mobile
+      .swiper-wrapper {
+        padding-left: 0;
+        padding-right: 0;
       }
     }
 
@@ -152,12 +163,22 @@
     width: 100%;
     top: 50%;
     transform: translateY(-50%);
-    z-index: 10;
+    z-index: 20;
     pointer-events: none;
-    padding: 0 1rem;
+    left: 0;
 
-    @media (max-width: 768px) {
-      padding: 0;
+    @media (min-width: 1024px) {
+      padding: 0 1rem;
+    }
+
+    @media (max-width: 1023px) {
+      padding: 0 0.5rem;
+      left: 0;
+      width: 100%;
+    }
+
+    @media (max-width: 480px) {
+      padding: 0 0.25rem;
     }
   }
 
@@ -175,10 +196,22 @@
     cursor: pointer;
     transition: all 0.3s ease;
     pointer-events: all;
+    z-index: 25;
+    position: relative;
 
     @media (max-width: 768px) {
       width: 40px;
       height: 40px;
+    }
+
+    @media (max-width: 480px) {
+      width: 36px;
+      height: 36px;
+    }
+
+    @media (max-width: 380px) {
+      width: 32px;
+      height: 32px;
     }
 
     ion-icon {
@@ -186,6 +219,14 @@
 
       @media (max-width: 768px) {
         font-size: 20px;
+      }
+
+      @media (max-width: 480px) {
+        font-size: 18px;
+      }
+
+      @media (max-width: 380px) {
+        font-size: 16px;
       }
     }
 
@@ -196,43 +237,18 @@
       transform: scale(1.05);
     }
 
+    &:active {
+      transform: scale(0.95);
+    }
+
     &.prev {
-      @media (min-width: 1024px) {
-        transform: translateX(0);
-      }
-
-      @media (max-width: 1023px) {
-        transform: translateX(-150%);
-      }
-
-      @media (max-width: 768px) {
-        transform: translateX(-120%);
-      }
-
-      @media (max-width: 480px) {
-        transform: translateX(-100%);
-      }
+      left: 0;
     }
 
     &.next {
-      @media (min-width: 1024px) {
-        transform: translateX(0);
-      }
-
-      @media (max-width: 1023px) {
-        transform: translateX(150%);
-      }
-
-      @media (max-width: 768px) {
-        transform: translateX(120%);
-      }
-
-      @media (max-width: 480px) {
-        transform: translateX(100%);
-      }
+      right: 0;
     }
   }
-
   // Counter
   &__counter {
     display: flex;
@@ -499,4 +515,3 @@
 .projects-carousel__container {
   animation: fadeInUp 0.8s ease-out;
 }
-
