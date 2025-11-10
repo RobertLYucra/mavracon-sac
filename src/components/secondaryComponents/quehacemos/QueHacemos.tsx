@@ -21,7 +21,7 @@ const QueHacemos = () => {
                   completo de un proyecto, desde el planeamiento y constructabilidad, construcción, 
                   operación, transferencia al cliente, hasta el cierre de proyecto."/>
       </div>
-      <div className="mt-10 mb-28">
+      <div className="mt-10 mb-10">
         <Actividades />
       </div>
       <div className="hacemos-main mt-10" >
