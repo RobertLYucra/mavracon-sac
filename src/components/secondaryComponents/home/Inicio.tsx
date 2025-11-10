@@ -6,7 +6,6 @@ import VideoImage from "./images/video-image.jpg"
 import { IonIcon } from '@ionic/react';
 import Proyectos from './subcomponents/Proyectos';
 import Impacto from './subcomponents/Impacto';
-import VideoPortada from '../../../images/portada-video.mp4'
 import ProyectoGlobal from '../proyectos/subcomponentes/ProyectoGlobal';
 
 const Inicio = () => {
@@ -18,7 +17,7 @@ const Inicio = () => {
       <div className="index-panel">
         <div className="banner_home">
           <video
-            src={VideoPortada}
+            src="https://www.stracon.com/site/media/PRINCIPAL-COMPRIMIDO.mp4"
             id="video_background"
             autoPlay
             muted

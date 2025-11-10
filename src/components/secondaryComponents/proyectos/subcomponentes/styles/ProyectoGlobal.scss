@@ -78,14 +78,11 @@
     .imagen {
       position: relative;
       width: 100%;
-      max-width: 450px;
       display: flex;
       justify-content: center;
 
       .mapa {
-        width: 100%;
         height: auto;
-        max-width: 350px;
         object-fit: contain;
         filter: drop-shadow(0 8px 24px rgba(0, 0, 0, 0.15));
         opacity: 0.95;
