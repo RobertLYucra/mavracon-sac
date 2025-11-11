@@ -74,14 +74,17 @@ const Navbar = () => {
           <div className="right">
             <div className={`nav-ul ${isOpen ? "open" : ""}`}>
               <div className={`nav-ul__panel ${isOpen ? "open" : ""}`}>
-                {/* Botón cerrar dentro del panel */}
-                <button
-                  onClick={() => setIsOpen(false)}
-                  className="close-button"
-                  aria-label="Cerrar menú"
-                >
-                  <IonIcon className="close-icon" icon={closeOutline} />
-                </button>
+                {/* Header con logo y botón cerrar */}
+                <div className="menu-header">
+                  <img src={Logo} className="logo-mobile" alt="logo" />
+                  <button
+                    onClick={() => setIsOpen(false)}
+                    className="close-button"
+                    aria-label="Cerrar menú"
+                  >
+                    <IonIcon className="close-icon" icon={closeOutline} />
+                  </button>
+                </div>
 
                 <ul className="links">
                   {navLinks.map((link) => (
@@ -101,7 +104,7 @@ const Navbar = () => {
                     className="contacto"
                     onClick={() => setIsOpen(false)}
                   >
-                    CONTACTO
+                    CONTÁCTANOS
                   </a>
                 </div>
               </div>
