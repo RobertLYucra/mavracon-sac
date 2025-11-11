@@ -11,7 +11,7 @@ export const ProjectCardMinimalista = ({
 }) => {
   return (
     <div className="proyect_card">
-      <a href="#" className="redirect_proyecto">
+      <figure className="redirect_proyecto">
         <div className="card-image-wrapper">
           <img
             src={proyecto.imagen}
@@ -55,12 +55,12 @@ export const ProjectCardMinimalista = ({
             </div>
           </div>
 
-          <button className="card-cta">
+          <a  href="#" className="card-cta">
             <span>Ver proyecto</span>
             <ArrowRight />
-          </button>
+          </a>
         </div>
-      </a>
+      </figure>
     </div>
   );
 };

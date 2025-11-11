@@ -17,15 +17,6 @@
     .card-image {
       transform: scale(1.08);
     }
-
-    .card-cta {
-      background: var(--secondary-color);
-      transform: translateY(-1px);
-
-      svg {
-        transform: translateX(3px);
-      }
-    }
   }
 }
 
@@ -160,7 +151,10 @@
   cursor: pointer;
   transition: all 0.3s ease;
   width: 100%;
-
+  &:hover {
+    background: var(--secondary-color);
+    transform: translateY(-1px);
+  }
   svg {
     width: 16px;
     height: 16px;
@@ -395,12 +389,11 @@
   .list-type p {
     font-size: 0.8rem;
   }
-  .card-content{
+  .card-content {
     padding: 15px;
-    .card-details{
+    .card-details {
       padding: 10px 5px;
     }
-
   }
 
   .card-image-wrapper {

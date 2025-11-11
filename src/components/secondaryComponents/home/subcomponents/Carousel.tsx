@@ -57,6 +57,8 @@ const Carousel: React.FC = () => {
     }
   };
 
+  const proyectosFiltrados = proyectos.slice(0, 5);
+
   const renderProjectCard = (proyecto: Proyecto) => (
     <div className="project-card">
       {/* Image Background */}
@@ -122,7 +124,7 @@ const Carousel: React.FC = () => {
         <div className="projects-carousel__wrapper">
           {/* Navigation Dots - Top */}
           <div className="projects-carousel__dots">
-            {proyectos.map((_, index) => (
+            {proyectosFiltrados.map((_, index) => (
               <button
                 key={index}
                 onClick={() => goToSlide(index)}
@@ -154,7 +156,7 @@ const Carousel: React.FC = () => {
               perSlideRotate: 2,
             }}
           >
-            {proyectos.map((proyecto, index) => (
+            {proyectosFiltrados.map((proyecto, index) => (
               <SwiperSlide key={`mobile-${index}`}>
                 {renderProjectCard(proyecto)}
               </SwiperSlide>
@@ -188,7 +190,7 @@ const Carousel: React.FC = () => {
               },
             }}
           >
-            {proyectos.map((proyecto, index) => (
+            {proyectosFiltrados.map((proyecto, index) => (
               <SwiperSlide key={`desktop-${index}`}>
                 {renderProjectCard(proyecto)}
               </SwiperSlide>
@@ -221,7 +223,7 @@ const Carousel: React.FC = () => {
           </span>
           <span className="separator">/</span>
           <span className="total">
-            {String(proyectos.length).padStart(2, "0")}
+            {String(proyectosFiltrados.length).padStart(2, "0")}
           </span>
         </div>
       </div>
