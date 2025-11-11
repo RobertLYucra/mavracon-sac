@@ -420,6 +420,8 @@ nav.scrolled {
         font-family: var(--primary-font);
         margin: 0;
         transition: all 0.3s ease;
+        margin-bottom: 50px;
+        margin-top: 25px;
 
         &:hover {
           background: var(--secondary-color);
