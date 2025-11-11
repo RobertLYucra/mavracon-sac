@@ -66,7 +66,7 @@ export const proyectos: Proyecto[] = [
       pronvincia: "Islay",
       distrito: "Cocachacra",
     },
-    tipo: "Extracción minera",
+    tipo: "Servicios de construcción",
     estado: "Planificado",
     imagen: imagen1,
     alcance: "Extracción de cobre a cielo abierto",

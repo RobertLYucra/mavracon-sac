@@ -13,8 +13,6 @@ const Contacto = () => {
         <NextPrev
           prevTitle="SOSTENIBILIDAD"
           prevLink="/sostenibilidad"
-          nextTitle="INICIO"
-          nextLink="/"
         />
       </div>
     </div>

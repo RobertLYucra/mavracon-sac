@@ -3,12 +3,25 @@ import { proyectos } from "../interfaces/Proyectos";
 import "./styles/ProyectCard.scss";
 import { ProjectCardMinimalista, ProjectCardList } from "./Card";
 import { IonIcon } from "@ionic/react";
-import { gridOutline, listOutline } from "ionicons/icons";
+import { gridOutline, listOutline, chevronDownOutline } from "ionicons/icons";
 
 const ProyectosCard = () => {
   const [viewMode, setViewMode] = useState<"grid" | "list">("grid");
   const [tipoFilter, setTipoFilter] = useState("Todos");
   const [paisFilter, setPaisFilter] = useState("Todos");
+  const [showAll, setShowAll] = useState(false);
+
+  // Función para manejar el toggle de ver más/menos
+  const handleToggleShowAll = () => {
+    if (showAll) {
+      // Si está mostrando todo, hacer scroll suave hacia arriba
+      window.scrollTo({
+        top: 150,
+        behavior: "smooth",
+      });
+    }
+    setShowAll(!showAll);
+  };
 
   // Extraer tipos y países únicos
   const tipos = ["Todos", ...Array.from(new Set(proyectos.map((p) => p.tipo)))];
@@ -24,6 +37,11 @@ const ProyectosCard = () => {
       paisFilter === "Todos" || proyecto.ubicacion.departamento === paisFilter;
     return matchTipo && matchPais;
   });
+
+  // Limitar a 3 proyectos si showAll es false
+  const proyectosMostrados = showAll
+    ? proyectosFiltrados
+    : proyectosFiltrados.slice(0, 3);
 
   return (
     <>
@@ -53,7 +71,7 @@ const ProyectosCard = () => {
 
             {/* Filtro País */}
             <div className="filter-group">
-              <label className="filter-label">PAÍS</label>
+              <label className="filter-label">UBICACIÓN</label>
               <select
                 className="filter-select"
                 value={paisFilter}
@@ -88,38 +106,31 @@ const ProyectosCard = () => {
         </div>
       </div>
 
-      {/* Grid/Lista de proyectos */}
+      {/* Header de lista (solo visible en desktop) */}
       {viewMode === "list" && proyectosFiltrados.length > 0 && (
-        <div className="max-w-[1400px] mx-auto px-8 pb-4">
-          <div className="flex items-center py-4 px-4 gap-6 border-b border-white/20">
-            <div className="flex-shrink-0 w-16"></div>
-            <div className="flex-1 min-w-[200px]">
-              <span className="text-sm font-bold text-white uppercase tracking-wider">
-                CLIENTE
-              </span>
+        <div className="list-header">
+          <div className="list-header-content">
+            <div className="list-header-index"></div>
+            <div className="list-header-client">
+              <span>CLIENTE</span>
             </div>
-            <div className="flex-1 min-w-[180px]">
-              <span className="text-sm font-bold text-white uppercase tracking-wider">
-                PROYECTO
-              </span>
+            <div className="list-header-project">
+              <span>PROYECTO</span>
             </div>
-            <div className="flex-1 min-w-[200px]">
-              <span className="text-sm font-bold text-white uppercase tracking-wider">
-                TIPO
-              </span>
+            <div className="list-header-type">
+              <span>TIPO</span>
             </div>
-            <div className="flex-shrink-0 min-w-[120px]">
-              <span className="text-sm font-bold text-white uppercase tracking-wider">
-                ESTADO
-              </span>
+            <div className="list-header-status">
+              <span>ESTADO</span>
             </div>
-            <div className="flex-shrink-0 w-10"></div>
+            <div className="list-header-action"></div>
           </div>
         </div>
       )}
 
+      {/* Grid/Lista de proyectos */}
       <div className={`proyectos-containers ${viewMode}`}>
-        {proyectosFiltrados.map((proyecto, index) =>
+        {proyectosMostrados.map((proyecto, index) =>
           viewMode === "grid" ? (
             <ProjectCardMinimalista key={index} proyecto={proyecto} />
           ) : (
@@ -135,6 +146,19 @@ const ProyectosCard = () => {
       {proyectosFiltrados.length === 0 && (
         <div className="no-results">
           <p>No se encontraron proyectos con los filtros seleccionados</p>
+        </div>
+      )}
+
+      {/* Botón Ver más */}
+      {proyectosFiltrados.length > 3 && (
+        <div className="ver-mas-section">
+          <button className="ver-mas-btn" onClick={handleToggleShowAll}>
+            <span>{showAll ? "Ver menos" : "Ver más proyectos"}</span>
+            <IonIcon
+              icon={chevronDownOutline}
+              className={`ver-mas-icon ${showAll ? "rotated" : ""}`}
+            />
+          </button>
         </div>
       )}
     </>
