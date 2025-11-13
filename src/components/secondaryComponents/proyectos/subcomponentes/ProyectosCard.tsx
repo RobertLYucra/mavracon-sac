@@ -1,15 +1,28 @@
 import { useState } from "react";
-import { proyectos } from "../interfaces/Proyectos";
+import { proyectos, Proyecto } from "../interfaces/Proyectos";
 import "./styles/ProyectCard.scss";
 import { ProjectCardMinimalista, ProjectCardList } from "./Card";
 import { IonIcon } from "@ionic/react";
 import { gridOutline, listOutline, chevronDownOutline } from "ionicons/icons";
+import ProyectoModal from "./ProyectoModal";
 
 const ProyectosCard = () => {
   const [viewMode, setViewMode] = useState<"grid" | "list">("grid");
   const [tipoFilter, setTipoFilter] = useState("Todos");
   const [paisFilter, setPaisFilter] = useState("Todos");
   const [showAll, setShowAll] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedProyecto, setSelectedProyecto] = useState<Proyecto | null>(null);
+
+  const handleOpenModal = (proyecto: Proyecto) => {
+    setSelectedProyecto(proyecto);
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+    setSelectedProyecto(null);
+  };
 
   // Función para manejar el toggle de ver más/menos
   const handleToggleShowAll = () => {
@@ -132,12 +145,17 @@ const ProyectosCard = () => {
       <div className={`proyectos-containers ${viewMode}`}>
         {proyectosMostrados.map((proyecto, index) =>
           viewMode === "grid" ? (
-            <ProjectCardMinimalista key={index} proyecto={proyecto} />
+            <ProjectCardMinimalista 
+              key={index} 
+              proyecto={proyecto}
+              onOpenModal={() => handleOpenModal(proyecto)}
+            />
           ) : (
             <ProjectCardList
               key={index}
               proyecto={proyecto}
               index={index + 1}
+              onOpenModal={() => handleOpenModal(proyecto)}
             />
           )
         )}
@@ -160,6 +178,15 @@ const ProyectosCard = () => {
             />
           </button>
         </div>
+      )}
+
+      {/* Modal */}
+      {selectedProyecto && (
+        <ProyectoModal
+          proyecto={selectedProyecto}
+          isOpen={isModalOpen}
+          onClose={handleCloseModal}
+        />
       )}
     </>
   );

@@ -1,57 +1,70 @@
 .innovacion-cards-detalle {
-    display: flex;
-    align-items: stretch;
-    justify-content: center;
-    gap: 1.5rem;
-    margin: 3rem auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 4rem auto;
     max-width: 1400px;
     padding: 0 2rem;
 
     figure {
         position: relative;
         flex: 1;
-        min-height: 280px;
-        background: linear-gradient(135deg, rgba(16, 31, 59, 0.9) 0%, rgba(10, 20, 40, 0.95) 100%);
-        backdrop-filter: blur(10px);
-        padding: 2rem;
-        border-radius: 12px;
-        border: 1px solid rgba(255, 255, 255, 0.08);
-        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        min-height: 320px;
+        background: linear-gradient(145deg, var(--body-bg) 0%, var(--cards-bg) 100%);
+        padding: 25px;
+        border-radius: 20px;
+        border: 1px solid rgba(244, 37, 52, 0.15);
+        transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
         overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
 
-        // Efecto de borde animado
+        // Brillo superior decorativo
         &::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
-            width: 100%;
-            height: 3px;
+            right: 0;
+            height: 5px;
             background: linear-gradient(90deg, 
                 transparent 0%, 
                 var(--secondary-color) 50%, 
                 transparent 100%
             );
-            transform: translateX(-100%);
-            transition: transform 0.6s ease;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        // Círculo decorativo
+        &::after {
+            content: '';
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            width: 180px;
+            height: 180px;
+            background: radial-gradient(circle, var(--secondary-color) 0%, transparent 70%);
+            opacity: 0.1;
+            border-radius: 50%;
+            transition: all 0.5s ease;
         }
 
         &:hover {
-            transform: translateY(-2px);
-            border-color: rgba(244, 37, 52, 0.3);
-            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3),
-                        0 0 0 1px rgba(244, 37, 52, 0.1);
-            background: linear-gradient(135deg, rgba(20, 35, 63, 0.95) 0%, rgba(15, 25, 45, 1) 100%);
+            transform: scale(1.02);
+
+            background: linear-gradient(145deg, var(--cards-bg) 0%, var(--navbar-bg) 100%);
 
             &::before {
-                transform: translateX(0);
+                opacity: 1;
             }
 
-            .contador {
-                transform: scale(1.1);
-                color: var(--secondary-color);
-                text-shadow: 0 0 20px rgba(244, 37, 52, 0.5);
+            &::after {
+                transform: translate(-20px, 20px) scale(1.2);
+                opacity: 0.2;
             }
+
 
             .titulo {
                 color: var(--secondary-color);
@@ -59,29 +72,38 @@
         }
 
         .contador {
-            font-size: 3rem;
-            font-weight: 800;
-            color: rgba(244, 37, 52, 0.6);
-            margin-bottom: 1rem;
+            position: relative;
+            font-size: 4rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--secondary-color) 0%, rgba(244, 37, 52, 0.4) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
             line-height: 1;
-            transition: all 0.4s ease;
+            transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
             display: inline-block;
+            z-index: 1;
         }
 
         .titulo {
-            font-size: 1.25rem;
-            font-weight: 600;
+            position: relative;
+            font-size: 1.4rem;
+            font-weight: 700;
             color: var(--text-primary-color);
             margin-bottom: 1rem;
-            line-height: 1.4;
-            transition: color 0.3s ease;
+            line-height: 1.3;
+            transition: all 0.4s ease;
+            z-index: 1;
         }
 
         p {
-            font-size: 0.95rem;
-            line-height: 1.6;
-            color: rgba(255, 255, 255, 0.7);
+            position: relative;
+            font-size: 1rem;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.75);
             margin: 0;
+            z-index: 1;
         }
     }
 }

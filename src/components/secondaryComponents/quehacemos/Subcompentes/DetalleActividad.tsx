@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { IonIcon } from '@ionic/react';
+import { X } from 'lucide-react';
 import { Actividades } from '../interfaces/QueHacemosPrincipal';
 import './styles/DetalleActividad.scss';
 
@@ -13,53 +14,73 @@ const DetalleActividad = ({ actividad, onClose, isOpen }: DetalleActividadProps)
   
   useEffect(() => {
     if (isOpen) {
-      // Desactivar scroll del body
       document.body.style.overflow = 'hidden';
     } else {
-      // Reactivar scroll del body
       document.body.style.overflow = '';
     }
 
-    // Cleanup: asegurar que el scroll se reactive al desmontar
     return () => {
       document.body.style.overflow = '';
     };
   }, [isOpen]);
 
+  const handleBackdropClick = (e: React.MouseEvent) => {
+    if (e.target === e.currentTarget) {
+      onClose();
+    }
+  };
+
+  if (!isOpen) return null;
+
   return (
-    <div className={`detalle-overlay ${isOpen ? 'open' : ''}`} onClick={onClose}>
-      <div className={`detalle-container ${isOpen ? 'open' : ''}`} onClick={(e) => e.stopPropagation()}>
-        <div className="detalle-content">
-          <button className="volver-btn" onClick={onClose}>
-            <IonIcon icon="arrow-back" />
-            <span>VOLVER</span>
-          </button>
+    <div className="detalle-overlay" onClick={handleBackdropClick}>
+      <div className="detalle-modal">
+        <button className="modal-close" onClick={onClose} aria-label="Cerrar">
+          <X />
+        </button>
 
-          <div className="detalle-body">
-            <div className="detalle-left">
-              <img src={actividad.imagenDetalle || actividad.imagen} alt={actividad.actividad} />
+        <div className="modal-content">
+
+          {/* Columna Izquierda - Imagen */}
+          <div className="modal-left">
+            <div className="detalle-image-wrapper">
+              <img 
+                src={actividad.imagenDetalle || actividad.imagen} 
+                alt={actividad.actividad}
+                className="detalle-image"
+              />
+            </div>
+          </div>
+
+          {/* Columna Derecha - Información */}
+          <div className="modal-right">
+            <div className="modal-header">
+              <div className="header-icon">
+                <IonIcon icon={actividad.icono} />
+              </div>
+              <h2 className="modal-title">{actividad.actividad}</h2>
             </div>
 
-            <div className="detalle-right">
-              <div className="detalle-header">
-                <IonIcon className="icon-detalle" icon={actividad.icono} />
-                <h2>{actividad.actividad}</h2>
-              </div>
+            <div className="modal-section">
+              <p className="section-text">{actividad.descripcion}</p>
+            </div>
 
-              <p className="descripcion-completa">{actividad.descripcion}</p>
-
-              <div className="detalles-lista">
-                {actividad.detalles?.map((detalle, index) => (
-                  <div key={index} className="detalle-item">
-                    <span className="numero">{detalle.numero}</span>
-                    <div className="detalle-info">
-                      <h3>{detalle.titulo}</h3>
-                      {detalle.descripcion && <p>{detalle.descripcion}</p>}
+            {actividad.detalles && actividad.detalles.length > 0 && (
+              <div className="modal-section">
+                <h3 className="section-title">Servicios Incluidos</h3>
+                <div className="detalles-grid">
+                  {actividad.detalles.map((detalle, index) => (
+                    <div key={index} className="detalle-card">
+                      <div className="detalle-numero">{detalle.numero}</div>
+                      <div className="detalle-content">
+                        <h4>{detalle.titulo}</h4>
+                        {detalle.descripcion && <p>{detalle.descripcion}</p>}
+                      </div>
                     </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
-            </div>
+            )}
           </div>
         </div>
       </div>

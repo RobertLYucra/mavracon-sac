@@ -6,8 +6,10 @@ import { IonIcon } from "@ionic/react";
 // Componente para vista Grid
 export const ProjectCardMinimalista = ({
   proyecto,
+  onOpenModal,
 }: {
   proyecto: Proyecto;
+  onOpenModal: () => void;
 }) => {
   return (
     <div className="proyect_card">
@@ -55,10 +57,10 @@ export const ProjectCardMinimalista = ({
             </div>
           </div>
 
-          <a  href="#" className="card-cta">
+          <button onClick={onOpenModal} className="card-cta">
             <span>Ver proyecto</span>
             <ArrowRight />
-          </a>
+          </button>
         </div>
       </figure>
     </div>
@@ -69,12 +71,14 @@ export const ProjectCardMinimalista = ({
 export const ProjectCardList = ({
   proyecto,
   index,
+  onOpenModal,
 }: {
   proyecto: Proyecto;
   index: number;
+  onOpenModal: () => void;
 }) => {
   return (
-    <a className="project-card-list" href="#">
+    <div className="project-card-list" onClick={onOpenModal}>
       <div className="list-content">
         <div className="list-index">
           <span>{String(index).padStart(2, "0")}</span>
@@ -106,6 +110,6 @@ export const ProjectCardList = ({
           </button>
         </div>
       </div>
-    </a>
+    </div>
   );
 };

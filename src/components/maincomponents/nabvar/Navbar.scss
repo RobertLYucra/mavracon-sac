@@ -38,7 +38,6 @@ body {
     &:hover {
       background-color: var(--secondary-color);
       color: var(--text-primary-color);
-      transform: translateY(-1px);
       box-shadow: 0 4px 12px rgba(244, 37, 52, 0.3);
     }
 
@@ -119,10 +118,6 @@ nav.scrolled {
       a {
         padding: 8px 14px;
         border-radius: 6px;
-
-        &:hover {
-          background: rgba(255, 255, 255, 0.08);
-        }
       }
     }
   }
@@ -197,7 +192,6 @@ nav.scrolled {
       }
 
       &:hover {
-        color: var(--secondary-color);
 
         &::before {
           width: 80%;
