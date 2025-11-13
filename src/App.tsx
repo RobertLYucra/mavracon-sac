@@ -9,6 +9,7 @@ import QuienesSomos from "./components/secondaryComponents/quienesSomos/QuienesS
 import Footer from "./components/maincomponents/footer/Footer";
 import Sostenenibilidad from "./components/secondaryComponents/sostenibilidad/Sostenenibilidad";
 import Contacto from "./components/secondaryComponents/Contacto/Contacto";
+import NotFound from "./components/maincomponents/NotFound/NotFound";
 
 function App() {
 
@@ -25,6 +26,7 @@ function App() {
           <Route path="/noticias" element={<Inicio />} ></Route>
           <Route path="/sostenibilidad" element={<Sostenenibilidad />} ></Route>
           <Route path="/contacto" element={<Contacto/>}></Route>
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </div>
     </div>

@@ -6,7 +6,7 @@ body {
 
 .logo {
   width: 200px;
-  transition: 0.5s ease;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   margin-left: 20px;
 }
 
@@ -30,13 +30,20 @@ body {
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    transition: 0.5s ease;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     border: 1px solid var(--secondary-color);
-    padding: 10px;
+    padding: 10px 18px;
+    border-radius: 4px;
 
     &:hover {
       background-color: var(--secondary-color);
       color: var(--text-primary-color);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(244, 37, 52, 0.3);
+    }
+
+    &:active {
+      transform: translateY(0);
     }
   }
 }
@@ -70,22 +77,60 @@ body {
 nav {
   background-color: transparent;
   width: 100%;
-  padding-top: 5px;
-  padding-bottom: 10px;
+  padding: 20px 0;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  transition: background-color 0.5s ease;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   z-index: 10;
   overflow: visible;
+
+  /* Animación de entrada al cargar */
+  animation: navFadeIn 0.8s ease-out;
+}
+
+@keyframes navFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 nav.scrolled {
-  background-color: rgba(10, 20, 38, 0.9);
-  backdrop-filter: blur(16px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-  padding: 0.75rem 0;
+  background-color: rgba(10, 20, 38, 0.95);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 12px 0;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+
+  .logo {
+    width: 170px;
+    transform: scale(0.95);
+    transition: 0.5s ease;
+  }
+
+  .links {
+    .etiquetas {
+      a {
+        padding: 8px 14px;
+        border-radius: 6px;
+
+        &:hover {
+          background: rgba(255, 255, 255, 0.08);
+        }
+      }
+    }
+  }
+
+  .contacto {
+    padding: 8px 16px;
+    box-shadow: 0 2px 8px rgba(244, 37, 52, 0.2);
+  }
 }
 
 .main-nav {
@@ -94,6 +139,7 @@ nav.scrolled {
   align-items: center;
   max-width: 100%;
   padding: 0 clamp(10px, 2vw, 20px);
+  transition: all 0.3s ease;
 
   .menu {
     display: none;
@@ -111,20 +157,20 @@ nav.scrolled {
 .links {
   display: flex;
   margin-right: 25px;
-  transition: 0.5s ease;
+  transition: all 0.3s ease;
   justify-content: center;
   align-items: center;
 
   .etiquetas {
     color: var(--text-primary-color);
     text-decoration: none;
-    margin: 15px;
+    margin: 0 8px;
     font-family: var(--primary-font);
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    transition: 0.5s ease;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
     .icon {
       display: none;
@@ -135,6 +181,8 @@ nav.scrolled {
       position: relative;
       color: var(--text-primary-color);
       text-decoration: none;
+      padding: 10px 16px;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
       &::before {
         content: "";
@@ -142,26 +190,35 @@ nav.scrolled {
         width: 0;
         height: 2px;
         background-color: var(--secondary-color);
-        top: 105%;
-        transition: 0.3s;
+        bottom: 4px;
+        left: 50%;
+        transform: translateX(-50%);
+        transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
       }
 
-      &:hover::before {
-        width: 100%;
+      &:hover {
+        color: var(--secondary-color);
+
+        &::before {
+          width: 80%;
+        }
       }
     }
   }
 
   .active {
     a {
+      color: var(--secondary-color);
+
       &::before {
         content: "";
         position: absolute;
-        width: 100%;
+        width: 80%;
         height: 2px;
         background-color: var(--secondary-color);
-        top: 105%;
-        transition: 0.3s;
+        bottom: 4px;
+        left: 50%;
+        transform: translateX(-50%);
       }
     }
   }
@@ -171,16 +228,24 @@ nav.scrolled {
   .links {
     .etiquetas {
       font-size: 14px;
-      margin: 10px;
+      margin: 0px;
+
+      a {
+        padding: 8px 12px;
+      }
     }
   }
 
   .logo {
-    width: 200px;
+    width: 180px;
   }
 
   .contacto {
     font-size: 14px;
+  }
+
+  nav.scrolled .logo {
+    width: 160px;
   }
 }
 
@@ -188,6 +253,10 @@ nav.scrolled {
   .links {
     .etiquetas {
       font-size: 12px;
+
+      a {
+        padding: 8px 10px;
+      }
     }
   }
 
@@ -197,6 +266,10 @@ nav.scrolled {
 
   .logo {
     width: 180px;
+  }
+
+  nav.scrolled .logo {
+    width: 150px;
   }
 }
 
