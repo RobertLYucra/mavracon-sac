@@ -1,17 +1,13 @@
-// ============================================
-// PROJECTS CAROUSEL - BASE STYLES
-// ============================================
-
 .projects-carousel {
   width: 100%;
-  padding: 1rem 0;
+  padding: 4rem 0;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
 
   &__container {
-    max-width: 1300px;
+    max-width: 1400px;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -29,7 +25,7 @@
     overflow: visible;
   }
 
-  // Navigation Dots
+  /* Navigation Dots */
   &__dots {
     display: flex;
     justify-content: center;
@@ -61,45 +57,30 @@
     }
   }
 
-  // Swiper Base
+  /* Swiper */
   &__swiper {
     width: 100%;
     padding-bottom: 4rem;
     overflow: visible;
 
-    &--mobile {
-      display: none;
-      height: 700px;
+    .swiper-slide {
+      transition: all 0.5s ease;
+      opacity: 0.5;
+      transform: scale(0.85);
 
-      .swiper-wrapper {
-        padding-left: 0;
-        padding-right: 0;
-      }
-    }
+      &-active {
+        opacity: 1;
+        transform: scale(1);
+        z-index: 10;
 
-    &--desktop {
-      display: block;
-      max-height: 850px;
-
-      .swiper-slide {
-        transition: all 0.5s ease;
-        opacity: 0.5;
-        transform: scale(0.85);
-
-        &-active {
-          opacity: 1;
-          transform: scale(1);
-          z-index: 10;
-
-          .project-card {
-            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
-          }
+        .project-card {
+          box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
         }
       }
     }
   }
 
-  // Navigation Buttons
+  /* Navigation Buttons */
   &__nav {
     display: flex;
     justify-content: space-between;
@@ -130,8 +111,9 @@
     z-index: 25;
     position: relative;
 
-    ion-icon {
-      font-size: 24px;
+    svg {
+      width: 24px;
+      height: 24px;
     }
 
     &:hover {
@@ -154,7 +136,7 @@
     }
   }
 
-  // Counter
+  /* Counter */
   &__counter {
     display: flex;
     justify-content: center;
@@ -178,10 +160,7 @@
   }
 }
 
-// ============================================
-// PROJECT CARD - BASE STYLES
-// ============================================
-
+/* PROJECT CARD */
 .project-card {
   width: 100%;
   height: 100%;
@@ -191,6 +170,12 @@
   position: relative;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
   border: 1px solid rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    border-color: rgba(244, 37, 52, 0.3);
+  }
 
   &__image-wrapper {
     position: relative;
@@ -267,22 +252,23 @@
     align-items: flex-start;
     gap: 1rem;
 
-    ion-icon {
-      font-size: 22px;
+    .detail-icon {
+      width: 20px;
+      height: 20px;
       color: var(--secondary-color);
       margin-top: 2px;
       flex-shrink: 0;
     }
-
-    > div {
-      display: flex;
-      flex-direction: column;
-      gap: 0.25rem;
-      flex: 1;
-    }
   }
 
-  &__detail-label {
+  .detail-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    flex: 1;
+  }
+
+  .detail-label {
     font-size: 0.75rem;
     font-weight: 600;
     color: rgba(255, 255, 255, 0.5);
@@ -290,7 +276,7 @@
     letter-spacing: 0.5px;
   }
 
-  &__detail-value {
+  .detail-value {
     font-size: 0.9375rem;
     font-weight: 500;
     color: var(--text-primary-color);
@@ -303,7 +289,7 @@
     gap: 0.75rem;
     padding: 1rem 2rem;
     background: rgba(244, 37, 52, 0.12);
-    border: none;
+    border: 1px solid rgba(244, 37, 52, 0.25);
     border-radius: 12px;
     color: var(--text-primary-color);
     font-size: 1rem;
@@ -311,17 +297,18 @@
     cursor: pointer;
     transition: all 0.3s ease;
 
-    ion-icon {
-      font-size: 20px;
+    .cta-icon {
+      width: 20px;
+      height: 20px;
       transition: transform 0.3s ease;
     }
 
     &:hover {
-      background: #a11720;
+      background: var(--secondary-color);
       box-shadow: 0 6px 24px rgba(244, 37, 52, 0.4);
       transform: translateY(-2px);
 
-      ion-icon {
+      .cta-icon {
         transform: translateX(4px);
       }
     }
@@ -332,20 +319,7 @@
   }
 }
 
-// ============================================
-// SWIPER OVERRIDES
-// ============================================
-
-.swiper-slide {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-// ============================================
-// ANIMATIONS
-// ============================================
-
+/* ANIMATIONS */
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -357,35 +331,25 @@
   }
 }
 
-// ============================================
-// MEDIA QUERIES
-// ============================================
-
-// Tablets y móviles grandes (max-width: 1023px)
-@media (max-width: 1023px) {
+/* RESPONSIVE */
+@media (max-width: 1024px) {
   .projects-carousel {
     &__wrapper {
-      max-width: 500px;
+      max-width: 100%;
     }
 
-    &__swiper--mobile {
-      height: 700px;
-    }
     &__swiper {
+      padding: 0 1rem;
       padding-bottom: 3rem;
 
-      &--mobile {
-        display: block;
-      }
-
-      &--desktop {
-        display: none;
+      .swiper-slide {
+        opacity: 1;
+        transform: scale(1);
       }
     }
 
     &__nav {
       padding: 0 0.5rem;
-      margin-top: 15px;
     }
   }
 
@@ -393,27 +357,19 @@
     &__details {
       gap: 0.875rem;
       padding: 1rem 0;
-      margin-left: 30px;
     }
-  }
-
-  .project-card__image-wrapper {
-    height: 230px;
   }
 }
 
-// Tablets (max-width: 768px)
 @media (max-width: 768px) {
   .projects-carousel {
-    min-height: auto;
-    padding: 1rem 0;
+    padding: 2rem 0;
 
     &__container {
       gap: 2rem;
     }
 
     &__wrapper {
-      max-width: 400px;
       padding: 1rem 0;
     }
 
@@ -431,20 +387,17 @@
       }
     }
 
-    &__nav {
-      margin-top: 0px;
-    }
-
-    &__swiper--mobile {
-      height: 630px;
+    &__swiper {
+      padding-bottom: 2.5rem;
     }
 
     &__nav-btn {
       width: 40px;
       height: 40px;
 
-      ion-icon {
-        font-size: 20px;
+      svg {
+        width: 20px;
+        height: 20px;
       }
     }
 
@@ -457,7 +410,7 @@
     border-radius: 20px;
 
     &__image-wrapper {
-      height: 280px;
+      height: 250px;
     }
 
     &__content {
@@ -476,22 +429,22 @@
     &__details {
       gap: 0.875rem;
       padding: 1rem 0;
-      margin-left: 25px;
     }
 
     &__detail {
       gap: 0.75rem;
 
-      ion-icon {
-        font-size: 20px;
+      .detail-icon {
+        width: 18px;
+        height: 18px;
       }
     }
 
-    &__detail-label {
+    .detail-label {
       font-size: 0.6875rem;
     }
 
-    &__detail-value {
+    .detail-value {
       font-size: 0.875rem;
     }
 
@@ -499,45 +452,30 @@
       padding: 0.875rem 1.5rem;
       font-size: 0.9375rem;
 
-      ion-icon {
-        font-size: 18px;
+      .cta-icon {
+        width: 18px;
+        height: 18px;
       }
     }
   }
-
-  .project-card__image-wrapper {
-    height: 200px;
-  }
 }
 
-// Móviles (max-width: 480px)
 @media (max-width: 480px) {
   .projects-carousel {
-    &__wrapper {
-      max-width: 340px;
-    }
-
-    &__swiper--mobile {
-      height: 550px;
-    }
-
-    &__nav {
-      padding: 0 0.25rem;
-    }
-
     &__nav-btn {
       width: 36px;
       height: 36px;
 
-      ion-icon {
-        font-size: 18px;
+      svg {
+        width: 18px;
+        height: 18px;
       }
     }
   }
 
   .project-card {
     &__image-wrapper {
-      height: 240px;
+      height: 200px;
     }
 
     &__content {
@@ -547,33 +485,6 @@
 
     &__title {
       font-size: 1.25rem;
-    }
-  }
-
-  .project-card__image-wrapper {
-    height: 150px;
-  }
-}
-
-// Móviles muy pequeños (max-width: 380px)
-@media (max-width: 380px) {
-  .projects-carousel {
-    &__nav-btn {
-      width: 32px;
-      height: 32px;
-
-      ion-icon {
-        font-size: 16px;
-      }
-    }
-  }
-}
-
-// Desktop grande (min-width: 1024px)
-@media (min-width: 1024px) {
-  .projects-carousel {
-    &__nav {
-      padding: 0 1rem;
     }
   }
 }
