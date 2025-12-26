@@ -1,17 +1,23 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import './Inicio.scss'
 import Actividades from "./subcomponents/Actividades";
 import VideoImage from "./images/video-image.jpg"
 //import Global from './subcomponents/Global';
 import { IonIcon } from '@ionic/react';
+import { playCircle } from 'ionicons/icons';
 import Proyectos from './subcomponents/Proyectos';
 import Impacto from './subcomponents/Impacto';
 import ProyectoGlobal from '../proyectos/subcomponentes/ProyectoGlobal';
+import Aliados from './subcomponents/Aliados';
+import CtaHome from './subcomponents/CtaHome';
+import VideoModal from './subcomponents/VideoModal';
 
 const Inicio = () => {
   useEffect(() => {
     document.title = "Inicio - MAVRACON";
   }, []);
+
+  const [showVideo, setShowVideo] = useState(false);
   return (
     <div className="containers">
       <div className="index-panel">
@@ -32,10 +38,11 @@ const Inicio = () => {
               <div className="text_animation">
                 <p className="display"> Más de 18 años impulsando el desarrollo de nuestro pais</p>
               </div>
-              <div className="right-video">
+              {/* Added onClick event */}
+              <div className="right-video" onClick={() => setShowVideo(true)}>
                 <div className='text-desc'>
                   <h3>MIRA EL VIDEO</h3>
-                  <IonIcon className='more-icon' icon="play-circle" />
+                  <IonIcon className='more-icon' icon={playCircle} />
                 </div>
                 <img className='video-image' src={VideoImage}></img>
               </div>
@@ -45,6 +52,7 @@ const Inicio = () => {
             </div>
           </div>
         </div>
+
         <div className='world_section'>
           <ProyectoGlobal />
         </div>
@@ -52,10 +60,25 @@ const Inicio = () => {
         <div className='proyectos_section'>
           <Proyectos />
         </div>
+
+        <div className='aliados_section'>
+          <Aliados />
+        </div>
+
         <div className='sostenibilidad_section mb-11'>
           <Impacto />
         </div>
+
+        <div className='cta_section'>
+          <CtaHome />
+        </div>
       </div>
+
+      <VideoModal 
+        isOpen={showVideo} 
+        onClose={() => setShowVideo(false)} 
+        videoSrc="https://www.stracon.com/site/media/PRINCIPAL-COMPRIMIDO.mp4" 
+      />
     </div>
   );
 };

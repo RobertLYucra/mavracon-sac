@@ -25,7 +25,7 @@ $breakpoint-mobile: 840px;
 
       .ver-mas-btn {
         gap: 12px;
-        
+
         &::after {
           opacity: 1;
           transform: translateX(0);
@@ -91,27 +91,35 @@ $breakpoint-mobile: 840px;
       }
 
       .ver-mas-btn {
-        font-size: 13px;
-        font-weight: 500;
-        letter-spacing: 2px;
+        font-size: 14px; // Increased from 13px
+        font-weight: 600;
+        letter-spacing: 1px;
         text-transform: uppercase;
-        color: var(--secondary-color);
-        background: transparent;
-        border: none;
+        color: #fff; // White text for contrast
+        background: rgba(255, 255, 255, 0.05); // Subtle background
+        border: 1px solid var(--secondary-color); // Visible border
+        border-radius: 4px;
         width: fit-content;
-        padding: 0;
+        padding: 12px 30px; // Generous clickable area
         display: flex;
         align-items: center;
-        gap: 8px;
-        transition: gap 0.3s ease;
+        gap: 10px;
+        transition: all 0.3s ease;
         position: relative;
+        cursor: pointer;
+        margin-top: 10px;
 
         &::after {
-          content: '→';
-          font-size: 16px;
-          opacity: 0;
-          transform: translateX(-10px);
-          transition: all 0.3s ease;
+          content: "→";
+          font-size: 18px;
+          opacity: 1; // Always visible now
+          transform: translateX(0);
+          transition: transform 0.3s ease;
+        }
+
+        &:hover {
+          background: var(--secondary-color); // Fill on hover
+          box-shadow: 0 5px 15px rgba(244, 37, 52, 0.3); // Glow effect
         }
       }
     }

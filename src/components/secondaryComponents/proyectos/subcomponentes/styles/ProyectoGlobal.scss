@@ -1,334 +1,283 @@
 .global_proyecto {
-  display: flex;
-  width: 100%;
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 30px 20px;
-  gap: 60px;
-  align-items: center;
-  margin-bottom: 25px;
-
-  .global_left {
-    flex: 1;
-    color: var(--text-primary-color);
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    min-width: 0; // Importante para flex
-
-    .texts-descp {
-      margin-bottom: 30px;
-
-      h3 {
-        font-size: 14px;
-        font-weight: 600;
-        color: var(--secondary-color);
-        letter-spacing: 1px;
-        margin-bottom: 15px;
-      }
-
-      h1 {
-        font-size: 32px;
-        font-weight: 600;
-        margin: 0 0 20px 0;
-        line-height: 1.3;
-      }
-
-      p {
-        font-size: 16px;
-        line-height: 1.6;
-        color: rgba(255, 255, 255, 0.8);
-      }
-    }
-
-    .status {
-      display: flex;
-      gap: 40px;
-      padding: 30px 0;
-      border-top: 1px solid rgba(155, 157, 177, 0.15);
-
-      .status-projects {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-
-        .icon {
-          font-size: 10px;
-        }
-
-        p {
-          font-size: 12px;
-          font-weight: 500;
-          text-transform: uppercase;
-          letter-spacing: 1px;
-          white-space: nowrap;
-        }
-      }
-    }
-  }
-
-  .global_right {
-    flex: 1;
-    display: flex;
-    justify-content: center;
+    width: 100%;
+    max-width: 1400px;
+    margin: 80px auto;
+    padding: 60px 40px;
+    gap: 80px;
     align-items: center;
-    position: relative;
-    min-width: 0;
-
-    .imagen {
-      position: relative;
-      width: 100%;
-      display: flex;
-      justify-content: center;
-
-      .mapa {
-        height: 550px;
-        max-width: 550px ;
-        object-fit: contain;
-        filter: drop-shadow(0 8px 24px rgba(0, 0, 0, 0.15));
-        opacity: 0.95;
-      }
-    }
-
-    .bonotes {
-      .btn {
-        position: absolute;
-        width: 12px;
-        height: 12px;
-        border-radius: 50%;
-        background: #e63636;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        cursor: pointer;
-        z-index: 2;
-        box-shadow: 0 0 0 0 rgba(230, 54, 54, 0.4);
-        transition: transform 0.3s ease;
-
-        &:hover {
-          transform: translate(-50%, -50%) scale(1.2);
-        }
-
-        p {
-          position: absolute;
-          top: 50%;
-          right: calc(100% + 20px);
-          transform: translateY(-50%);
-          color: var(--secondary-color);
-          font-weight: 500;
-          font-size: 13px;
-          white-space: nowrap;
-          letter-spacing: 0.5px;
-        }
-
-        &::after {
-          content: "";
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          width: 24px;
-          height: 24px;
-          border-radius: 50%;
-          background-color: rgba(230, 54, 54, 0.2);
-          animation: pulse 2.5s ease-in-out infinite;
-          z-index: -1;
-        }
-      }
-    }
-  }
-}
-
-@keyframes pulse {
-  0%,
-  100% {
-    transform: translate(-50%, -50%) scale(1);
-    opacity: 0.6;
-  }
-  50% {
-    transform: translate(-50%, -50%) scale(2);
-    opacity: 0;
-  }
-}
-
-// Tablet
-@media screen and (max-width: 1024px) {
-  .global_proyecto {
-    padding: 50px 20px;
-    gap: 40px;
+    background: linear-gradient(135deg, #15284B 0%, rgba(255, 255, 255, 0.01) 100%);
+    border-radius: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
 
     .global_left {
-      .texts-descp {
-        h3 {
-          font-size: 13px;
-        }
-
-        h1 {
-          font-size: 26px;
-        }
-
-        p {
-          font-size: 15px;
-        }
-      }
-
-      .status {
-        gap: 30px;
-        flex-wrap: wrap;
-
-        .status-projects {
-          p {
-            font-size: 10px;
-          }
-        }
-      }
-    }
-
-    .global_right {
-      .imagen {
-        max-width: 400px;
-      }
-    }
-  }
-}
-
-@media screen and (max-width: 593px) {
-  .global_proyecto {
-    .global_left {
-      .status {
-        flex-direction: column;
-        padding: 0;
-        border: none;
-
-        p {
-          font-size: 25px ; 
-        }
-      }
-    }
-  }
-}
-// Mobile
-@media screen and (max-width: 768px) {
-  .global_proyecto {
-    flex-direction: column;
-    padding: 40px 20px;
-    gap: 50px;
-
-    .global_left {
-      width: 100%;
-
-      .texts-descp {
-        h3 {
-          font-size: 12px;
-        }
-
-        h1 {
-          font-size: 24px;
-        }
-
-        p {
-          font-size: 14px;
-        }
-      }
-
-      .status {
+        flex: 1;
+        color: var(--text-primary-color);
         display: flex;
-        flex-wrap: nowrap;
-        gap: 30px;
-        padding: 30px 0;
-        border: none;
-        border-top: 1px solid rgba(155, 157, 177, 0.15);
+        flex-direction: column;
+        justify-content: center;
 
-        .status-projects {
-          padding: 0;
-          border: none;
+        .texts-descp {
+            margin-bottom: 50px;
 
-          p {
-            font-size: 10px;
-          }
+            .subtitle {
+                display: inline-block;
+                font-size: 14px;
+                font-weight: 700;
+                color: var(--secondary-color);
+                letter-spacing: 2px;
+                margin-bottom: 15px;
+                text-transform: uppercase;
+                background: rgba(var(--secondary-color-rgb), 0.1);
+                padding: 8px 16px;
+                border-radius: 20px;
+            }
+
+            .title {
+                font-size: 48px;
+                font-weight: 800;
+                margin: 0 0 25px 0;
+                line-height: 1.1;
+                background: linear-gradient(90deg, #fff, #aebacf);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+
+            .description {
+                font-size: 18px;
+                line-height: 1.7;
+                color: rgba(255, 255, 255, 0.7);
+                max-width: 90%;
+            }
         }
-      }
+
+        .status-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            padding-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+
+            .status-item {
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+                transition: transform 0.3s ease;
+
+                &:hover {
+                    transform: translateY(-5px);
+                }
+
+                .status-dot {
+                    width: 12px;
+                    height: 12px;
+                    border-radius: 50%;
+                    position: relative;
+
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        top: -4px;
+                        left: -4px;
+                        right: -4px;
+                        bottom: -4px;
+                        border-radius: 50%;
+                        border: 1px solid currentColor;
+                        opacity: 0.5;
+                    }
+
+                    &.current { background-color: #ef4444; color: #ef4444; box-shadow: 0 0 10px rgba(239, 68, 68, 0.5); }
+                    &.completed { background-color: #3b82f6; color: #3b82f6; box-shadow: 0 0 10px rgba(59, 130, 246, 0.5); }
+                    &.subsidiary { background-color: #eab308; color: #eab308; box-shadow: 0 0 10px rgba(234, 179, 8, 0.5); }
+                }
+
+                .status-info {
+                    .count {
+                        display: block;
+                        font-size: 32px;
+                        font-weight: 700;
+                        color: white;
+                        margin-bottom: 5px;
+                    }
+
+                    p {
+                        font-size: 12px;
+                        font-weight: 600;
+                        text-transform: uppercase;
+                        letter-spacing: 1px;
+                        color: rgba(255, 255, 255, 0.6);
+                    }
+                }
+            }
+        }
     }
 
     .global_right {
-      width: 100%;
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
-      .imagen {
-        max-width: 350px;
-      }
+        .map-container {
+            position: relative;
+            width: 100%;
+            display: flex;
+            justify-content: center; // Center the map image horizontally
+            
+            .mapa {
+                max-width: 100%;
+                height: auto;
+                max-height: 600px;
+                object-fit: contain;
+                filter: drop-shadow(0 0 30px rgba(0, 0, 0, 0.3));
+                opacity: 0.9;
+                transition: opacity 0.5s ease;
 
-      .bonotes {
-        .btn {
-          width: 14px;
-          height: 14px;
+                &:hover {
+                    opacity: 1;
+                }
+            }
 
-          p {
-            font-size: 13px;
-            right: calc(100% + 12px);
-          }
+            .hotspot {
+                position: absolute;
+                width: 20px;
+                height: 20px;
+                transform: translate(-50%, -50%);
+                cursor: pointer;
+                z-index: 10;
 
-          &::after {
-            width: 28px;
-            height: 28px;
-          }
+                .pulse {
+                    width: 100%;
+                    height: 100%;
+                    background-color: var(--secondary-color);
+                    border-radius: 50%;
+                    position: relative;
+                    box-shadow: 0 0 15px var(--secondary-color);
+                    
+                    &::before, &::after {
+                        content: '';
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        border-radius: 50%;
+                        border: 1px solid var(--secondary-color);
+                        animation: ripple 2s infinite linear;
+                        width: 100%;
+                        height: 100%;
+                    }
+
+                    &::after {
+                        animation-delay: 1s;
+                    }
+                }
+
+                .tooltip {
+                    position: absolute;
+                    bottom: 100%;
+                    left: 50%;
+                    transform: translateX(-50%) translateY(-10px);
+                    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+                    color: white;
+                    padding: 5px 12px;
+                    border-radius: 6px;
+                    font-size: 12px;
+                    font-weight: 700;
+                    opacity: 0;
+                    pointer-events: none;
+                    transition: all 0.3s ease;
+                    white-space: nowrap;
+                    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        top: 100%;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        border: 6px solid transparent;
+                        border-top-color: white;
+                    }
+                }
+
+                &:hover .tooltip {
+                    opacity: 1;
+                    transform: translateX(-50%) translateY(-15px);
+                }
+            }
         }
-      }
     }
-  }
 }
 
-// Small Mobile
-@media screen and (max-width: 480px) {
-  .global_proyecto {
-    padding: 40px 20px;
-
-    .global_left {
-      .texts-descp {
-        h1 {
-          font-size: 24px;
-        }
-
-        p {
-          font-size: 14px;
-        }
-      }
-
-      .status {
-        gap: 20px;
-
-        .status-projects {
-          .icon {
-            font-size: 9px;
-          }
-
-          p {
-            font-size: 9px;
-          }
-        }
-      }
+@keyframes ripple {
+    0% {
+        width: 100%;
+        height: 100%;
+        opacity: 1;
     }
-
-    .global_right {
-      .imagen {
-        max-width: 280px;
-      }
-
-      .bonotes {
-        .btn {
-          width: 10px;
-          height: 10px;
-
-          p {
-            font-size: 11px;
-            right: calc(100% + 14px);
-          }
-
-          &::after {
-            width: 20px;
-            height: 20px;
-          }
-        }
-      }
+    100% {
+        width: 300%;
+        height: 300%;
+        opacity: 0;
     }
-  }
+}
+
+// Responsive
+@media screen and (max-width: 1024px) {
+    .global_proyecto {
+        flex-direction: column;
+        padding: 40px 20px;
+        gap: 50px;
+
+        .global_left {
+            .texts-descp {
+                text-align: center;
+                .title { font-size: 32px; }
+                .description { font-size: 16px; }
+            }
+            .status-grid {
+                justify-content: center;
+                text-align: center;
+                
+                .status-item {
+                    align-items: center; // Fixes dot alignment relative to text
+                }
+            }
+        }
+
+        .global_right {
+            width: 100%;
+            .mapa { max-height: 400px; }
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .global_proyecto {
+        gap: 30px;
+        
+        .global_left {
+            .texts-descp {
+                .subtitle { font-size: 11px; }
+                .title { font-size: 24px; margin-bottom: 20px; }
+                .description { font-size: 14px; line-height: 1.6; }
+            }
+
+            .status-grid {
+                grid-template-columns: repeat(3, 1fr); // Keep horizontal
+                gap: 10px;
+                
+                .status-item {
+                    gap: 8px;
+                    
+                    .status-info {
+                        .count { font-size: 20px; }
+                        p { font-size: 9px; }
+                    }
+                }
+            }
+        }
+    }
 }

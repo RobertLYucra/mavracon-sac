@@ -86,18 +86,9 @@ nav {
   overflow: visible;
 
   /* Animación de entrada al cargar */
-  animation: navFadeIn 0.8s ease-out;
-}
+  overflow: visible;
 
-@keyframes navFadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  /* Animación de entrada al cargar removed */
 }
 
 nav.scrolled {
@@ -192,7 +183,6 @@ nav.scrolled {
       }
 
       &:hover {
-
         &::before {
           width: 80%;
         }
@@ -307,11 +297,7 @@ nav.scrolled {
       max-width: 100%;
       height: 100vh;
       height: 100dvh;
-      background: linear-gradient(
-        135deg,
-        rgba(10, 20, 38, 0.98) 0%,
-        rgba(15, 25, 43, 0.98) 100%
-      );
+      background-color: rgba(10, 20, 38, 0.95);
       backdrop-filter: blur(20px);
       z-index: 999;
       transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -411,57 +397,36 @@ nav.scrolled {
         align-items: center;
         padding: 0;
         margin: 0;
-        opacity: 0;
-        transform: translateX(30px);
         background: transparent;
-        border-radius: 0;
-        border: none;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-        transition: all 0.3s ease;
+        border-radius: 8px; // softer look
+        border: none; // Remove the line
+        transition: all 0.2s ease;
         overflow: hidden;
-
-        &:nth-child(1) {
-          animation: slideInRight 0.4s ease 0.1s forwards;
-        }
-        &:nth-child(2) {
-          animation: slideInRight 0.4s ease 0.15s forwards;
-        }
-        &:nth-child(3) {
-          animation: slideInRight 0.4s ease 0.2s forwards;
-        }
-        &:nth-child(4) {
-          animation: slideInRight 0.4s ease 0.25s forwards;
-        }
-        &:nth-child(5) {
-          animation: slideInRight 0.4s ease 0.3s forwards;
-        }
-        &:nth-child(6) {
-          animation: slideInRight 0.4s ease 0.35s forwards;
-        }
+        margin-bottom: 5px; // spacing between items
 
         &:hover {
-          background: rgba(255, 255, 255, 0.03);
-          border-bottom-color: var(--secondary-color);
-          transform: translateX(0);
+          background: rgba(255, 255, 255, 0.1);
+
+          a {
+            color: white; // keep white or secondary
+            padding-left: 1.5rem; // keep simple slide
+          }
 
           .icon {
-            transform: translateX(6px);
-            color: var(--secondary-color);
+            opacity: 1;
+            transform: translateX(0);
           }
         }
 
         a {
           flex: 1;
-          font-size: 20px;
-          font-weight: 400;
-          color: var(--text-primary-color);
+          font-size: 22px; // Bigger, more modern font
+          font-weight: 600; // Stronger presence
+          color: rgba(255, 255, 255, 0.9);
           text-decoration: none;
-          padding: 1.5rem 0;
+          padding: 1rem;
           font-family: var(--primary-font);
-
-          &::before {
-            display: none;
-          }
+          transition: all 0.3s ease;
         }
 
         .icon {
@@ -469,21 +434,24 @@ nav.scrolled {
           font-size: 20px;
           display: flex;
           align-items: center;
-          padding-right: 0;
+          padding-right: 2rem;
+          opacity: 0;
+          transform: translateX(-10px);
           transition: all 0.3s ease;
         }
       }
 
       .active {
-        background: transparent;
-        border-bottom-color: var(--secondary-color);
+        background: rgba(255, 255, 255, 0.05);
 
         a {
           color: var(--secondary-color);
+          font-weight: 600;
         }
 
         .icon {
-          color: var(--secondary-color);
+          opacity: 1;
+          transform: translateX(0);
         }
       }
     }
@@ -493,11 +461,11 @@ nav.scrolled {
       padding: 2rem;
       padding-bottom: 3rem;
       border-top: 1px solid rgba(255, 255, 255, 0.08);
-      opacity: 0;
-      animation: slideInRight 0.4s ease 0.4s forwards;
-      background: rgba(10, 20, 38, 0.98);
+      background-color: rgba(10, 20, 38, 0.95);
+      backdrop-filter: blur(20px);
       position: sticky;
       bottom: 0;
+      opacity: 1;
 
       .contacto {
         display: flex;
@@ -529,21 +497,12 @@ nav.scrolled {
     }
   }
 
-  @keyframes slideInRight {
-    to {
-      opacity: 1;
-      transform: translateX(0);
-    }
-  }
-
   .nav-ul:not(.open) .links .etiquetas {
-    animation: none;
-    opacity: 0;
+    opacity: 1;
   }
 
   .nav-ul:not(.open) .mobile-contact {
-    animation: none;
-    opacity: 0;
+    opacity: 1;
   }
 }
 

@@ -1,0 +1,95 @@
+.cta-home-section {
+    position: relative;
+    padding: 120px 5%;
+    background-image: url('https://www.stracon.com/site/media/home.jpg'); // Reusing the specific image found in Inicio.tsx or similar
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: white;
+    text-align: center;
+    overflow: hidden;
+
+    .cta-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.7);
+        z-index: 1;
+    }
+
+    .cta-content {
+        position: relative;
+        z-index: 2;
+        max-width: 800px;
+        margin: 0 auto;
+
+        h2 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        p {
+            font-size: 1.5rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background-color: var(--secondary-color); // Assuming secondary color variable
+            color: white; // Assuming white text
+            padding: 15px 40px;
+            border-radius: 5px; // Standard border radius
+            font-weight: 600;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+
+            &:hover {
+                background-color: var(--secondary-color-dark, #c0392b); // Fallback if var not defined
+                transform: translateY(-3px);
+                box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .cta-home-section {
+        padding: 60px 20px;
+
+        .cta-content {
+            h2 {
+                font-size: 1.8rem; // Smaller title
+                margin-bottom: 15px;
+            }
+            p {
+                font-size: 1rem; // Smaller description
+                margin-bottom: 30px;
+            }
+            
+            .cta-button {
+                padding: 12px 25px; // Smaller button padding
+                font-size: 1rem; // Smaller button text
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .cta-home-section {
+        padding: 50px 15px;
+        
+        .cta-content {
+            h2 { font-size: 1.5rem; }
+            .cta-button { width: 100%; justify-content: center; }
+        }
+    }
+}

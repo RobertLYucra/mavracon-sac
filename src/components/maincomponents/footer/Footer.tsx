@@ -57,10 +57,18 @@ const Footer = () => {
           <div className="footer-contact-section">
             <h3>Contacto</h3>
             <div className="contact-info">
-              <p>Jr. Manuel Villavicencio 1711, Lince</p>
-              <p>Lima, Perú</p>
-              <p className="phone">+51 123 456 789</p>
-              <p className="email">contacto@mavracon.com</p>
+              <div className="contact-item">
+                <IonIcon icon="location-outline" />
+                <p>Jr. Manuel Villavicencio 1711, Lince, Lima - Perú</p>
+              </div>
+              <div className="contact-item">
+                <IonIcon icon="call-outline" />
+                <p className="phone">+51 123 456 789</p>
+              </div>
+              <div className="contact-item">
+                <IonIcon icon="mail-outline" />
+                <p className="email">contacto@mavracon.com</p>
+              </div>
             </div>
           </div>
         </div>

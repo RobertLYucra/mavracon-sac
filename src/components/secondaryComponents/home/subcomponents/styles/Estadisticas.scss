@@ -1,0 +1,99 @@
+.estadisticas-section {
+  width: 100%;
+  padding: 80px 5%;
+  background-color: var(
+    --secondary-color
+  ); // Assuming secondary color is available, or use a specific hex
+  color: white;
+
+  .estadisticas-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .stat-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 15px;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: translateY(-5px);
+    }
+
+    .stat-icon {
+      font-size: 3rem;
+      color: var(--primary-color);
+      background: rgba(255, 255, 255, 0.1);
+      padding: 20px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 80px;
+      height: 80px;
+    }
+
+    .stat-info {
+      .stat-value {
+        font-size: 3rem;
+        font-weight: 700;
+        margin-bottom: 5px;
+      }
+
+      .stat-label {
+        font-size: 1.1rem;
+        font-weight: 400;
+        opacity: 0.9;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .estadisticas-section {
+    padding: 30px 15px; // Reduced padding
+
+    .estadisticas-container {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr); // 2 columns for compactness
+      gap: 20px; // Smaller gap
+      
+      // If we want it really compact on very small screens, maybe strictly 2 columns is fine
+      // But let's ensure it handles it well.
+    }
+
+    .stat-card {
+        gap: 8px;
+
+        .stat-icon {
+            width: 50px;
+            height: 50px;
+            font-size: 1.5rem;
+            padding: 10px;
+            margin-bottom: 5px;
+        }
+
+        .stat-info {
+            .stat-value {
+                font-size: 1.8rem; // Smaller font
+                margin-bottom: 2px;
+            }
+
+            .stat-label {
+                font-size: 0.8rem; // Smaller label
+                line-height: 1.2;
+            }
+        }
+    }
+  }
+}

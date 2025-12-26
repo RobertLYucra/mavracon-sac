@@ -1,5 +1,6 @@
 import { actividades } from "../../home/interfaces/Data";
 import { IonIcon } from "@ionic/react";
+import { arrowDown } from "ionicons/icons";
 import "./styles/Actividades.hacemos.scss";
 
 const Actividades = () => {
@@ -24,7 +25,7 @@ const Actividades = () => {
             <IonIcon className="actividad-icon" icon={actividad.icono} />
             <h3 className="actividad-title">{actividad.actividad}</h3>
           </div>
-          <IonIcon className="arrow-icon" icon="arrow-down" />
+          <IonIcon className="arrow-icon" icon={arrowDown} />
         </button>
       ))}
     </div>

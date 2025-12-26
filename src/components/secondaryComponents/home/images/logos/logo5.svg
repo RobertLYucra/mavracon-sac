@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 80">
+  <polygon points="45,15 70,60 20,60" fill="#ffffff"/>
+  <line x1="20" y1="65" x2="70" y2="65" stroke="#ffffff" stroke-width="3"/>
+  <text x="85" y="55" font-family="Arial, sans-serif" font-weight="bold" font-size="28" fill="#ffffff" font-style="italic">APEX</text>
+</svg>
