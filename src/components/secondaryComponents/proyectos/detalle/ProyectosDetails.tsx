@@ -36,7 +36,15 @@ const ProyectosDetails = () => {
   if (!data) return <NotFound />;
 
   const galleryItems = [
-    ...(data.galleryVideo || []).map(url => ({ type: 'video' as const, url })),
+    ...(data.galleryVideo || []).map(item => {
+      const isString = typeof item === 'string';
+      return {
+        type: 'video' as const,
+        url: isString ? item : item.url,
+        thumbnail: !isString ? item.thumbnail : undefined,
+        title: !isString ? item.title : undefined
+      };
+    }),
     ...(data.galleryImage || []).map(url => ({ type: 'image' as const, url })),
   ];
 
@@ -102,7 +110,17 @@ const ProyectosDetails = () => {
                          <div key={idx} className="gallery-item" onClick={() => setSelectedImage(item.url)}>
                             {item.type === 'video' ? (
                                 <div className="video-thumbnail">
-                                    <video src={item.url} muted className="preview-video" />
+                                    {item.thumbnail ? (
+                                        <img src={item.thumbnail} alt={item.title || "Video thumbnail"} className="preview-image" />
+                                    ) : (
+                                        <video 
+                                          src={`${item.url}#t=0.5`} 
+                                          muted 
+                                          preload="metadata"
+                                          playsInline
+                                          className="preview-video" 
+                                        />
+                                    )}
                                     <div className="play-icon">
                                         <IonIcon icon={playCircleOutline} />
                                     </div>

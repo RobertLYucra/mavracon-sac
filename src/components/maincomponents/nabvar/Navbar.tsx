@@ -11,9 +11,9 @@ const Navbar = () => {
   const navLinks = [
     { href: "/", label: "Inicio" },
     { href: "/que-hacemos", label: "Qué hacemos?" },
+    { href: "/quienes-somos", label: "Quiénes Somos" },
     { href: "/proyectos", label: "Proyectos" },
     { href: "/innovacion-tecnologia", label: "Innovación y tecnología" },
-    { href: "/quienes-somos", label: "Quiénes Somos" },
     { href: "/sostenibilidad", label: "Sostenibilidad" },
   ];
 

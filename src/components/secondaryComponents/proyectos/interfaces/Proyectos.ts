@@ -12,7 +12,10 @@ export interface Proyecto {
   url: string;
   descripcion?: string[];
   galleryImage?: string[];
-  galleryVideo?: string[];
+  galleryVideo?: (
+    | string
+    | { url: string; thumbnail?: string; title?: string }
+  )[];
   slug?: string; // Add slug for routing
 }
 
@@ -53,7 +56,12 @@ export const proyectos: Proyecto[] = [
       "https://images.unsplash.com/photo-1587293852726-70cdb56c2866?w=800",
     ],
     galleryVideo: [
-      "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+      {
+        url: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+        thumbnail:
+          "https://images.unsplash.com/photo-1536240478700-b869070f9279?w=800", // Example thumbnail
+        title: "Operaciones en Tajo Abierto",
+      },
     ],
   },
 

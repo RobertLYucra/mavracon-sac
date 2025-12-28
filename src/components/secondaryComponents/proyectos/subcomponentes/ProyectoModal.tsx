@@ -16,7 +16,14 @@ const ProyectoModal = ({ proyecto, isOpen, onClose }: ProyectoModalProps) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const galleryItems = [
-    ...(proyecto.galleryVideo || []).map(url => ({ type: 'video' as const, url })),
+    ...(proyecto.galleryVideo || []).map(item => {
+      const isString = typeof item === 'string';
+      return {
+        type: 'video' as const,
+        url: isString ? item : item.url,
+        thumbnail: !isString ? item.thumbnail : undefined
+      };
+    }),
     ...(proyecto.galleryImage || []).map(url => ({ type: 'image' as const, url })),
   ];
 
@@ -114,7 +121,17 @@ const ProyectoModal = ({ proyecto, isOpen, onClose }: ProyectoModalProps) => {
                         >
                           {item.type === 'video' ? (
                                 <div className="thumbnail-video-wrapper">
-                                     <video src={item.url} muted className="thumbnail-video" /> 
+                                     {item.thumbnail ? (
+                                         <img src={item.thumbnail} alt="Video thumb" className="thumbnail-image" />
+                                     ) : (
+                                         <video 
+                                            src={`${item.url}#t=0.5`} 
+                                            muted 
+                                            preload="metadata"
+                                            playsInline
+                                            className="thumbnail-video" 
+                                         /> 
+                                     )}
                                      <div className="play-icon-small">
                                         <IonIcon icon={playCircleOutline} />
                                      </div>
