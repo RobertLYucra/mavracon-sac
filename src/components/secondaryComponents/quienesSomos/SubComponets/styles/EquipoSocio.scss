@@ -1,304 +1,137 @@
 .nuestro_equipo_socio {
-  color: var(--text-primary-color);
   width: 100%;
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 10px 20px;
+  padding: 4rem 0;
+  position: relative;
 
   .socios {
+    width: 90%;
+    max-width: 1400px;
+    margin: 0 auto;
+
     .titulo_directorio {
-      font-size: 20px;
-      font-weight: 600;
-      margin-bottom: 30px;
+      font-size: 1.8rem;
       color: var(--secondary-color);
-      text-transform: uppercase;
-      letter-spacing: 1px;
+      margin-bottom: 2rem;
+      border-left: 4px solid var(--secondary-color);
+      padding-left: 1rem;
+      font-weight: 600;
     }
 
     .cards_directorio {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 30px;
-      justify-items: center;
+      gap: 2rem;
 
-      figure {
-        background: #182a4b;
+      .member-card {
+        position: relative;
         border-radius: 12px;
-        padding: 30px 20px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        height: 100%;
-        width: 100%;
-        max-width: 320px;
+        overflow: hidden;
+        aspect-ratio: 3/4;
+        background: #0a0a0a;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        cursor: pointer;
+        transition: transform 0.3s ease;
 
         &:hover {
           transform: translateY(-5px);
-          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 
-          .more-info {
-            .linkedin {
-              color: #0077b5;
-            }
+          .image-wrapper img {
+            filter: grayscale(0%);
+            transform: scale(1.05);
+          }
 
-            .more {
-              color: var(--secondary-color);
+          .member-info-overlay {
+            opacity: 1;
+            background: linear-gradient(
+              to top,
+              rgba(0, 0, 0, 0.95) 0%,
+              rgba(0, 0, 0, 0.7) 50%,
+              rgba(0, 0, 0, 0.2) 100%
+            );
+
+            .info-content {
+              transform: translateY(0);
             }
           }
         }
 
-        img {
-          width: 160px;
-          height: 160px;
-          border-radius: 50%;
-          object-fit: cover;
-          margin-bottom: 20px;
-          border: 3px solid rgba(255, 255, 255, 0.1);
+        .image-wrapper {
+          width: 100%;
+          height: 100%;
+
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(100%);
+            transition: all 0.5s ease;
+          }
         }
 
-        .datos_personales {
+        .member-info-overlay {
+          position: absolute;
+          top: 0;
+          left: 0;
           width: 100%;
+          height: 100%;
           display: flex;
           flex-direction: column;
-          align-items: center;
-          gap: 15px;
-          padding-top: 20px;
-          border-top: 1px solid rgba(255, 255, 255, 0.1);
+          justify-content: flex-end;
+          padding: 2rem;
+          background: linear-gradient(
+            to top,
+            rgba(0, 0, 0, 0.8) 0%,
+            rgba(0, 0, 0, 0) 100%
+          );
+          opacity: 1;
+          transition: all 0.3s ease;
 
-          .datos {
-            text-align: center;
+          .info-content {
+            transform: translateY(0);
+            transition: transform 0.4s ease;
 
             .name {
-              font-size: 18px;
+              font-size: 1.25rem;
               font-weight: 700;
-              margin-bottom: 5px;
-              line-height: 1.3;
+              color: #fff;
+              margin: 0;
+              margin-bottom: 0.5rem;
             }
 
-            .puesto {
-              font-size: 14px;
-              color: rgba(255, 255, 255, 0.7);
-              font-weight: 500;
+            .position {
+              font-size: 0.9rem;
+              color: #aaa;
+              margin: 0;
+              font-weight: 400;
+              text-transform: uppercase;
+              letter-spacing: 1px;
             }
-          }
 
-          .more-info {
-            width: 100%;
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
-            gap: 20px;
+            .divider {
+              width: 40px;
+              height: 2px;
+              background: var(--gold-accent);
+              margin: 1rem 0;
+              transform-origin: left;
+              transition: width 0.3s ease;
+            }
 
-            .linkedin {
-              color: rgba(255, 255, 255, 0.8);
-              font-size: 24px;
-              transition: color 0.3s ease, transform 0.3s ease;
-              text-decoration: none;
-              display: flex;
+            .social-link {
+              display: inline-flex;
               align-items: center;
               justify-content: center;
+              width: 36px;
+              height: 36px;
+              border-radius: 50%;
+              background: rgba(255, 255, 255, 0.1);
+              color: #fff;
+              font-size: 1.2rem;
+              backdrop-filter: blur(4px);
+              transition: all 0.3s ease;
 
               &:hover {
-                transform: scale(1.1);
-                color: var(--secondary-color);
-              }
-            }
-
-            .more {
-              color: rgba(255, 255, 255, 0.8);
-              font-size: 13px;
-              font-weight: 600;
-              text-decoration: none;
-              text-transform: uppercase;
-              letter-spacing: 0.5px;
-              transition: color 0.3s ease;
-            }
-          }
-        }
-      }
-    }
-  }
-}
-
-// Tablet Grande
-@media screen and (max-width: 1024px) {
-  .nuestro_equipo_socio {
-    padding: 20px 20px;
-
-    .socios {
-      .titulo_directorio {
-        font-size: 18px;
-        margin-bottom: 25px;
-      }
-
-      .cards_directorio {
-        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-        gap: 25px;
-
-        figure {
-          padding: 25px 15px;
-
-          img {
-            width: 140px;
-            height: 140px;
-          }
-
-          .datos_personales {
-            .datos {
-              .name {
-                font-size: 17px;
-              }
-
-              .puesto {
-                font-size: 13px;
-              }
-            }
-
-            .more-info {
-              gap: 15px;
-
-              .linkedin {
-                font-size: 22px;
-              }
-
-              .more {
-                font-size: 12px;
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-}
-
-// Tablet
-@media screen and (max-width: 768px) {
-  .nuestro_equipo_socio {
-    padding: 20px 15px;
-
-    .socios {
-      .titulo_directorio {
-        font-size: 17px;
-        margin-bottom: 20px;
-      }
-
-      .cards_directorio {
-        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-        gap: 20px;
-
-        figure {
-          padding: 20px 15px;
-
-          img {
-            width: 130px;
-            height: 130px;
-          }
-        }
-      }
-    }
-  }
-}
-
-// Mobile
-@media screen and (max-width: 540px) {
-  .nuestro_equipo_socio {
-    padding: 30px 15px;
-
-    .socios {
-      .titulo_directorio {
-        font-size: 16px;
-        margin-bottom: 20px;
-      }
-
-      .cards_directorio {
-        grid-template-columns: 1fr;
-        gap: 15px;
-
-        figure {
-          max-width: 100%;
-          flex-direction: row;
-          padding: 15px;
-          gap: 15px;
-          align-items: center;
-          text-align: left;
-
-          img {
-            width: 100px;
-            height: 100px;
-            margin-bottom: 0;
-            flex-shrink: 0;
-          }
-
-          .datos_personales {
-            padding-top: 0;
-            border-top: none;
-            align-items: flex-start;
-            gap: 10px;
-
-            .datos {
-              text-align: left;
-
-              .name {
-                font-size: 15px;
-                margin-bottom: 3px;
-              }
-
-              .puesto {
-                font-size: 12px;
-              }
-            }
-
-            .more-info {
-              justify-content: flex-end;
-              gap: 15px;
-
-              .linkedin {
-                font-size: 25px;
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-}
-
-// Small Mobile
-@media screen and (max-width: 380px) {
-  .nuestro_equipo_socio {
-    .socios {
-      .cards_directorio {
-        figure {
-          padding: 12px;
-          gap: 12px;
-
-          img {
-            width: 80px;
-            height: 80px;
-          }
-
-          .datos_personales {
-            .datos {
-              .name {
-                font-size: 14px;
-              }
-
-              .puesto {
-                font-size: 11px;
-              }
-            }
-
-            .more-info {
-              gap: 12px;
-
-              .linkedin {
-                font-size: 18px;
-              }
-
-              .more {
-                font-size: 10px;
+                background: var(--gold-accent);
+                color: #000;
               }
             }
           }

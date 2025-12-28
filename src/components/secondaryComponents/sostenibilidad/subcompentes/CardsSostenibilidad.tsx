@@ -1,4 +1,5 @@
 import { IonIcon } from "@ionic/react";
+import { Link } from "react-router-dom";
 import { indicador } from "../interfaces/indicadores";
 import "./styles/CardsSostenibilidad.scss";
 
@@ -8,9 +9,9 @@ const CardsSostenibilidad = () => {
       <div className="sostenibilidad-container">
         <div className="sostenibilidad-grid">
           {indicador.map((ind, index) => (
-            <a
+            <Link
               key={index}
-              href={`#indicador-${ind.titulo
+              to={`/sostenibilidad/${ind.titulo
                 .toLowerCase()
                 .replace(/\s+/g, "-")}`}
               className="sostenibilidad-card"
@@ -21,12 +22,13 @@ const CardsSostenibilidad = () => {
 
               <div className="card-body">
                 <h3 className="indicador-titulo">{ind.titulo}</h3>
+                <p className="indicador-desc">{ind.descripcion}</p>
               </div>
 
               <div className="card-footer">
                 <IonIcon className="arrow-icon" icon="arrow-forward" />
               </div>
-            </a>
+            </Link>
           ))}
         </div>
       </div>

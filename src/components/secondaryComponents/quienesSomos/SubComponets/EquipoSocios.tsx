@@ -10,25 +10,28 @@ const EquipoSocios = () => {
 
           <div className="cards_directorio">
             {socios.map((socio, index) => (
-              <figure key={index}>
-                <img
-                  src={socio.foto}
-                  alt={`${socio.datosPersonales.nombre} ${socio.datosPersonales.apellidoPaterno}`}
-                />
+              <div className="member-card" key={index}>
+                <div className="image-wrapper">
+                  <img
+                    src={socio.foto}
+                    alt={`${socio.datosPersonales.nombre} ${socio.datosPersonales.apellidoPaterno}`}
+                    loading="lazy"
+                  />
+                </div>
 
-                <div className="datos_personales">
-                  <div className="datos">
-                    <p className="name">
+                <div className="member-info-overlay">
+                  <div className="info-content">
+                    <h4 className="name">
                       Ing. {socio.datosPersonales.nombre}{" "}
                       {socio.datosPersonales.apellidoPaterno}
-                    </p>
-                    <p className="puesto">{socio.puesto}</p>
-                  </div>
+                    </h4>
+                    <p className="position">{socio.puesto}</p>
+                    
+                    <div className="divider"></div>
 
-                  <div className="more-info">
                     <a
                       href={socio.linkedin || "#"}
-                      className="linkedin"
+                      className="social-link"
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label={`LinkedIn de ${socio.datosPersonales.nombre}`}
@@ -37,7 +40,7 @@ const EquipoSocios = () => {
                     </a>
                   </div>
                 </div>
-              </figure>
+              </div>
             ))}
           </div>
         </div>

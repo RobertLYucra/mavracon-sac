@@ -19,8 +19,7 @@ const QuienesSomos = () => {
           section="QUIENES SOMOS"
           titulo="Flexibilidad a cualquier contexto"
           imagen="https://wallpapers.com/images/hd/animated-busy-construction-4d8ybs8zf86spdwu.jpg"
-          description="En Mavracon somos más que constructores. Somos diseñadores de tus sueños.
-Con un legado de años de excelencia y experiencia, hemos sido pioneros en soluciones innovadoras y en diversos megaproyectos."
+          description="Más que constructores, somos artífices de tus metas. Unimos experiencia y tecnología para ejecutar proyectos que marcan la diferencia en cada detalle."
         />
       </div>
 

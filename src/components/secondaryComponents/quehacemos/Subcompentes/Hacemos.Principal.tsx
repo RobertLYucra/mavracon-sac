@@ -1,23 +1,9 @@
-import { useState } from "react";
 import { IonIcon } from "@ionic/react";
 import "./styles/Hacemos.Principal.scss";
-import { actividades, Actividades } from "../interfaces/QueHacemosPrincipal";
-import DetalleActividad from "./DetalleActividad";
+import { actividades } from "../interfaces/QueHacemosPrincipal"; // Removed ActionTypes import if unused
+import { Link } from "react-router-dom";
 
 const HacemosPrincipal = () => {
-  const [actividadSeleccionada, setActividadSeleccionada] =
-    useState<Actividades | null>(null);
-  const [isOpen, setIsOpen] = useState(false);
-
-  const handleClick = (actividad: Actividades) => {
-    setActividadSeleccionada(actividad);
-    setTimeout(() => setIsOpen(true), 10);
-  };
-
-  const handleClose = () => {
-    setIsOpen(false);
-    setTimeout(() => setActividadSeleccionada(null), 300);
-  };
 
   return (
     <>
@@ -34,26 +20,18 @@ const HacemosPrincipal = () => {
                 <IonIcon className="more-icon" icon={actividad.icono} />
                 <h3 className="titulo">{actividad.actividad}</h3>
                 <p>{actividad.descripcion}</p>
-                <div
+                <Link
                   className="ver-mas-btn"
-                  onClick={() => handleClick(actividad)}
-                  style={{ cursor: "pointer" }}
+                  to={`/que-hacemos/${actividad.section}`}
+                  style={{ cursor: "pointer", textDecoration: "none" }}
                 >
                   VER MÁS
-                </div>
+                </Link>
               </div>
             </figure>
           </section>
         ))}
       </div>
-
-      {actividadSeleccionada && (
-        <DetalleActividad
-          actividad={actividadSeleccionada}
-          onClose={handleClose}
-          isOpen={isOpen}
-        />
-      )}
     </>
   );
 };

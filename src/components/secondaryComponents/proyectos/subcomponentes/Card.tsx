@@ -2,18 +2,32 @@ import { ArrowRight, Flag, Layers, MapPin } from "lucide-react";
 import { Proyecto } from "../interfaces/Proyectos";
 import "./styles/Card.scss";
 import { IonIcon } from "@ionic/react";
+import { Link } from "react-router-dom";
+import { arrowForward } from "ionicons/icons";
+
+const slugify = (text: string) => {
+  return text
+    .toString()
+    .toLowerCase()
+    .normalize("NFD").replace(/[\u0300-\u036f]/g, "") 
+    .trim()
+    .replace(/\s+/g, "-") 
+    .replace(/[^\w\-]+/g, "")
+    .replace(/\-\-+/g, "-"); 
+};
 
 // Componente para vista Grid
 export const ProjectCardMinimalista = ({
   proyecto,
-  onOpenModal,
 }: {
   proyecto: Proyecto;
-  onOpenModal: () => void;
+  onOpenModal?: () => void;
 }) => {
+  const slug = proyecto.slug || slugify(proyecto.nombre);
+  
   return (
     <div className="proyect_card">
-      <figure className="redirect_proyecto">
+      <Link to={`/proyectos/${slug}`} className="redirect_proyecto">
         <div className="card-image-wrapper">
           <img
             src={proyecto.imagen}
@@ -25,7 +39,7 @@ export const ProjectCardMinimalista = ({
 
         <div className="card-content">
           <div className="card-header">
-            <span className="card-tag">{proyecto.cliente}</span>
+            <span className="card-tag">{proyecto.categoria}</span>
             <h3 className="card-title">{proyecto.nombre}</h3>
           </div>
 
@@ -57,12 +71,12 @@ export const ProjectCardMinimalista = ({
             </div>
           </div>
 
-          <button onClick={onOpenModal} className="card-cta">
+          <div className="card-cta">
             <span>Ver proyecto</span>
             <ArrowRight />
-          </button>
+          </div>
         </div>
-      </figure>
+      </Link>
     </div>
   );
 };
@@ -71,14 +85,15 @@ export const ProjectCardMinimalista = ({
 export const ProjectCardList = ({
   proyecto,
   index,
-  onOpenModal,
 }: {
   proyecto: Proyecto;
   index: number;
-  onOpenModal: () => void;
+  onOpenModal?: () => void;
 }) => {
+  const slug = proyecto.slug || slugify(proyecto.nombre);
+
   return (
-    <div className="project-card-list" onClick={onOpenModal}>
+    <Link to={`/proyectos/${slug}`} className="project-card-list">
       <div className="list-content">
         <div className="list-index">
           <span>{String(index).padStart(2, "0")}</span>
@@ -106,10 +121,10 @@ export const ProjectCardList = ({
 
         <div className="list-action">
           <button type="button" aria-label="Ver proyecto">
-            <IonIcon icon="arrow-forward"></IonIcon>
+            <IonIcon icon={arrowForward}></IonIcon>
           </button>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };

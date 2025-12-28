@@ -15,10 +15,8 @@ const Impacto = () => {
             promueven el desarrollo social en cada proyecto.
           </p>
           <a
-            href="https://www.stracon.com/sostenibilidad/"
+            href="/sostenibilidad/"
             className="our-impact__button"
-            target="_blank"
-            rel="noopener noreferrer"
           >
             <span>Ir a Sostenibilidad</span>
             <IonIcon icon="arrow-forward-outline" />

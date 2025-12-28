@@ -1,0 +1,92 @@
+.pilar-section {
+  width: 100%;
+
+  // Clean container styles for new layout context
+  .pilar-container {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    display: block; // Stack content vertically in the right panel calling context
+  }
+
+  .pilar-content {
+    .pilar-header {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+
+      .icon-wrapper {
+        font-size: 2rem;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .pilar-title {
+        font-size: clamp(1.2rem, 3vw, 2rem); // Reduced size per feedback
+        font-weight: 700;
+        margin: 0;
+        color: #fff;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        line-height: 1.1;
+      }
+    }
+
+    .pilar-description {
+      font-size: clamp(1rem, 1.5vw, 1.25rem); // Responsive Text
+      color: #ccc;
+      margin-bottom: 4rem;
+      font-weight: 300;
+      line-height: 1.6;
+      max-width: 800px;
+    }
+
+    .pilar-features {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+
+      .feature-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 2rem;
+        padding: 2rem 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        transition: background 0.3s ease;
+
+        &:last-child {
+          border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .feature-number {
+          font-family: monospace;
+          font-size: 1.5rem; // Slightly larger
+          font-weight: 700;
+          color: var(--gold-accent); // User requested GOLD
+          min-width: 40px;
+        }
+
+        span {
+          font-size: clamp(0.95rem, 1.2vw, 1.15rem); // Responsive List Text
+          color: #e0e0e0;
+          line-height: 1.6;
+        }
+
+        // Removed old icon and background styles
+        .feature-icon {
+          display: none;
+        }
+      }
+    }
+  }
+
+  // Hide visual column as it's now external
+  .pilar-visual {
+    display: none;
+  }
+}

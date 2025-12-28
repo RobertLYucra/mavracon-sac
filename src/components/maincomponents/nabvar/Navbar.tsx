@@ -10,11 +10,11 @@ const Navbar = () => {
 
   const navLinks = [
     { href: "/", label: "Inicio" },
-    { href: "que-hacemos", label: "Qué hacemos?" },
-    { href: "proyectos", label: "Proyectos" },
-    { href: "innovacion-tecnologia", label: "Innovación y tecnología" },
-    { href: "quienes-somos", label: "Quiénes Somos" },
-    { href: "sostenibilidad", label: "Sostenibilidad" },
+    { href: "/que-hacemos", label: "Qué hacemos?" },
+    { href: "/proyectos", label: "Proyectos" },
+    { href: "/innovacion-tecnologia", label: "Innovación y tecnología" },
+    { href: "/quienes-somos", label: "Quiénes Somos" },
+    { href: "/sostenibilidad", label: "Sostenibilidad" },
   ];
 
   const handleScroll = () => {
@@ -100,7 +100,7 @@ const Navbar = () => {
                 {/* Botón contacto en mobile */}
                 <div className="mobile-contact">
                   <a
-                    href="contacto"
+                    href="/contacto"
                     className="contacto"
                     onClick={() => setIsOpen(false)}
                   >
@@ -110,7 +110,7 @@ const Navbar = () => {
               </div>
             </div>
 
-            <a href="contacto" className="contacto">
+            <a href="/contacto" className="contacto">
               CONTACTO
             </a>
 

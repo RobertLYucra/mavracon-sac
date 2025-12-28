@@ -1,197 +1,209 @@
 .portada-img {
-    width: 100%;
+  width: 100%;
 }
 
 .index-panel {
-    width: 100%;
+  width: 100%;
 
-    .video_background {
-        width: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        display: block;
-        object-fit: cover;
-        height: 100%;
-        z-index: -1;
-        animation: fadeIn 1.5s ease-in-out;
-    }
+  .video_background {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: block;
+    object-fit: cover;
+    height: 100%;
+    z-index: -1;
+    animation: fadeIn 1.5s ease-in-out;
+  }
 }
 
 .world_section {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .container {
-    width: 100%;
-    display: flex;
-    justify-content: center;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .index-panel .banner_home .content {
-    margin: auto;
-    padding: 18vh 0 0 0;
-    margin-left: 5%;
-    margin-right: 5%;
+  margin: auto;
+  padding: 18vh 0 0 0;
+  margin-left: 5%;
+  margin-right: 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .top {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    justify-content: space-between;
+    align-items: stretch; // Force same height
+    padding-bottom: 80px;
+    gap: 40px;
 
-    .top {
-        width: 100%;
-        max-width: 1400px;
-        margin: 0 auto;
-        display: flex;
-        justify-content: space-between;
-        align-items: stretch; // Force same height
-        padding-bottom: 80px;
-        gap: 40px;
+    .text_animation {
+      margin-top: 0;
+      opacity: 1;
+      display: flex;
+      align-items: center; // Vertically center text if container is tall
 
-        .text_animation {
-            margin-top: 0;
-            opacity: 1;
-            display: flex;
-            align-items: center; // Vertically center text if container is tall
-
-            .display {
-                font-size: 64px;
-                max-width: 700px;
-                font-weight: 800;
-                color: #ffffff;
-                line-height: 1.1;
-                text-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-            }
-        }
-
-        .right-video {
-            display: flex;
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-            overflow: hidden;
-            cursor: pointer;
-            transition: all 0.4s ease;
-            opacity: 1;
-            padding: 10px;
-            height: auto; // Fill flex height
-
-            &:hover {
-                transform: translateY(-5px);
-                background: rgba(255, 255, 255, 0.1);
-                box-shadow: 0 20px 40px rgba(0,0,0,0.3);
-                
-                .text-desc .more-icon {
-                    color: white;
-                    transform: scale(1.1);
-                }
-            }
-
-            .text-desc {
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                gap: 15px;
-                width: auto;
-                padding: 0 25px;
-                color: white;
-
-                h3 {
-                    opacity: 1;
-                    font-size: 14px;
-                    font-weight: 700;
-                    letter-spacing: 2px;
-                    margin: 0;
-                }
-
-                .more-icon {
-                    font-size: 3.5rem;
-                    color: var(--secondary-color);
-                    opacity: 1;
-                    transition: all 0.3s ease;
-                }
-            }
-
-            .video-image {
-                width: 280px;
-                height: 100%; // Fill container height
-                object-fit: cover; // Maintain aspect ratio
-                border-radius: 12px;
-            }
-        }
+      .display {
+        font-size: 64px;
+        max-width: 700px;
+        font-weight: 800;
+        color: #ffffff;
+        line-height: 1.1;
+        text-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+      }
     }
+
+    .right-video {
+      display: flex;
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: all 0.4s ease;
+      opacity: 1;
+      padding: 10px;
+      height: auto; // Fill flex height
+
+      &:hover {
+        transform: translateY(-5px);
+        background: rgba(255, 255, 255, 0.1);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+
+        .text-desc .more-icon {
+          color: white;
+          transform: scale(1.1);
+        }
+      }
+
+      .text-desc {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 15px;
+        width: auto;
+        padding: 0 25px;
+        color: white;
+
+        h3 {
+          opacity: 1;
+          font-size: 14px;
+          font-weight: 700;
+          letter-spacing: 2px;
+          margin: 0;
+        }
+
+        .more-icon {
+          font-size: 3.5rem;
+          color: var(--secondary-color);
+          opacity: 1;
+          transition: all 0.3s ease;
+        }
+      }
+
+      .video-image {
+        width: 280px;
+        height: 100%; // Fill container height
+        object-fit: cover; // Maintain aspect ratio
+        border-radius: 12px;
+      }
+    }
+  }
 }
 
 .bg_blur {
-    z-index: -1;
-    top: 0;
-    right: 0;
-    left: 0;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: -webkit-gradient(linear, left bottom, left top, color-stop(-62.39%, rgba(5, 17, 37, 0)), color-stop(-0.24%, #081324), color-stop(87.33%, rgba(6, 14, 25, 0)));
-    background: linear-gradient(360deg, rgba(5, 17, 37, 0) -62.39%, #081324 -0.24%, rgba(6, 14, 25, 0) 87.33%);
-    animation: fadeIn 1s ease-in-out;
+  z-index: -1;
+  top: 0;
+  right: 0;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: -webkit-gradient(
+    linear,
+    left bottom,
+    left top,
+    color-stop(-62.39%, rgba(5, 17, 37, 0)),
+    color-stop(-0.24%, #081324),
+    color-stop(87.33%, rgba(6, 14, 25, 0))
+  );
+  background: linear-gradient(
+    360deg,
+    rgba(5, 17, 37, 0) -62.39%,
+    #081324 -0.24%,
+    rgba(6, 14, 25, 0) 87.33%
+  );
+  animation: fadeIn 1s ease-in-out;
 }
 
 .que-hacemos {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    border-top: 1px solid rgb(155, 157, 177);
-    opacity: 0;
-    animation: fadeInUp 1s ease-out 1s forwards;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  border-top: 1px solid rgb(155, 157, 177);
+  opacity: 0;
+  animation: fadeInUp 1s ease-out 1s forwards;
 }
 
 // Animaciones de secciones
 .world_section {
-    opacity: 0;
-    transform: translateY(50px);
-    animation: fadeInUp 1s ease-out 1.3s forwards;
+  opacity: 0;
+  transform: translateY(50px);
+  animation: fadeInUp 1s ease-out 1.3s forwards;
 }
 
 .proyectos_section {
-    opacity: 0;
-    transform: translateY(50px);
-    animation: fadeInUp 1s ease-out 1.6s forwards;
+  opacity: 0;
+  transform: translateY(50px);
+  animation: fadeInUp 1s ease-out 1.6s forwards;
 }
 
 .sostenibilidad_section {
-    opacity: 0;
-    transform: translateY(50px);
-    animation: fadeInUp 1s ease-out 1.9s forwards;
+  opacity: 0;
+  transform: translateY(50px);
+  animation: fadeInUp 1s ease-out 1.9s forwards;
 }
 
 .estadisticas_section {
-    opacity: 0;
-    transform: translateY(50px);
-    animation: fadeInUp 1s ease-out 1.2s forwards; // Slightly earlier or around the same time
+  opacity: 0;
+  transform: translateY(50px);
+  animation: fadeInUp 1s ease-out 1.2s forwards; // Slightly earlier or around the same time
 }
 
 .aliados_section {
-    opacity: 0;
-    transform: translateY(50px);
-    animation: fadeInUp 1s ease-out 2.1s forwards;
+  opacity: 0;
+  transform: translateY(50px);
+  animation: fadeInUp 1s ease-out 2.1s forwards;
 }
 
 .cta_section {
-    opacity: 0;
-    transform: translateY(50px);
-    animation: fadeInUp 1s ease-out 2.3s forwards;
-    
-    // Breakout of container to be full width
-    width: 100vw;
-    position: relative;
-    left: 50%;
-    right: 50%;
-    margin-left: -50vw;
-    margin-right: -50vw;
+  opacity: 0;
+  transform: translateY(50px);
+  animation: fadeInUp 1s ease-out 2.3s forwards;
+
+  // Breakout of container to be full width
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
 }
 
 // ============================================
@@ -199,74 +211,75 @@
 // ============================================
 
 @keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes slideInLeft {
-    from {
-        opacity: 0;
-        transform: translateX(-100px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
+  from {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 @keyframes slideInRight {
-    from {
-        opacity: 0;
-        transform: translateX(100px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
+  from {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 @keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes scaleIn {
-    from {
-        opacity: 0;
-        transform: scale(0.5);
-    }
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
+  from {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 @keyframes textShine {
-    0% {
-        background-position: 200% center;
-    }
-    100% {
-        background-position: 0% center;
-    }
+  0% {
+    background-position: 200% center;
+  }
+  100% {
+    background-position: 0% center;
+  }
 }
 
 @keyframes pulse {
-    0%, 100% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.05);
-    }
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
 }
 
 // ============================================
@@ -274,97 +287,97 @@
 // ============================================
 
 @media screen and (max-width: 1650px) {
-    .index-panel .banner_home .content {
-        margin-left: 5%;
-        margin-right: 5%;
-    }
+  .index-panel .banner_home .content {
+    margin-left: 5%;
+    margin-right: 5%;
+  }
 }
 
 @media screen and (max-width: 1005px) {
-    .index-panel {
-        .video_background {
-            height: 80%;
-        }
+  .index-panel {
+    .video_background {
+      height: 80%;
     }
+  }
 
-    .bg_blur {
-        height: 80%;
-    }
+  .bg_blur {
+    height: 80%;
+  }
 
-    .index-panel .banner_home .content {
-        .top {
-            .text_animation {
-                .display {
-                    font-size: 50px;
-                }
-            }
+  .index-panel .banner_home .content {
+    .top {
+      .text_animation {
+        .display {
+          font-size: 50px;
         }
+      }
     }
+  }
 }
 
 @media screen and (max-width: 1400px) {
-    .index-panel .banner_home .content {
-        .top {
-            .text_animation {
-                .display {
-                    max-width: 550px;
-                    font-size: 40px;
-                }
-            }
+  .index-panel .banner_home .content {
+    .top {
+      .text_animation {
+        .display {
+          max-width: 550px;
+          font-size: 40px;
         }
+      }
     }
+  }
 }
 
 @media screen and (max-width: 850px) {
-    .index-panel .banner_home .content {
-        padding: 8vh 0 0 0;
+  .index-panel .banner_home .content {
+    padding: 8vh 0 0 0;
 
-        .top {
-            flex-direction: column;
+    .top {
+      flex-direction: column;
 
-            .text_animation {
-                animation: fadeInUp 1s ease-out 0.3s forwards;
+      .text_animation {
+        animation: fadeInUp 1s ease-out 0.3s forwards;
 
-                .display {
-                    font-size: 30px;
-                    max-width: 450px;
-                    margin-right: 15px;
-                    margin-left: 15px;
-                }
-            }
-
-            .right-video {
-                margin-top: 15px;
-                animation: fadeInUp 1s ease-out 0.8s forwards;
-
-                .video-image {
-                    width: 100%;
-                }
-            }
+        .display {
+          font-size: 30px;
+          max-width: 450px;
+          margin-right: 15px;
+          margin-left: 15px;
         }
+      }
+
+      .right-video {
+        margin-top: 15px;
+        animation: fadeInUp 1s ease-out 0.8s forwards;
+
+        .video-image {
+          width: 100%;
+        }
+      }
     }
+  }
 }
 
 @media screen and (max-width: 550px) {
-    .index-panel .banner_home .content {
-        margin-top: -25px;
+  .index-panel .banner_home .content {
+    margin-top: -25px;
 
-        .top {
-            width: 100%;
+    .top {
+      width: 100%;
 
-            .text_animation {
-                .display {
-                    font-size: 25px;
-                }
-            }
-
-            .right-video {
-                margin-top: 15px;
-
-                .video-image {
-                    width: 100%;
-                }
-            }
+      .text_animation {
+        .display {
+          font-size: 25px;
         }
+      }
+
+      .right-video {
+        margin-top: 15px;
+
+        .video-image {
+          width: 100%;
+        }
+      }
     }
+  }
 }

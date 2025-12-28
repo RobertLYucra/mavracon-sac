@@ -1,0 +1,119 @@
+.sostenibilidad-details-page {
+  // Break out of parent .routes container constraints (Edge-to-Edge)
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+
+  // Counteract .routes-main margin-top (adjust based on your global layout)
+  margin-top: -90px;
+
+  min-height: 100vh;
+  display: flex;
+  background-color: var(--body-bg);
+
+  .split-layout {
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+
+    // --- LEFT PANEL (Sticky Image) ---
+    .image-panel {
+      flex: 0 0 50%;
+      height: 100vh;
+      position: sticky;
+      top: 0;
+      overflow: hidden;
+      z-index: 0;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: rgba(
+          0,
+          0,
+          0,
+          0.2
+        ); // Sostenibilidad might want slightly lighter overlay
+      }
+    }
+
+    // --- RIGHT PANEL (Scrollable Content) ---
+    .content-panel {
+      flex: 1;
+      // Large padding top to clear navbar visual space if needed
+      padding: 140px 8% 5rem 6%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      min-height: 100vh;
+      background-color: #0b121f;
+      position: relative;
+      z-index: 1;
+
+      .top-nav {
+        margin-bottom: clamp(2rem, 5vw, 4rem);
+
+        .back-link {
+          display: inline-flex;
+          align-items: center;
+          gap: 0.8rem;
+          text-decoration: none;
+          text-transform: uppercase;
+          font-weight: 700;
+          color: #fff;
+          font-size: 0.9rem;
+          letter-spacing: 1px;
+          transition: opacity 0.3s ease;
+
+          ion-icon {
+            color: var(--secondary-color, #f42534);
+            font-size: 1.2rem;
+            transition: color 0.3s ease;
+          }
+
+          &:hover {
+            opacity: 1;
+            color: var(--gold-accent);
+
+            ion-icon {
+              color: var(--gold-accent);
+            }
+          }
+        }
+      }
+
+      // Additional styling for PilarDetalle content if needed
+      // Most styles should be handled by the component itself, but we can override here
+    }
+  }
+
+  // Responsive
+  @media (max-width: 1024px) {
+    .split-layout {
+      flex-direction: column;
+
+      .image-panel {
+        position: relative;
+        flex: none;
+        height: 40vh;
+        width: 100%;
+        top: auto;
+      }
+
+      .content-panel {
+        padding: 3rem 5%;
+        min-height: auto;
+      }
+    }
+  }
+}
