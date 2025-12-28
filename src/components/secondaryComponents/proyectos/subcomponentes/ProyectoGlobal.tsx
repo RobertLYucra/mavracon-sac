@@ -1,4 +1,4 @@
-import { IonIcon } from "@ionic/react"
+
 import "./styles/ProyectoGlobal.scss"
 import Peru from '../../home/images/Peru.png'
 

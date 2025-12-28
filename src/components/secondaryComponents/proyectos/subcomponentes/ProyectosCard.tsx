@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { proyectos, Proyecto } from "../interfaces/Proyectos";
+import { proyectos } from "../interfaces/Proyectos";
 import "./styles/ProyectCard.scss";
 import { ProjectCardMinimalista, ProjectCardList } from "./Card";
 import { IonIcon } from "@ionic/react";
