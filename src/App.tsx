@@ -10,9 +10,9 @@ import Footer from "./components/maincomponents/footer/Footer";
 import Sostenenibilidad from "./components/secondaryComponents/sostenibilidad/Sostenenibilidad";
 import SostenibilidadDetails from "./components/secondaryComponents/sostenibilidad/detalle/SostenibilidadDetails";
 import ProyectosDetails from "./components/secondaryComponents/proyectos/detalle/ProyectosDetails";
-import Contacto from "./components/secondaryComponents/Contacto/Contacto";
 import QueHacemosDetails from "./components/secondaryComponents/quehacemos/detalle/QueHacemosDetails";
 import NotFound from "./components/maincomponents/NotFound/NotFound";
+import Contacto from "./components/secondaryComponents/Contacto/Contacto";
 
 function App() {
 

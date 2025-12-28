@@ -1,58 +1,58 @@
 .innovacion-cards-detalle {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    margin: 4rem auto;
-    max-width: 1400px;
-    padding: 0 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin: 4rem auto;
+  max-width: 1400px;
+  padding: 0 2rem;
 
-    figure {
-        position: relative;
-        flex: 1;
-        min-height: 320px;
-        background: var(--cards-bg);
-        padding: 2.5rem;
-        border-radius: 16px;
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        display: flex;
-        flex-direction: column;
-        gap: 1.5rem;
+  figure {
+    position: relative;
+    flex: 1;
+    min-height: 320px;
+    background: var(--cards-bg);
+    padding: 2.5rem;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
 
-        .contador {
-            font-size: 2rem;
-            font-weight: 900;
-            color: var(--secondary-color);
-            margin-bottom: 10px;
-            line-height: 1;
-        }
-
-        .titulo {
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: var(--text-primary-color);
-            margin-bottom: 10px;
-            line-height: 1.3;
-        }
-
-        p {
-            font-size: 1rem;
-            line-height: 1.8;
-            color: rgba(255, 255, 255, 0.75);
-            margin: 0;
-        }
+    .contador {
+      font-size: 2rem;
+      font-weight: 900;
+      color: var(--secondary-color);
+      margin-bottom: 10px;
+      line-height: 1;
     }
+
+    .titulo {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--text-primary-color);
+      margin-bottom: 10px;
+      line-height: 1.3;
+    }
+
+    p {
+      font-size: 1rem;
+      line-height: 1.8;
+      color: rgba(255, 255, 255, 0.75);
+      margin: 0;
+    }
+  }
 }
 
 // Animación de entrada
 @keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 // ============================================
@@ -60,64 +60,64 @@
 // ============================================
 
 @media screen and (max-width: 1200px) {
-    .innovacion-cards-detalle {
-        flex-wrap: wrap;
-        gap: 1.25rem;
+  .innovacion-cards-detalle {
+    flex-wrap: wrap;
+    gap: 1.25rem;
 
-        figure {
-            flex: 0 1 calc(50% - 0.625rem);
-            min-height: 260px;
-        }
+    figure {
+      flex: 0 1 calc(50% - 0.625rem);
+      min-height: 260px;
     }
+  }
 }
 
 @media screen and (max-width: 768px) {
-    .innovacion-cards-detalle {
-        padding: 0 1.5rem;
-        margin: 2rem auto;
-        gap: 1.5rem;
+  .innovacion-cards-detalle {
+    padding: 0 1.5rem;
+    margin: 2rem auto;
+    gap: 1.5rem;
 
-        figure {
-            padding: 2rem;
-            min-height: 280px;
+    figure {
+      padding: 2rem;
+      min-height: 280px;
 
-            .contador {
-                font-size: 1.5rem;
-            }
+      .contador {
+        font-size: 1.5rem;
+      }
 
-            .titulo {
-                font-size: 1.2rem;
-            }
+      .titulo {
+        font-size: 1.2rem;
+      }
 
-            p {
-                font-size: 0.95rem;
-            }
-        }
+      p {
+        font-size: 0.95rem;
+      }
     }
+  }
 }
 
 @media screen and (max-width: 650px) {
-    .innovacion-cards-detalle {
-        flex-direction: column;
-        padding: 0 1rem;
+  .innovacion-cards-detalle {
+    flex-direction: column;
+    padding: 0 1rem;
 
-        figure {
-            flex: 1;
-            width: 100%;
-            min-height: 260px;
-            padding: 18px;
+    figure {
+      flex: 1;
+      width: 100%;
+      min-height: 260px;
+      padding: 18px;
 
-            .contador {
-                font-size: 1.5rem;
-            }
+      .contador {
+        font-size: 1.5rem;
+      }
 
-            .titulo {
-                font-size: 1.15rem;
-            }
+      .titulo {
+        font-size: 1.15rem;
+      }
 
-            p {
-                font-size: 0.9rem;
-            }
-        }
+      p {
+        font-size: 0.9rem;
+      }
     }
+  }
 }

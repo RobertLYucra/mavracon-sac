@@ -11,7 +11,8 @@ export interface Proyecto {
   imagen: string;
   url: string;
   descripcion?: string[];
-  galeria?: string[];
+  galleryImage?: string[];
+  galleryVideo?: string[];
   slug?: string; // Add slug for routing
 }
 
@@ -45,11 +46,14 @@ export const proyectos: Proyecto[] = [
       "Gestión ambiental y sostenibilidad en todas las fases del proyecto",
       "Cumplimiento estricto de normativas de seguridad y medio ambiente",
     ],
-    galeria: [
+    galleryImage: [
       "https://images.unsplash.com/photo-1611273426858-450d8e3c9fce?w=800",
       "https://images.unsplash.com/photo-1580982172477-25ac3300d9c2?w=800",
       "https://images.unsplash.com/photo-1513828583688-c52646db42da?w=800",
       "https://images.unsplash.com/photo-1587293852726-70cdb56c2866?w=800",
+    ],
+    galleryVideo: [
+      "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
     ],
   },
 
@@ -74,11 +78,14 @@ export const proyectos: Proyecto[] = [
       "Desarrollo sostenible con programas de responsabilidad social",
       "Infraestructura moderna adaptada a condiciones de altura",
     ],
-    galeria: [
+    galleryImage: [
       "https://images.unsplash.com/photo-1617791160505-6f00504e3519?w=800",
       "https://images.unsplash.com/photo-1611273426858-450d8e3c9fce?w=800",
       "https://images.unsplash.com/photo-1624996379656-2d0d1f6ca8e9?w=800",
       "https://images.unsplash.com/photo-1582639590011-f5a8416d1101?w=800",
+    ],
+    galleryVideo: [
+      "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4",
     ],
   },
 
@@ -103,12 +110,13 @@ export const proyectos: Proyecto[] = [
       "Departamentos con acabados de primera calidad",
       "Sistemas de seguridad y domótica integrada",
     ],
-    galeria: [
+    galleryImage: [
       "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800",
       "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800",
       "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800",
       "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800",
     ],
+    galleryVideo: [],
   },
 
   {
@@ -133,12 +141,13 @@ export const proyectos: Proyecto[] = [
       "Cines multiplex y áreas de entretenimiento familiar",
       "Estacionamiento subterráneo con capacidad para 1000 vehículos",
     ],
-    galeria: [
+    galleryImage: [
       "https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?w=800",
       "https://images.unsplash.com/photo-1567958451986-2de427a4a0be?w=800",
       "https://images.unsplash.com/photo-1582719188393-bb71ca45dbb9?w=800",
       "https://images.unsplash.com/photo-1519567241046-7f570eee3ce6?w=800",
     ],
+    galleryVideo: [],
   },
 
   {
@@ -162,12 +171,13 @@ export const proyectos: Proyecto[] = [
       "Mejora significativa en tiempos de transporte regional",
       "Construcción con estándares internacionales de seguridad",
     ],
-    galeria: [
+    galleryImage: [
       "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800",
       "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=800",
       "https://images.unsplash.com/photo-1577495508048-b635879837f1?w=800",
       "https://images.unsplash.com/photo-1573331519317-30b24326bb9a?w=800",
     ],
+    galleryVideo: [],
   },
 
   {
@@ -192,11 +202,14 @@ export const proyectos: Proyecto[] = [
       "Áreas de coworking y salas de reuniones ejecutivas",
       "Lobby de doble altura con servicios premium",
     ],
-    galeria: [
+    galleryImage: [
       "https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=800",
       "https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=800",
       "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800",
       "https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=800",
+    ],
+    galleryVideo: [
+      "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
     ],
   },
 
@@ -222,12 +235,13 @@ export const proyectos: Proyecto[] = [
       "Servicios de energía y agua optimizados",
       "Áreas de carga y descarga con acceso directo a vías principales",
     ],
-    galeria: [
+    galleryImage: [
       "https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=800",
       "https://images.unsplash.com/photo-1586864387634-836c6bb28fc3?w=800",
       "https://images.unsplash.com/photo-1587293852726-70cdb56c2866?w=800",
       "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800",
     ],
+    galleryVideo: [],
   },
 
   {
@@ -252,11 +266,15 @@ export const proyectos: Proyecto[] = [
       "Salas de cirugía con tecnología robótica",
       "Áreas de hospitalización con confort para pacientes y familiares",
     ],
-    galeria: [
+    galleryImage: [
       "https://images.unsplash.com/photo-1538108149393-fbbd81895907?w=800",
       "https://images.unsplash.com/photo-1516549655169-df83a0774514?w=800",
       "https://images.unsplash.com/photo-1571772996211-2f02c9727629?w=800",
       "https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?w=800",
+    ],
+    galleryVideo: [
+      "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
+      "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4",
     ],
   },
 ];

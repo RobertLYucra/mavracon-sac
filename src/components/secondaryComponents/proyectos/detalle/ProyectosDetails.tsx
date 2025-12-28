@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { IonIcon } from "@ionic/react";
-import { arrowBackOutline, closeOutline } from "ionicons/icons";
+import { arrowBackOutline, closeOutline, playCircleOutline } from "ionicons/icons";
 import { proyectos as projectsList } from "../interfaces/Proyectos";
 import NextPrev from "../../plantillas/NextPrev";
 import NotFound from "../../../maincomponents/NotFound/NotFound";
@@ -34,6 +34,11 @@ const ProyectosDetails = () => {
   });
 
   if (!data) return <NotFound />;
+
+  const galleryItems = [
+    ...(data.galleryVideo || []).map(url => ({ type: 'video' as const, url })),
+    ...(data.galleryImage || []).map(url => ({ type: 'image' as const, url })),
+  ];
 
   return (
     <div className="proyectos-details-page">
@@ -88,14 +93,23 @@ const ProyectosDetails = () => {
       </div>
 
       {/* Full Width Gallery Section */}
-      {data.galeria && data.galeria.length > 0 && (
+      {galleryItems.length > 0 && (
          <div className="project-full-gallery">
              <div className="gallery-container">
                  <h3>Galería del Proyecto</h3>
                  <div className="gallery-grid">
-                     {data.galeria.map((img, idx) => (
-                         <div key={idx} className="gallery-item" onClick={() => setSelectedImage(img)}>
-                            <img src={img} alt={`${data.nombre} - Galeria ${idx + 1}`} />
+                     {galleryItems.map((item, idx) => (
+                         <div key={idx} className="gallery-item" onClick={() => setSelectedImage(item.url)}>
+                            {item.type === 'video' ? (
+                                <div className="video-thumbnail">
+                                    <video src={item.url} muted className="preview-video" />
+                                    <div className="play-icon">
+                                        <IonIcon icon={playCircleOutline} />
+                                    </div>
+                                </div>
+                            ) : (
+                                <img src={item.url} alt={`${data.nombre} - Galeria ${idx + 1}`} />
+                            )}
                             <div className="overlay">
                                 <IonIcon icon={arrowBackOutline} style={{transform: 'rotate(135deg)', fontSize: '2rem'}} />
                             </div>
@@ -113,7 +127,11 @@ const ProyectosDetails = () => {
                 <button className="close-btn" onClick={() => setSelectedImage(null)}>
                     <IonIcon icon={closeOutline} />
                 </button>
-                <img src={selectedImage} alt="Full View" />
+                {galleryItems.find(item => item.url === selectedImage)?.type === 'video' ? (
+                    <video src={selectedImage} controls autoPlay className="lightbox-video" />
+                ) : (
+                    <img src={selectedImage} alt="Full View" />
+                )}
             </div>
         </div>
       )}

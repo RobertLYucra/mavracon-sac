@@ -3,6 +3,8 @@ import { useState, useEffect } from "react";
 import { createPortal } from "react-dom";
 import { Proyecto } from "../../proyectos/interfaces/Proyectos";
 import "./styles/CarouselModal.scss";
+import { IonIcon } from "@ionic/react";
+import { playCircleOutline } from "ionicons/icons";
 
 interface CarouselModalProps {
   proyecto: Proyecto;
@@ -12,6 +14,11 @@ interface CarouselModalProps {
 
 const CarouselModal = ({ proyecto, isOpen, onClose }: CarouselModalProps) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  const galleryItems = [
+    ...(proyecto.galleryVideo || []).map(url => ({ type: 'video' as const, url })),
+    ...(proyecto.galleryImage || []).map(url => ({ type: 'image' as const, url })),
+  ];
 
   useEffect(() => {
     if (isOpen) {
@@ -31,17 +38,17 @@ const CarouselModal = ({ proyecto, isOpen, onClose }: CarouselModalProps) => {
   };
 
   const nextImage = () => {
-    if (proyecto.galeria) {
+    if (galleryItems.length > 0) {
       setCurrentImageIndex((prev) =>
-        prev === proyecto.galeria!.length - 1 ? 0 : prev + 1
+        prev === galleryItems.length - 1 ? 0 : prev + 1
       );
     }
   };
 
   const prevImage = () => {
-    if (proyecto.galeria) {
+    if (galleryItems.length > 0) {
       setCurrentImageIndex((prev) =>
-        prev === 0 ? proyecto.galeria!.length - 1 : prev - 1
+        prev === 0 ? galleryItems.length - 1 : prev - 1
       );
     }
   };
@@ -65,16 +72,25 @@ const CarouselModal = ({ proyecto, isOpen, onClose }: CarouselModalProps) => {
           {/* Columna Izquierda - Galería */}
           <div className="modal-left">
             <div className="modal-gallery">
-              {proyecto.galeria && proyecto.galeria.length > 0 ? (
+              {galleryItems.length > 0 ? (
                 <>
                   <div className="gallery-main">
-                    <img
-                      src={proyecto.galeria[currentImageIndex]}
-                      alt={`${proyecto.nombre} - Imagen ${currentImageIndex + 1}`}
-                      className="gallery-image"
-                    />
+                    {galleryItems[currentImageIndex].type === 'video' ? (
+                         <video
+                            src={galleryItems[currentImageIndex].url}
+                            className="gallery-image"
+                            controls
+                            autoPlay
+                         />
+                    ) : (
+                        <img
+                          src={galleryItems[currentImageIndex].url}
+                          alt={`${proyecto.nombre} - Imagen ${currentImageIndex + 1}`}
+                          className="gallery-image"
+                        />
+                    )}
                     
-                    {proyecto.galeria.length > 1 && (
+                    {galleryItems.length > 1 && (
                       <>
                         <button
                           className="gallery-nav gallery-prev"
@@ -94,15 +110,24 @@ const CarouselModal = ({ proyecto, isOpen, onClose }: CarouselModalProps) => {
                     )}
                   </div>
 
-                  {proyecto.galeria.length > 1 && (
+                  {galleryItems.length > 1 && (
                     <div className="gallery-thumbnails">
-                      {proyecto.galeria.map((img, idx) => (
+                      {galleryItems.map((item, idx) => (
                         <button
                           key={idx}
                           className={`thumbnail ${idx === currentImageIndex ? "active" : ""}`}
                           onClick={() => setCurrentImageIndex(idx)}
                         >
-                          <img src={img} alt={`Miniatura ${idx + 1}`} />
+                          {item.type === 'video' ? (
+                                <div className="thumbnail-video-wrapper">
+                                     <video src={item.url} muted className="thumbnail-video" /> 
+                                     <div className="play-icon-small">
+                                        <IonIcon icon={playCircleOutline} />
+                                     </div>
+                                </div>
+                          ) : (
+                                <img src={item.url} alt={`Miniatura ${idx + 1}`} />
+                          )}
                         </button>
                       ))}
                     </div>

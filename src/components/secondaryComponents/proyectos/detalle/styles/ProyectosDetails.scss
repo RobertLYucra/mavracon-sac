@@ -14,6 +14,7 @@
   display: flex;
   flex-direction: column; // Stack split-layout and gallery vertically
   background-color: var(--body-bg);
+  overflow-x: hidden; // Prevent horizontal scroll
 
   // --- LIGHTBOX OVERLAY ---
   .lightbox-overlay {
@@ -86,12 +87,10 @@
     width: 100%;
     min-height: 100vh;
 
-    // --- LEFT PANEL (Sticky Image) ---
+    // --- LEFT PANEL (Image grows with content) ---
     .image-panel {
       flex: 0 0 50%;
-      height: 100vh;
-      position: sticky;
-      top: 0;
+      position: relative;
       overflow: hidden;
       z-index: 0;
 
@@ -99,6 +98,8 @@
         width: 100%;
         height: 100%;
         object-fit: cover;
+        position: sticky;
+        top: 0;
         // Optionally add a subtle zoom effect on load if desired
       }
 
@@ -112,6 +113,7 @@
           0,
           0.3
         ); // Overlay for contrast if text overlaps (less relevant here but good practice)
+        pointer-events: none;
       }
     }
 
